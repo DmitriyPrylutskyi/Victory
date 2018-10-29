@@ -1,0 +1,22 @@
+input[type="radio"] {
+    display:none;
+    & + label{
+        color:#f2f2f2;
+    font-family:Arial, sans-serif;
+    }
+    & + label span {
+        display:inline-block;
+        width: 14px;
+        height: 14px;
+        margin: -3px 10px 0 0;
+        vertical-align:middle;
+        background-image:url(../img/radio.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        cursor:pointer;
+    }
+    &:checked + label span {
+        background-image:url(../img/radio-act.png);
+    }
+}
