@@ -1,0 +1,42 @@
+footer {
+  height: 185px;
+  .logo {
+    padding-top: 20px;
+    text-align: center;
+    p {
+      margin-bottom: 0;
+      font-family: 'CocogoosePro', sans-serif;
+      font-weight: 300;
+      font-size: 32px;
+      line-height: 1;
+      color: #ffffff;
+    }
+    span {
+      display: block;
+      font-family: 'CocogoosePro', sans-serif;
+      font-weight: 300;
+      font-size: 8px;
+      font-weight: 300;
+      color: #ffffff;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 50px;
+    text-align: right;
+    a {
+      margin-right: 30px;
+    }
+    span {
+      margin-right: 5px;
+      font-family: 'Lato', sans-serif;
+    }
+    span, a {
+      font-size: 15px;
+      color: #ffffff;
+    }
+  }
+}

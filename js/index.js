@@ -1,0 +1,1 @@
+function initEvents(){$(function(){}),$(window).on("load",function(){})}initEvents();
