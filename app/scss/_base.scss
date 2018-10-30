@@ -63,7 +63,9 @@ body {
         max-width: 100%;
         display: inline-block;
     }
-
+    .clean{
+        clear: both;
+    }
     a {
         display: inline-block;
         font-family: 'Lato', sans-serif;
