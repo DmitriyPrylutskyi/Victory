@@ -5,6 +5,10 @@ body {
     background: url("../img/bg-top.jpg");
     background-repeat: no-repeat;
 
+    >.wrapper {
+        min-height: calc(100vh - 185px);
+    }
+
     h1, h2, h3, h4, h5, h6 {
         margin: 0;
         font-family: 'CocogoosePro', sans-serif;
