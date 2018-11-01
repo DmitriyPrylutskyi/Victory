@@ -1,3 +1,37 @@
+.oun-head{
+    margin-top: 100px;
+    margin-bottom: 190px;
+    position: relative;
+
+    h2{
+        font-size: 25px;
+        color: #ffffff;
+        font-family: "CocogoosePro";
+        font-weight: 300;
+        width: 1023px;
+        margin: 0 auto;
+        display: block;
+        text-align: left;
+        position: relative;
+        text-transform: uppercase;
+        padding-left: 140px;
+
+
+        &:before{
+            content: "";
+            position: absolute;
+            background-image: url(../app/img/back-head-after.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: block;
+            width: 79px;
+            height: 15px;
+            left: 24px;
+            bottom: 6px;
+        }
+    }
+}
 .personal-area{
     .prog-take{
         margin: 0 auto;
@@ -93,10 +127,12 @@
         background-color: #ffffff;
         margin-right: 20px;
         &:hover{
+            background-color: transparent;
             color: #ffffff;
             background-image: linear-gradient(-85deg, #fd9b13 0%, #c55b00 100%);
         }
         &.active{
+            background-color: transparent;
             color: #ffffff;
             background-image: linear-gradient(-85deg, #fd9b13 0%, #c55b00 100%);
         }
