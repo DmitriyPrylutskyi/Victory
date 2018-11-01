@@ -1,4 +1,85 @@
 .personal-area{
+    .prog-take{
+        margin: 0 auto;
+        margin-top: 40px;
+        width: 100%;
+        max-width: 1031px;
+        border-radius: 20px;
+        box-shadow: 0px 18px 35px rgba(0,0,0,0.14);
+        background-color: #ffffff;
+        border: 1px solid #e7830c;
+        position: relative;
+
+        h3{
+            text-transform: uppercase;
+            font-size: 25px;
+            letter-spacing: 0px;
+            display: block;
+            font-family: "CocogoosePro";
+            font-weight: 300;
+            text-align: center;
+            color: #c55b00;
+            margin: 0 auto;
+            width: 520px;
+            left: calc(50% - 260px - 60px);
+            position: absolute;
+            padding-left: 100px;
+            top: -16px;
+            background-image: url(../img/tit-back.png);
+            background-position: 40px;
+            background-repeat: no-repeat;
+            background-size: 110%;
+            padding-right: 40px;
+        }
+        .all-kind-off{
+            display: flex;
+            position: relative;
+            top: 40px;
+            h4{
+                font-family: "Lato";
+                font-size: 15px;
+                color: #494949;
+                text-transform: uppercase;
+                font-weight: 300;
+                margin-bottom: 20px;
+                padding-left: 15px
+            }
+            .one-kind-off{
+                display: block;
+                width: 17%;
+                margin: 0 auto;
+                .per-one-k{
+                    border-radius: 10px;
+                    box-shadow: 2.29px 11.78px 35px rgba(0,0,0,0.11);
+                    background-color: #ffffff;
+                    padding: 15px;
+
+                    span{
+                        font-family: "Lato";
+                        font-size: 33px;
+                        line-height: 40px;
+                        font-weight: 800;
+                        text-align: left;
+                        background: linear-gradient(to right, #c55b00 0%, #fd9b13);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        margin-bottom: 10px;
+                        display: block;
+                    }
+                    p{
+                        font-family: "Lato";
+                        font-size: 12px;
+                        line-height: 12px;
+                        color: #7c746c;
+                        margin: 0;
+                        text-transform: uppercase;
+                        font-weight: 200;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
     .nav-link{
         font-size: 15px;
         color: #df7e1d;
@@ -45,6 +126,7 @@
         }
     }
     .pass-data{
+        margin: 0 auto;
         border-radius: 25px;
         // box-shadow: 0 0 35px rgba(0,0,0,0.13);
         background-color: #ffffff;
@@ -53,7 +135,7 @@
         max-width:  1053px;
         margin-top: 70px;
         position: relative;
-
+        z-index: 9;
         
         
         // .has-titt{
@@ -134,7 +216,7 @@
             right: 66px;
             bottom: 50px;
             width: 188px;
-            height: 39px;
+            // height: 39px;
             color: #fff;
             border-radius: 20px;
             background-image: linear-gradient(-85deg, #c55b00 0%, #fd9b13 100%);
@@ -149,28 +231,182 @@
         }
     }
     .last-pass-doc{
-        margin-top: 200px;
+        z-index: 9;
+        position: relative;
+        max-width: 1053px;
+        width: 100%;
+        padding-bottom: 50px;
+        margin: 0 auto;
+
+        .part-l, .part-r{
+            width: 50%;
+            float: left;
+        }
+        .part-l{
+            position: relative;
+            h3{
+                text-transform: uppercase;
+                font-size: 25px;
+                letter-spacing: 0px;
+                padding-left: 185px;
+                position: absolute;
+                display: inline-block;
+                top: -10px;
+                text-align: left;
+                font-family: "CocogoosePro";
+                font-weight: 300;
+                text-align: center;
+                background: linear-gradient(to right, #c55b00 0%, #fd9b13);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            label{
+                font-weight: 200;
+                font-family: "CocogoosePro";
+                text-align: right;
+                font-size: 17px;
+                letter-spacing: 0px;
+                color: #4e4e4e;
+                width: 160px;
+                display: inline-block;
+                margin-right: 20px;
+            }
+            .first-bb{
+                margin-top: 60px
+            }
+            
+            .last-bb{
+                position: relative;
+                top: 10px;
+            }
+            input[type="password"]{
+                width: 277px;
+                height: 39px;
+                border-radius: 19px;
+                border: 1px solid #e7830c;
+                padding: 0 15px;
+                box-sizing: border-box;
+                color: #919191;
+                font-family: "CocogoosePro";
+                font-weight: 200;
+                font-size: 13px;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                outline: none;
+                transition: .25s;
+            }
+            .one-sl-bl{
+                margin-bottom: 20px
+            }
+            .sec-bb{
+                margin-bottom: 5px
+            }
+            [type="submit"]{
+                left: 185px;
+                width: 188px;
+                position: relative;
+                // height: 39px;
+                color: #fff;
+                border-radius: 20px;
+                background-image: linear-gradient(-85deg, #c55b00 0%, #fd9b13 100%);
+                line-height: 39px;
+                transition: .3s;
+                text-transform: none;
+    
+                &:hover{
+                    background-image: linear-gradient(-85deg, #fd9b13 0%, #c55b00 100%);
+                    text-transform: none;
+                }
+            }
+        }
+        .in-nwe-ff{
+            max-width: 448px;
+            width: 100%;
+            height: auto;
+            border-radius: 25px;
+            box-shadow: 0 0 35px rgba(0,0,0,0.13);
+            background-color: #ffffff;
+            border: 1px solid #ababab;
+            padding: 70px;
+            position: relative;
+            h3{
+                text-align: left;
+                position: absolute;
+                top: -18px;
+                text-transform: uppercase;
+                width: 315px;
+                left: 0;
+                padding-left: 70px;
+                background-image: url(../img/tit-back.png);
+                background-position: 0px;
+                background-repeat: no-repeat;
+                background-size: 110%;
+                padding-right: 40px;
+                font-weight: 300;
+                font-size: 25px;
+                letter-spacing: 0px;
+                line-height: 29px;
+                color: #c55b00;
+            }
+            p{
+                font-size: 13px;
+                letter-spacing: 0px;
+                line-height: 17px;
+                color: #4e4e4e;
+                font-family: "Lato";
+                font-weight: 200;
+            }
+
+            [type="submit"] {
+                position: absolute;
+                left: 66px;
+                bottom: 30px;
+                width: 188px;
+                // height: 39px;
+                color: #fff;
+                border-radius: 20px;
+                background-image: linear-gradient(-85deg, #c55b00 0%, #fd9b13 100%);
+                line-height: 39px;
+                transition: .3s;
+                text-transform: none;
+
+                &:hover{
+                    background-image: linear-gradient(-85deg, #fd9b13 0%, #c55b00 100%);
+                    text-transform: none;
+                }
+            }
+        }
     }
     .jjjjd{
-        background-image: url(../img/new-lineback.png);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 1918px;
+        
+        width: 100%;
         display: block;
-        position: absolute;
-        height: 270px;
+        position: relative; 
+        height: 200px;
         left: 0;
+
+        .new-back{
+            background-image: url(../app/img/new-lineback.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            display: block;
+            position: absolute;
+            height: 700px;
+            top: -270px;
+        }
 
         &:before{
             content: "";
-            background-image: url(../img/left-el.png);
+            background-image: url(../app/img/left-el.png);
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
             left: 0;
             z-index: 9;
-            top: 30px;
+            top: -260px;
             width: 280px;
             height: 445px;
             position: absolute;
@@ -178,13 +414,13 @@
         }
         &:after{
             content: "";
-            background-image: url(../img/left-el.png);
+            background-image: url(../app/img/right-el.png);
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
             right: 0;
             z-index: 9;
-            top: 30px;
+            top: 90px;
             width: 280px;
             height: 445px;
             position: absolute;
@@ -192,6 +428,7 @@
         }
     }
     .personal-info{
+        margin: 0 auto;
         margin-top: 90px;
         width: 100%;
         max-width:  1053px;
@@ -210,7 +447,7 @@
                 right: 66px;
                 bottom: 50px;
                 width: 188px;
-                height: 39px;
+                // height: 39px;
                 color: #fff;
                 border-radius: 20px;
                 background-image: linear-gradient(-85deg, #c55b00 0%, #fd9b13 100%);
@@ -357,10 +594,16 @@
     .nav-tabs{
         border: 0;
         padding-left: 150px;
-    }
-    .in-block{
         margin: 0 auto;
         max-width: 1170px;
+        width: 100%;
+    }
+    // .tab-content{
+    //     margin: 0 auto;
+    //     max-width: 1170px;
+    //     width: 100%;
+    // }
+    .in-block{
         width: 100%;
     }
     .table-in{

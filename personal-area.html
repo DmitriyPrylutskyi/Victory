@@ -9,9 +9,11 @@
 	<link rel="icon" type="image/png" sizes="64x64" href="/img/favicon/64.png">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css">
 	<link rel="stylesheet" href="./libs/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="./libs/upload/imageuploadify.min.css">
 	<link href="css/index.css" type="text/css" rel="stylesheet" />
 	<script type="text/javascript" src="./libs/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="./libs/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="./libs/upload/imageuploadify.min.js"></script>
 	<script type="text/javascript" src="./js/index.js"></script>
 </head>
 <body>
@@ -77,7 +79,7 @@
                 </ul>
                 <!-- Tab panes -->
                 <div class="tab-content">
-                    <div id="profile" class="container tab-pane active">
+                    <div id="profile" class="tab-pane active">
                         <div class="personal-info">
                             <h3 class="new-title">личные данные</h3>
                             <div>
@@ -168,36 +170,86 @@
                             </form>
                         </div>
                         <div class="jjjjd">
+                            <div class="new-back">
 
+                            </div>
                         </div>
                         <div class="last-pass-doc">
-                            <div>
+                            <div class="part-l">
                                 <h3>Смена пароля</h3>
-                                <div>
+                                <div class="one-sl-bl first-bb">
                                     <label for="old-pass">Старый пароль</label>
                                     <input type="password" id="old-pass" name="old-pass">
                                 </div>
-                                <div>
+                                <div class="one-sl-bl sec-bb">
                                     <label for="new-pass">Новый пароль</label>
                                     <input type="password" id="new-pass" name="new-pass">
                                 </div>
-                                <div>
-                                    <label for="re-pass">Подтверждение пароля</label>
+                                <div class="one-sl-bl">
+                                    <label for="re-pass" class="last-bb">Подтверждение пароля</label>
                                     <input type="password" id="re-pass" name="re-pass">
                                 </div>
                                 <input type="submit" value="Сохранить">
                             </div>
-                            <div>
-                                <h3>Смена пароля</h3>
-                                <p>Загрузите действующий документ, удостоверяющий вашу личность (PNG или JPEG не более 5МБ)</p>
-                                <input type="submit" value="Сохранить">
+                            <div class="part-r">
+                                <div class="in-nwe-ff">
+                                    <h3>Верификация
+                                        пользователя
+                                    </h3>
+                                    <p>Загрузите действующий документ, удостоверяющий вашу личность (PNG или JPEG не
+                                        более 5МБ)</p>
+                                    <div>
+                                        <form>
+                                            <input type="file" accept=".jpg, .jpeg, .png" multiple>
+                                        </form>
+                                    </div>
+                                    <input type="submit" value="Сохранить">
+                                </div>
                             </div>
+                            <div class="clean"></div>
                         </div>
                     </div>
                     <div id="open-vklad" class="container tab-pane fade">
-                        <p>
-                            test2
-                        </p>
+                        <div class="prog-take">
+                            <h3>Программы сбережений</h3>
+                            <div class="all-kind-off">
+                                <div class="one-kind-off">
+                                    <h4>Срок 90 дней</h4>
+                                    <div class="per-one-k">
+                                        <span>13 %</span>
+                                        <p>сумма от 1000 Р</p>
+                                    </div>
+                                </div>
+                                <div class="one-kind-off">
+                                    <h4>Срок 90 дней</h4>
+                                    <div class="per-one-k">
+                                        <span>13 %</span>
+                                        <p>сумма от 1000 Р</p>
+                                    </div>
+                                </div>
+                                <div class="one-kind-off">
+                                    <h4>Срок 90 дней</h4>
+                                    <div class="per-one-k">
+                                        <span>13 %</span>
+                                        <p>сумма от 1000 Р</p>
+                                    </div>
+                                </div>
+                                <div class="one-kind-off">
+                                    <h4>Срок 90 дней</h4>
+                                    <div class="per-one-k">
+                                        <span>13 %</span>
+                                        <p>сумма от 1000 Р</p>
+                                    </div>
+                                </div>
+                                <div class="one-kind-off">
+                                    <h4>Срок 90 дней</h4>
+                                    <div class="per-one-k">
+                                        <span>13 %</span>
+                                        <p>сумма от 1000 Р</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div id="in-time" class="container tab-pane fade">
                         <h3 class="title-block">Дeйствующие вклады</h3>
@@ -331,6 +383,25 @@
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function () {
+        $('input[type="file"]').imageuploadify();
+    })
+</script>
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36251023-1']);
+    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
 <footer>
     <div class="container">
         <div class="row">
