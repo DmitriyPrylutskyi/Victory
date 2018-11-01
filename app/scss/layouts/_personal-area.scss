@@ -1,3 +1,35 @@
+.modal-dialog{
+    max-width: 996px;
+    width: 100%;
+    .modal-content{
+        border-radius: 50px;
+        box-shadow: 0 0 120px rgba(28,27,27,0.22);
+        background-color: #ffffff;
+        .modal-body{
+            max-height: 700px;
+            padding: 50px 70px 50px 100px;
+            .close{
+                padding: 0;
+                background-color: transparent;
+                -webkit-appearance: none;
+                box-shadow: none;
+                position: absolute;
+                right: 60px;
+                top: 50px;
+                opacity: 1;
+                color: #FF9138;
+                outline: none;
+                border: none;
+                font-size: 40px;
+            }
+            .new-in-bl-nn{
+                overflow-y: scroll;
+                max-height: 520px;
+                margin-top: 60px;
+            }
+        }
+    }
+}
 .oun-head{
     margin-top: 100px;
     margin-bottom: 190px;
