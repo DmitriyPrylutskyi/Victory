@@ -1,0 +1,151 @@
+<div class="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>
+                    В счастливое будущее
+                    <br>
+                    вместе с Победой
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="wrapper-calc">
+                    <div class="data">
+                        <form id="calc" action="">
+                        <div class="input-period">
+                            <input name="period" type="radio" id="period1" checked>
+                            <label for="period1">
+                                <span></span>
+                                2 года
+                            </label>
+                            <input name="period" type="radio" id="period2">
+                            <label for="period2">
+                                <span></span>
+                                1 год
+                            </label>
+                            <input name="period" type="radio" id="period3">
+                            <label for="period3">
+                                <span></span>
+                                6 месяцев
+                            </label>
+                            <input name="period" type="radio" id="period4">
+                            <label for="period4">
+                                <span></span>
+                                3 месяца
+                            </label>
+                            <input name="period" type="radio" id="period5">
+                            <label for="period5">
+                                <span></span>
+                                бессрочное
+                            </label>
+                        </div>
+                        <div class="input-method">
+                            <input name="method" type="radio" id="method1" checked>
+                            <label for="method1">
+                                <span></span>
+                                Оставлять проценты на вкладе
+                            </label>
+                            <input name="method" type="radio" id="method2">
+                            <label for="method2">
+                                <span></span>
+                                Долгосрочное закрытие вклада
+                            </label>
+                        </div>
+                        <div class="input-amount-block">
+                            <div id="slider-amount" class="slider"></div>
+                            <div class="input-amount">
+                                <input name="amount" type="text" id="amount" value="1000">
+                                <label for="amount">
+                                    Сумма вложения
+                                </label>
+                            </div>
+                        </div>
+                        <div class="input-refill-block">
+                            <div id="slider-refill" class="slider"></div>
+                            <div class="input-refill">
+                                <input name="refill" type="text" id="refill" value="1000">
+                                <label for="refill">
+                                    Ежемесячное пополнение
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                    </div>
+                    <div class="result">
+                        <h3>Расчет сбережений</h3>
+
+                        <span class="caption">
+                            Доход по сбережению
+                        </span>
+                        <span class="value" id="income" form="calc">
+                            55
+                        </span>
+                        <span class="caption">
+                            Процентная ставка
+                        </span>
+                        <span class="value" id="interest-rate" form="calc">
+                            18
+                            <span class="unit">%</span>
+                        </span>
+                        <span class="caption">
+                            Сумма к концу срока
+                        </span>
+                        <span class="value" id="total" form="calc">
+                            1055
+                        </span>
+                        <button type="submit" form="calc">Оставить заявку</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="about">
+            <div class="row">
+                <div class="col-12">
+                    <h2>
+                        потребительский корпоратив,
+                        <br>
+                        которому доверяют тысячи россиян
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <p>
+                        Кредитный потребительский кооператив является некоммерческой организацией, который выполняет социальную миссию, предлагая населению доступные услуги финансовой взаимопомощи. Без волокиты с бумагами и справками в «ПОБЕДЕ» всегда можно сохранить свои сбережения под выгодные проценты или оформить заём на неотложные нужды. Деятельность КПК регулируется Федеральным законом «О кредитной кооперации», а контроль осуществляет Центробанк РФ, являясь мега-регулятором кредитных и некредитных организаций.
+                    </p>
+                </div>
+                <div class="col-6 image">
+                    <img src="/img/about.png" alt="about">
+                </div>
+            </div>
+        </section>
+        <section class="advantages">
+            <div class="row">
+                <div class="col-12">
+                    <div class="advantage-block">
+                        <div class="advantage-img">
+                            <img src="/img/advantage-icon-1.png" alt="advantage">
+                        </div>
+                        <div class="advantage-desc">
+                            <p>
+                                Страхование ответственности ПК на сумму <span>100</span> млн.р
+                            </p>
+                        </div>
+                    </div>
+                    <div class="advantage-block">
+                        <div class="advantage-desc">
+                            <p>
+                                Высокие процентные ставки
+                            </p>
+                        </div>
+                        <div class="advantage-img">
+                            <img src="/img/advantage-icon-2.png" alt="advantage">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

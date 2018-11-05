@@ -14,29 +14,26 @@ body {
         font-family: 'CocogoosePro', sans-serif;
         font-weight: 300;
         font-style: normal;
-        line-height: 1;
-        text-align: center;
     }
 
     h1 {
-        font-size: 45px;
-        font-weight: 400;
+        font-size: 50px;
+        line-height: 70px;
         text-transform: uppercase;
-        color: #333333;
+        color: #ffffff;
     }
 
     h2 {
-        font-size: 45px;
-        font-weight: 400;
-        text-transform: capitalize;
-        color: #333333;
+        font-size: 30px;
+        line-height: 40px;
+        text-transform: uppercase;
+        color: #e1811f;
     }
 
     h3 {
-        font-size: 20px;
-        font-weight: 700;
-        line-height: 34px;
-        color: #333333;
+        font-size: 15px;
+        font-weight: 300;
+        color: #dc7d1f;
     }
 
     h4 {
@@ -56,11 +53,15 @@ body {
     }
 
     p {
-        font-family: 'Lato', sans-serif;
-        font-size: 20px;
-        font-weight: normal;
+        font-family: 'CocogoosePro', sans-serif;
+        font-size: 14px;
+        font-weight: 200;
         font-style: normal;
-        color: #333333;
+        line-height: 27px;
+        color: #3c3c3c;
+        span {
+            font-family: 'Lato', sans-serif;
+        }
     }
 
     img {

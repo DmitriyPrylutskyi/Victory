@@ -99,9 +99,9 @@ gulp.task('server', function() {
 
 gulp.task('build', [
     'html',
-/*    'js',
+    'js',
     'stylesheets',
-    'img'*/
+    'img'
 ]);
 
 gulp.task('watch', function() {

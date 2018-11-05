@@ -1,8 +1,8 @@
 input[type="radio"] {
     display:none;
     & + label{
-        color:#f2f2f2;
-    font-family:Arial, sans-serif;
+        color: #3c3c3c;
+        font-family: "Lato", sans-serif;
     }
     & + label span {
         display:inline-block;
