@@ -1,3 +1,203 @@
+body.personal-ar{
+    background-image: url(../app/img/other-head.png);
+    background-size: contain;
+    margin: 0px;
+    padding: 0px;
+
+    background-repeat: no-repeat;
+}
+@include breakpoint(mob-small) {
+    .jjjjd:before, .jjjjd:after{
+    display: none;
+    }
+}
+@include breakpoint(desktopssr) {
+    .jjjjd:before, .jjjjd:after{
+        display: inline-block;
+    }
+}
+.modal-dialog{
+    max-width: 996px;
+    width: 100%;
+    .modal-content{
+        border-radius: 50px;
+        box-shadow: 0 0 120px rgba(28,27,27,0.22);
+        background-color: #ffffff;
+        .modal-body{
+            max-height: 700px;
+            padding: 50px 70px 50px 100px;
+            button.go-to-other{
+                text-transform: uppercase;
+                display: block;
+                margin: 0 auto;
+                margin-bottom: 60px;
+                margin-top: 30px;
+            }
+            .rull-go-to{
+                font-size: 14px;
+                letter-spacing: 0px;
+                line-height: 30px;
+                color: #bebaba;
+                font-family: "CocogoosePro";
+                font-weight: 300;
+                text-align: center;
+                display: block;
+            }
+            
+            .close{
+                padding: 0;
+                background-color: transparent;
+                -webkit-appearance: none;
+                box-shadow: none;
+                position: absolute;
+                right: 60px;
+                top: 50px;
+                opacity: 1;
+                color: #FF9138;
+                outline: none;
+                border: none;
+                font-size: 40px;
+                cursor: pointer;
+                z-index: 9;
+                &:hover{
+                    background-color: transparent;
+                    background-image: none
+                }
+            }
+            .new-in-bl-nn{
+                overflow-y: scroll;
+                max-height: 520px;
+                h3{
+                    background: linear-gradient(to left, #fd9b14  0%, #c55c00);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-size: 18px;
+                    letter-spacing: 0px;
+                    line-height: 18px;
+                    text-align: left;
+                    font-family: "Lato";
+                    margin-bottom: 30px;
+                    text-transform: uppercase
+                }
+                p{
+                    font-size: 14px;
+                    line-height: 28px;
+                    color: #7f7f7f;
+                    font-family: "Lato";
+                    font-weight: 300;
+                    padding-right: 40px;
+                    font-family: "Lato";
+                }
+                a{
+                    display: block;
+                    margin-bottom: 15px;
+                    table{
+                        span{
+                            background-image: url(../app/img/pdf-img-icon.png);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: cover;
+                            display: inline-block;
+                            width: 70px;
+                            height: 90px;
+                            
+                            position: relative;
+                        }
+                        p{
+                            font-size: 14px;
+                            letter-spacing: 0px;
+                            line-height: 30px;
+                            color: #6c6c6c;
+                            font-family: "CocogoosePro";
+                            font-weight: 300;
+                            padding: 0;
+                            width: 100%;
+                            
+                            display: inline-block;
+                        }
+                        i{
+                            font-size: 14px;
+                            letter-spacing: 0px;
+                            line-height: 30px;
+                            color: #bebaba;
+                            font-family: "Lato";
+                        }
+                    }
+                    
+                }
+                ul {
+                    padding: 0;
+                    margin: 0;
+                    li{
+                        list-style: none;
+                        font-family: "Lato";
+                        padding: 0;
+                        margin: 0;
+                        font-size: 14px;
+                        line-height: 28px;
+                        display: inline-block;
+                        width: 49%;
+                        font-weight: 300;
+                        background: linear-gradient(to left, #fd9b14  0%, #c55c00);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+                }
+                
+                .firls-bl-mod{
+                    position: relative;
+                }
+                .one-bl-modal{
+                    display: block;
+                    margin-bottom: 40px;
+                }
+            }
+        }
+    }
+}
+.scrollbar::-webkit-scrollbar-track {
+    width: 10px;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0px 7px 18px rgba(95,95,95,0.07);
+    top: 30px;
+    margin-top: 80px;
+    background-color: #ffffff;
+}
+.oun-head{
+    margin-top: 100px;
+    margin-bottom: 190px;
+    position: relative;
+
+    h2{
+        font-size: 25px;
+        color: #ffffff;
+        font-family: "CocogoosePro";
+        font-weight: 300;
+        width: 1023px;
+        margin: 0 auto;
+        display: block;
+        text-align: left;
+        position: relative;
+        text-transform: uppercase;
+        padding-left: 140px;
+
+
+        &:before{
+            content: "";
+            position: absolute;
+            background-image: url(../app/img/back-head-after.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: block;
+            width: 79px;
+            height: 15px;
+            left: 24px;
+            bottom: 6px;
+        }
+    }
+}
 .personal-area{
     .prog-take{
         margin: 0 auto;
@@ -93,10 +293,12 @@
         background-color: #ffffff;
         margin-right: 20px;
         &:hover{
+            background-color: transparent;
             color: #ffffff;
             background-image: linear-gradient(-85deg, #fd9b13 0%, #c55b00 100%);
         }
         &.active{
+            background-color: transparent;
             color: #ffffff;
             background-image: linear-gradient(-85deg, #fd9b13 0%, #c55b00 100%);
         }
@@ -410,7 +612,6 @@
             width: 280px;
             height: 445px;
             position: absolute;
-            display: inline-block;
         }
         &:after{
             content: "";
@@ -424,7 +625,6 @@
             width: 280px;
             height: 445px;
             position: absolute;
-            display: inline-block;
         }
     }
     .personal-info{
@@ -702,5 +902,5 @@
                 }
             }
         }
-    }
+    }  
 }
