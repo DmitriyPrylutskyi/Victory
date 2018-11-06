@@ -39,31 +39,76 @@
     }
   }
   .advantages {
-    padding: 50px 180px 75px 180px ;
-    border: 2px solid #d87b1d;
-    border-radius: 20px;
-    .advantage-block {
-      vertical-align: middle;
-      .advantage-img {
-        position: relative;
-        display: inline-block;
-        width: 288px;
-        height: 301px;
-        background-image: url('../img/bg-advantage-icon.png');
-        background-repeat: no-repeat;
-        img {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translateX(-50%) translateY(-50%);
-        }
+    padding-top: 220px;
+    background-image: url('../img/bg-advantage.png');
+    background-repeat: no-repeat;
+    background-position-y: 35px;
+    .advantages-wrapper {
+      position: relative;
+      padding: 50px 180px 75px 180px;
+      border: 2px solid #c55c00;
+      border-radius: 20px;
+      &:before {
+        position: absolute;
+        content: "";
+        top: -2px;
+        left: 0;
+        width: calc(100% - 30px);
+        height: 2px;
+        margin-left: 15px;
+        background-image: linear-gradient(to right, #c55c00 0%, #ffffff 30%, #ffffff 70%, #c55c00 100%);
       }
-      .advantage-desc {
-        display: inline-block;
-        border-radius: 20px;
-        background-color:  #ffffff;
-        width: 504px;
-        height: 145px;
+      .title {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        padding: 0 10px;
+        background: #ffffff;
+        background-image: linear-gradient(to right, #c55c00 0%, #fd9b14 100%);
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+      .advantage-block {
+        .advantage-img {
+          position: relative;
+          display: inline-block;
+          vertical-align: middle;
+        }
+        .advantage-desc {
+          position: relative;
+          left: -22px;
+          display: inline-block;
+          width: 100%;
+          max-width: 385px;
+          height: 180px;
+          margin-bottom: 17px;
+          border-radius: 20px;
+          background-image: url('../img/bg-advantage-desc.png');
+          background-position-x: -125px;
+          vertical-align: middle;
+          p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            min-width: 305px;
+            font-size: 17px;
+            line-height: 25px;
+            text-align: left;
+            color: rgba(65, 65, 65, 0.9);
+            &.small-text {
+              font-size: 15px;
+            }
+          }
+        }
+        &.right {
+          text-align: right;
+          .advantage-desc {
+            left: 22px;
+          }
+        }
       }
     }
   }
