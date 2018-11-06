@@ -26,21 +26,18 @@ input[type="reset"] {
   transition: .3s;
 
   &:hover {
-    text-transform: uppercase;
     outline: none;
     color: #fff;
     background-image: linear-gradient(-85deg, #fd9b13 0%, #c55b00 100%);
   }
 
   &:focus {
-    text-transform: uppercase;
     outline: none;
     color: #fff;
     background-image: linear-gradient(-85deg, #fd9b13 0%, #c55b00 100%);
   }
 
   &:active {
-    text-transform: uppercase;
     outline: none;
     color: #fff;
     background-image: linear-gradient(-85deg, #fd9b13 0%, #c55b00 100%);

@@ -1,0 +1,55 @@
+input[type="checkbox"] {
+    display:none;
+    & + label{
+        color: #3c3c3c;
+        font-family: "Lato", sans-serif;
+    }
+    & + label span {
+        display: inline-block;
+        width: 16px;
+        height: 13px;
+        margin: 0px 6px 0 0;
+        position: relative;
+        top: -1px;
+        vertical-align: middle;
+        background-image: url(../app/img/check-pre.png);
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: contain;
+        cursor: pointer;
+    }
+    &:checked + label span {
+        background-image:url(../app/img/check-hover.png);
+    }
+}
+.seee-pass{
+    input[type="checkbox"] {
+        display:none;
+        & + label{
+            color: #3c3c3c;
+            font-family: "Lato", sans-serif;
+            position: absolute;
+            top: 11px;
+            width: 30px !important;;
+            right: 0;
+        }
+        & + label span {
+            display: inline-block;
+            width: 16px;
+            height: 13px;
+            margin: 0px 6px 0 0;
+            position: relative;
+            top: -1px;
+            vertical-align: middle;
+            background-image: url(../app/img/eye-pass.png);
+            background-position: left;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: pointer;
+        }
+        &:checked + label span {
+            background-image:url(../app/img/eye-pass-check.png);
+        }
+    }
+}
+
