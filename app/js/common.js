@@ -52,6 +52,12 @@ $(document).ready(function () {
       $('body').css('padding-right','15px').addClass('modal-open'); 
     });
   });
+  $('.sign-up').on('click', function () {
+    $('#forgot-pass').modal('hide');
+    $('#sign-up').on('shown.bs.modal', function() {
+      $('body').css('padding-right','15px').addClass('modal-open'); 
+    });
+  });
   $('.leave-order').on('click', function () {
     $('#enter').modal('hide');
     $('#leave-order').on('shown.bs.modal', function() {
