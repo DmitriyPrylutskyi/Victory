@@ -29,6 +29,27 @@ function calcresult() {
   $('#total').text(1055);
 }
 
+function setHoverOnAdvantageIcon() {
+  $('.advantage-img').hover(
+    function() {
+      var img = $( this ).find('img').attr('src').replace( /^\D+/g, '');
+      $(this).find('img').attr('src', '/img/advantage-icon-hover-' + img);
+    }, function() {
+      if (  !$( this ).hasClass('active') ) {
+        var img = $(this).find('img').attr('src').replace(/^\D+/g, '');
+        $(this).find('img').attr('src', '/img/advantage-icon-' + img);
+      }
+    }
+  )
+}
+
+function setClickOnAdvantageIcon() {
+  $('.advantage-img').click(function() {
+    $( this ).toggleClass('active');
+    $( this ).parent().find('.advantage-desc p').toggleClass('active');
+  })
+}
+
 function initEvents() {
     /*Actions on 'DOM ready' event*/
 
@@ -36,6 +57,8 @@ function initEvents() {
     $(window).on("load", function() {
       initAmountSlider();
       initRefillSlider();
+      setHoverOnAdvantageIcon();
+      setClickOnAdvantageIcon();
     });
 };
 
