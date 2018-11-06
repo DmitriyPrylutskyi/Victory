@@ -61,6 +61,36 @@ function initEvents() {
       setClickOnAdvantageIcon();
     });
 };
+// modal
+$(document).ready(function () {
+  $('.forgot-pass').on('click', function () {
+    $('#enter').modal('hide');
+    $('#forgot-pass').on('shown.bs.modal', function() {
+      $('body').css('padding-right','15px').addClass('modal-open'); 
+    });
+  });
+  $('.sign-up').on('click', function () {
+    $('#enter').modal('hide');
+    $('#sign-up').on('shown.bs.modal', function() {
+      $('body').css('padding-right','15px').addClass('modal-open'); 
+    });
+  });
+  $('.leave-order').on('click', function () {
+    $('#enter').modal('hide');
+    $('#leave-order').on('shown.bs.modal', function() {
+      $('body').css('padding-right','15px').addClass('modal-open'); 
+    });
+  });
+});
+//show pass
+function showPass() {
+  var x = document.getElementById("my-pass");
+  if (x.type === "password") {
+      x.type = "text";
+  } else {
+      x.type = "password";
+  }
+}
 
 /*Start all functions and actions*/
 initEvents();

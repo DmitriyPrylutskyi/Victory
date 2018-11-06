@@ -1,4 +1,9 @@
 @mixin breakpoint($point) {
+    @if $point == desktopssr {
+        @media (min-width: 1600px) {
+            @content;
+        }
+    }
     @if $point == desktops {
         @media (min-width: 1200px) {
             @content;
@@ -11,6 +16,11 @@
     }
     @else if $point == tablets {
         @media (min-width: 768px) {
+            @content;
+        }
+    }
+    @else if $point == mob-small {
+        @media (min-width: 320px) {
             @content;
         }
     }

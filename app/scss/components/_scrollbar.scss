@@ -1,6 +1,15 @@
 .scrollbar {
     overflow-y: scroll;
-  
+    position: relative;
+    &:before{
+      position: absolute;
+      content: "";
+      background-color: #ffffff;
+      top: 0;
+      right: 0;
+      height:80px;
+      width: 10px;
+    }
     &::-webkit-scrollbar-track {
       width: 10px;
       border-radius: 5px;

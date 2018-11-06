@@ -1,4 +1,8 @@
 <div class="personal-area">
+    <div class="oun-head">
+        <h2>Личный кабинет</h2>
+
+    </div>
     <div class="contain">
         <div class="row">
             <div class="in-block">
@@ -151,6 +155,97 @@
                         </div>
                     </div>
                     <div id="open-vklad" class="container tab-pane fade">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="wrapper-calc">
+                                    <div class="data">
+                                        <form id="calc" action="">
+                                            <div class="input-period">
+                                                <input name="period" type="radio" id="period1" checked>
+                                                <label for="period1">
+                                                    <span></span>
+                                                    2 года
+                                                </label>
+                                                <input name="period" type="radio" id="period2">
+                                                <label for="period2">
+                                                    <span></span>
+                                                    1 год
+                                                </label>
+                                                <input name="period" type="radio" id="period3">
+                                                <label for="period3">
+                                                    <span></span>
+                                                    6 месяцев
+                                                </label>
+                                                <input name="period" type="radio" id="period4">
+                                                <label for="period4">
+                                                    <span></span>
+                                                    3 месяца
+                                                </label>
+                                                <input name="period" type="radio" id="period5">
+                                                <label for="period5">
+                                                    <span></span>
+                                                    бессрочное
+                                                </label>
+                                            </div>
+                                            <div class="input-method">
+                                                <input name="method" type="radio" id="method1" checked>
+                                                <label for="method1">
+                                                    <span></span>
+                                                    Оставлять проценты на вкладе
+                                                </label>
+                                                <input name="method" type="radio" id="method2">
+                                                <label for="method2">
+                                                    <span></span>
+                                                    Долгосрочное закрытие вклада
+                                                </label>
+                                            </div>
+                                            <div class="input-amount-block">
+                                                <div id="slider-amount" class="slider"></div>
+                                                <div class="input-amount">
+                                                    <input name="amount" type="text" id="amount" value="1000">
+                                                    <label for="amount">
+                                                        Сумма вложения
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="input-refill-block">
+                                                <div id="slider-refill" class="slider"></div>
+                                                <div class="input-refill">
+                                                    <input name="refill" type="text" id="refill" value="1000">
+                                                    <label for="refill">
+                                                        Ежемесячное пополнение
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="result">
+                                        <h3>Расчет сбережений</h3>
+
+                                        <span class="caption">
+                                            Доход по сбережению
+                                        </span>
+                                        <span class="value" id="income" form="calc">
+                                            55
+                                        </span>
+                                        <span class="caption">
+                                            Процентная ставка
+                                        </span>
+                                        <span class="value" id="interest-rate" form="calc">
+                                            18
+                                            <span class="unit">%</span>
+                                        </span>
+                                        <span class="caption">
+                                            Сумма к концу срока
+                                        </span>
+                                        <span class="value" id="total" form="calc">
+                                            1055
+                                        </span>
+                                        <button type="submit" data-toggle="modal" data-target="#leave-order">Оставить заявку</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="prog-take">
                             <h3>Программы сбережений</h3>
                             <div class="all-kind-off">
@@ -223,7 +318,7 @@
                                         <td>20000</td>
                                         <td>15 %</td>
                                         <td>2470 %</td>
-                                        <td>374 <i class="fas fa-ruble-sign"></i></td>
+                                        <td>374 <img src="../app/img/ruble1.png" alt="rb-sing"></td>
                                         <td><a href="" class="act">Снять</a><span>?</span></td>
                                     </tr>
                                     <tr>
@@ -233,7 +328,7 @@
                                         <td>20000</td>
                                         <td>15 %</td>
                                         <td>2470 %</td>
-                                        <td>374 <i class="fas fa-ruble-sign"></i></td>
+                                        <td>374 <img src="../app/img/ruble1.png" alt="rb-sing"></td>
                                         <td><a href="" class="act">Снять</a><span>?</span></td>
                                     </tr>
                                     <tr>
@@ -243,7 +338,7 @@
                                         <td>20000</td>
                                         <td>15 %</td>
                                         <td>2470 %</td>
-                                        <td>374 <i class="fas fa-ruble-sign"></i></td>
+                                        <td>374 <img src="../app/img/ruble1.png" alt="rb-sing"></td>
                                         <td><a href="" class="act">Снять</a><span>?</span></td>
                                     </tr>
                                     <tr>
@@ -253,7 +348,7 @@
                                         <td>20000</td>
                                         <td>15 %</td>
                                         <td>2470 %</td>
-                                        <td>374 <i class="fas fa-ruble-sign"></i></td>
+                                        <td>374 <img src="../app/img/ruble1.png" alt="rb-sing"></td>
                                         <td><a href="" class="not-act">Снять</a><span>?</span></td>
                                     </tr>
                                     <tr>
@@ -263,7 +358,7 @@
                                         <td>20000</td>
                                         <td>15 %</td>
                                         <td>2470 %</td>
-                                        <td>374 <i class="fas fa-ruble-sign"></i></td>
+                                        <td>374 <img src="../app/img/ruble1.png" alt="rb-sing"></td>
                                         <td><a href="" class="act">Снять</a><span>?</span></td>
                                     </tr>
                                 </tbody>
@@ -323,23 +418,10 @@
             </div>
         </div>
     </div>
+    
 </div>
 <script>
     $(document).ready(function () {
         $('input[type="file"]').imageuploadify();
     })
-</script>
-<script>
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-36251023-1']);
-    _gaq.push(['_setDomainName', 'jqueryscript.net']);
-    _gaq.push(['_trackPageview']);
-
-    (function () {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
 </script>
