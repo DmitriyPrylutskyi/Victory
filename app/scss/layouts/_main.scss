@@ -39,10 +39,22 @@
     }
   }
   .advantages {
+    position: relative;
     padding-top: 220px;
+    padding-bottom: 145px;
     background-image: url('../img/bg-advantage.png');
     background-repeat: no-repeat;
     background-position-y: 35px;
+    &:after {
+      position: absolute;
+      content: '';
+      bottom: -230px;
+      right: 0;
+      width: 397px;
+      height: 506px;
+      background-image: url('../img/bg-advantage-right.png');
+      background-repeat: no-repeat;
+    }
     .advantages-wrapper {
       position: relative;
       padding: 50px 180px 75px 180px;
@@ -118,6 +130,29 @@
             background-position-x: 15px;
           }
         }
+      }
+    }
+  }
+  .leaders {
+    .title {
+      text-align: center;
+      h3 {
+        display: inline-block;
+        margin: 0 auto;
+        padding-bottom: 120px;
+        background-image: linear-gradient(to right, #c55c00 0%, #fd9b14 100%);
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+    }
+    .wrapper {
+      margin: 0 42px;
+      .lider {
+        height: 335px;
+        margin: 0 18px;
+        border-radius: 20px;
+        background-color: #ffffff;
+        box-shadow: 1px 20px 46.55px 2.45px rgba(166, 93, 35, 0.45);
       }
     }
   }
