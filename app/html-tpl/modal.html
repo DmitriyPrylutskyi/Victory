@@ -163,9 +163,9 @@
                     <input type="text" placeholder="Телефон" name="phone">
                     <div class="seee-pass">
                         <input type="password" placeholder="Пароль" name="password" id="my-pass">
-                        <input type="checkbox" id="see-pass" onclick="showPass()"><label for="see-pass"><span></span></label> 
+                        <input type="checkbox" id="see-pass" onclick="showPass()"><label for="see-pass"><span></span></label>
                     </div>
-                    <div> 
+                    <div>
                         <input type="checkbox" id="ireadd">
                         <label for="ireadd"><span></span>Я прочел и согласен с <a href="" data-toggle="modal"
                                 data-target="#leave-order" class="leave-order">Правилами и условиями</a></label>
@@ -191,16 +191,21 @@
                 </button>
                 <h3>Регистрация</h3>
                 <form>
+                    <input type="text" placeholder="Фамилия">
+                    <input type="text" placeholder="Имя">
+                    <input type="text" placeholder="Отчество">
+                    <input type="email" placeholder="Почта">
                     <input type="text" placeholder="Телефон">
                     <input type="password" placeholder="Пароль">
+                    <input type="password" placeholder="Повторите пароль">
                     <div>
-                        <span></span>
-                        <input type="checkbox" id="ireadd">
-                        <label for="ireadd">Я прочел и согласен с <a href="">Правилами и условиями</a></label>
+                        <input type="checkbox" id="ireadd2">
+                        <label for="ireadd2"><span></span>Я прочел и согласен с <a href="" data-toggle="modal"
+                                data-target="#leave-order" class="leave-order">Правилами и условиями</a></label>
                     </div>
-                    <a href="" data-toggle="modal" data-target="#forgot-pass">Забыли пароль?</a>
-                    <a href="" data-toggle="modal" data-target="#sign-up">Регистрация</a>
-                    <input type="submit" value="Войти">
+                    
+                    
+                    <input type="submit" value="Зарегистрироватся" class="reg-new-snb">
                 </form>
             </div>
         </div>
@@ -217,12 +222,12 @@
                 </button>
                 <h3>Забыли пароль?</h3>
                 <form>
-                    <p>Вам на почту было отправлено письмо. Для подтверждения регистрации перейдите по указанной в нем ссылке</p>
+                    <!-- <p>На указанную почту будет отправлено письмо с инструкциями</p> -->
                     <input type="email" placeholder="Почта">
-                    
-                    
-                    <a href="" data-toggle="modal" data-target="#sign-up">Регистрация</a>
-                    <input type="submit" value="Отправить">
+                    <div class="new-link-mod">
+                        <a href="" data-toggle="modal" data-target="#sign-up" class="sign-up">Регистрация</a>
+                        <input type="submit" value="Отправить">
+                    </div>
                 </form>
             </div>
         </div>

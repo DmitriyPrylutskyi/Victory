@@ -11,11 +11,13 @@
 	<link rel="stylesheet" href="./libs/bootstrap/bootstrap.min.css">
 	<link rel="stylesheet" href="./libs/jqueryUI/jquery-ui.min.css">
 	<link rel="stylesheet" href="./libs/upload/imageuploadify.min.css">
+	<link rel="stylesheet" href="./libs/slick/slick.css">
 	<link href="css/index.css" type="text/css" rel="stylesheet" />
 	<script type="text/javascript" src="./libs/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="./libs/jqueryUI/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="./libs/bootstrap/bootstrap.min.js"></script>
 	<script type="text/javascript" src="./libs/upload/imageuploadify.min.js"></script>
+	<script type="text/javascript" src="./libs/slick/slick.min.js"></script>
 	<script type="text/javascript" src="./js/index.js"></script>
 </head>
 <body>
@@ -152,7 +154,7 @@
                             </form>
                         </div>
                         <div class="result">
-                            <h3>Расчет сбережений</h3>
+                            <h5>Расчет сбережений</h5>
     
                             <span class="caption">
                                     Доход по сбережению
@@ -281,14 +283,83 @@
                 </div>
                 <div class="wrapper">
                     <div class="row">
-                        <div class="col-4">
-                            <div class="lider"></div>
+                        <div class="col-4 lider deputy">
+                            <div class="img-wrapper"></div>
+                            <h4>
+                                Гарифуллина Юлия <br> Валерьевна
+                            </h4>
+                            <p>
+                                заместитель председателя совета
+                            </p>
                         </div>
-                        <div class="col-4">
-                            <div class="lider"></div>
+                        <div class="col-4 lider chairman">
+                            <div class="img-wrapper"></div>
+                            <h4>
+                                Кравченко Константин <br> Валерьевич
+                            </h4>
+                            <p>
+                                председатель совета
+                            </p>
                         </div>
-                        <div class="col-4">
-                            <div class="lider"></div>
+                        <div class="col-4 lider manager">
+                            <div class="img-wrapper"></div>
+                            <h4>
+                                Жегалов Олег <br> Александрович
+                            </h4>
+                            <p>
+                                управляющий
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="reviews">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="wrapper-block">
+                            <div class="wrapper-carousel">
+                                <div class="reviews-carousel">
+                                    <div class="review">
+                                        <div class="photo">
+                                            <img src="/img/photo.png" alt="photo">
+                                        </div>
+                                        <h4>
+                                            Кравченко Карина Георгиевна
+                                        </h4>
+                                        <span>
+                                            03 мая 2017
+                                        </span>
+                                        <h5>
+                                            г. Мингск
+                                        </h5>
+                                        <p>
+                                            Я являюсь пайщиком КПК "ПЕРВЫЙ", неоднократно обращался за помощью в данную организацию и очень доволен сотрудничеством, планирую обращаться к вам и дальше! Желаю КПК "ПЕРВЫЙ" всего наилучшего и дальнейшего развития! ...
+                                        </p>
+                                    </div>
+                                    <div class="review">
+                                        <div class="photo">
+                                            <img src="/img/photo.png" alt="photo">
+                                        </div>
+                                        <h4>
+                                            Кравченко Карина Георгиевна
+                                        </h4>
+                                        <span>
+                                            03 мая 2017
+                                        </span>
+                                        <h5>
+                                            г. Мингск
+                                        </h5>
+                                        <p>
+                                            Я являюсь пайщиком КПК "ПЕРВЫЙ", неоднократно обращался за помощью в данную организацию и очень доволен сотрудничеством, планирую обращаться к вам и дальше! Желаю КПК "ПЕРВЫЙ" всего наилучшего и дальнейшего развития! ...
+                                        </p>
+                                    </div>
+                                </div>
+                                <a href="#" class="link-review">
+                                    Перейти на страницу
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -478,9 +549,9 @@
                     <input type="text" placeholder="Телефон" name="phone">
                     <div class="seee-pass">
                         <input type="password" placeholder="Пароль" name="password" id="my-pass">
-                        <input type="checkbox" id="see-pass" onclick="showPass()"><label for="see-pass"><span></span></label> 
+                        <input type="checkbox" id="see-pass" onclick="showPass()"><label for="see-pass"><span></span></label>
                     </div>
-                    <div> 
+                    <div>
                         <input type="checkbox" id="ireadd">
                         <label for="ireadd"><span></span>Я прочел и согласен с <a href="" data-toggle="modal"
                                 data-target="#leave-order" class="leave-order">Правилами и условиями</a></label>
@@ -506,16 +577,21 @@
                 </button>
                 <h3>Регистрация</h3>
                 <form>
+                    <input type="text" placeholder="Фамилия">
+                    <input type="text" placeholder="Имя">
+                    <input type="text" placeholder="Отчество">
+                    <input type="email" placeholder="Почта">
                     <input type="text" placeholder="Телефон">
                     <input type="password" placeholder="Пароль">
+                    <input type="password" placeholder="Повторите пароль">
                     <div>
-                        <span></span>
-                        <input type="checkbox" id="ireadd">
-                        <label for="ireadd">Я прочел и согласен с <a href="">Правилами и условиями</a></label>
+                        <input type="checkbox" id="ireadd2">
+                        <label for="ireadd2"><span></span>Я прочел и согласен с <a href="" data-toggle="modal"
+                                data-target="#leave-order" class="leave-order">Правилами и условиями</a></label>
                     </div>
-                    <a href="" data-toggle="modal" data-target="#forgot-pass">Забыли пароль?</a>
-                    <a href="" data-toggle="modal" data-target="#sign-up">Регистрация</a>
-                    <input type="submit" value="Войти">
+                    
+                    
+                    <input type="submit" value="Зарегистрироватся" class="reg-new-snb">
                 </form>
             </div>
         </div>
@@ -532,12 +608,12 @@
                 </button>
                 <h3>Забыли пароль?</h3>
                 <form>
-                    <p>Вам на почту было отправлено письмо. Для подтверждения регистрации перейдите по указанной в нем ссылке</p>
+                    <!-- <p>На указанную почту будет отправлено письмо с инструкциями</p> -->
                     <input type="email" placeholder="Почта">
-                    
-                    
-                    <a href="" data-toggle="modal" data-target="#sign-up">Регистрация</a>
-                    <input type="submit" value="Отправить">
+                    <div class="new-link-mod">
+                        <a href="" data-toggle="modal" data-target="#sign-up" class="sign-up">Регистрация</a>
+                        <input type="submit" value="Отправить">
+                    </div>
                 </form>
             </div>
         </div>

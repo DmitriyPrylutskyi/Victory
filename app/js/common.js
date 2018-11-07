@@ -50,6 +50,13 @@ function setClickOnAdvantageIcon() {
   })
 }
 
+function initReviewsCarousel() {
+    $('.reviews .reviews-carousel').slick({
+      prevArrow: '<div class="slick-prev"></div>',
+      nextArrow: '<div class="slick-next"></div>'
+    })
+}
+
 function initEvents() {
     /*Actions on 'DOM ready' event*/
 
@@ -59,6 +66,7 @@ function initEvents() {
       initRefillSlider();
       setHoverOnAdvantageIcon();
       setClickOnAdvantageIcon();
+      initReviewsCarousel();
     });
 };
 // modal
@@ -71,6 +79,12 @@ $(document).ready(function () {
   });
   $('.sign-up').on('click', function () {
     $('#enter').modal('hide');
+    $('#sign-up').on('shown.bs.modal', function() {
+      $('body').css('padding-right','15px').addClass('modal-open'); 
+    });
+  });
+  $('.sign-up').on('click', function () {
+    $('#forgot-pass').modal('hide');
     $('#sign-up').on('shown.bs.modal', function() {
       $('body').css('padding-right','15px').addClass('modal-open'); 
     });
