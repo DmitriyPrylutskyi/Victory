@@ -29,4 +29,59 @@
             @content;
         }
     }
+    @else if $point == midboot {
+        @media (max-width: 1200px) {
+            @content;
+        }
+    }
+    @else if $point == midfromtablet {
+        @media (max-width: 1100px) {
+            @content;
+        }
+    }
+    @else if $point == smallfromtablet {
+        @media (max-width: 1000px) {
+            @content;
+        }
+    }
+    @else if $point == bigfrommobile {
+        @media (max-width: 800px) {
+            @content;
+        }
+    }
+    @else if $point == big-prefrommobile {
+        @media (max-width: 739px) {
+            @content;
+        }
+    }
+    @else if $point == bigsmallrommobile {
+        @media (max-width: 700px) {
+            @content;
+        }
+    }
+    @else if $point == bigdsmallrommobile {
+        @media (max-width: 600px) {
+            @content;
+        }
+    }
+    @else if $point == bigmidrommobile {
+        @media (max-width: 540px) {
+            @content;
+        }
+    }
+    @else if $point == onebigmobile {
+        @media (max-width: 475px) {
+            @content;
+        }
+    }
+    @else if $point == midprefrommob {
+        @media (max-width: 430px) {
+            @content;
+        }
+    }
+    @else if $point == midmob {
+        @media (max-width: 420px) {
+            @content;
+        }
+    }
 }

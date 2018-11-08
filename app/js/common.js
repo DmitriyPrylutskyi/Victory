@@ -49,20 +49,8 @@ function setClickOnAdvantageIcon() {
     $( this ).parent().find('.advantage-desc p').toggleClass('active');
   })
 }
-
-function initEvents() {
-    /*Actions on 'DOM ready' event*/
-
-    /*Actions on 'Window load' event*/
-    $(window).on("load", function() {
-      initAmountSlider();
-      initRefillSlider();
-      setHoverOnAdvantageIcon();
-      setClickOnAdvantageIcon();
-    });
-};
 // modal
-$(document).ready(function () {
+function modalWindow () {
   $('.forgot-pass').on('click', function () {
     $('#enter').modal('hide');
     $('#forgot-pass').on('shown.bs.modal', function() {
@@ -87,7 +75,21 @@ $(document).ready(function () {
       $('body').css('padding-right','15px').addClass('modal-open'); 
     });
   });
-});
+};
+
+function initEvents() {
+    /*Actions on 'DOM ready' event*/
+
+    /*Actions on 'Window load' event*/
+    $(window).on("load", function() {
+      modalWindow();
+      initAmountSlider();
+      initRefillSlider();
+      setHoverOnAdvantageIcon();
+      setClickOnAdvantageIcon();
+    });
+};
+
 //show pass
 function showPass() {
   var x = document.getElementById("my-pass");
