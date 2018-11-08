@@ -57,19 +57,6 @@ function initReviewsCarousel() {
     })
 }
 
-function initEvents() {
-    /*Actions on 'DOM ready' event*/
-
-    /*Actions on 'Window load' event*/
-    $(window).on("load", function() {
-      initAmountSlider();
-      initRefillSlider();
-      setHoverOnAdvantageIcon();
-      setClickOnAdvantageIcon();
-      initReviewsCarousel();
-    });
-};
-
 // modal
 function modalWindow () {
   $('.forgot-pass').on('click', function () {
@@ -99,17 +86,19 @@ function modalWindow () {
 };
 
 function initEvents() {
-    /*Actions on 'DOM ready' event*/
+  /*Actions on 'DOM ready' event*/
 
-    /*Actions on 'Window load' event*/
-    $(window).on("load", function() {
-      modalWindow();
-      initAmountSlider();
-      initRefillSlider();
-      setHoverOnAdvantageIcon();
-      setClickOnAdvantageIcon();
-    });
+  /*Actions on 'Window load' event*/
+  $(window).on("load", function() {
+    initAmountSlider();
+    initRefillSlider();
+    setHoverOnAdvantageIcon();
+    setClickOnAdvantageIcon();
+    initReviewsCarousel();
+    modalWindow ();
+  });
 };
+
 
 //show pass
 function showPass() {

@@ -39,6 +39,11 @@
             @content;
         }
     }
+    @else if $point == bigipad {
+        @media (max-width: 1024px) {
+            @content;
+        }
+    }
     @else if $point == smallfromtablet {
         @media (max-width: 1000px) {
             @content;
@@ -46,6 +51,11 @@
     }
     @else if $point == bigfrommobile {
         @media (max-width: 800px) {
+            @content;
+        }
+    }
+    @else if $point == ipadsmall {
+        @media (max-width: 768px) {
             @content;
         }
     }
@@ -59,8 +69,18 @@
             @content;
         }
     }
+    @else if $point == bigiphommobile {
+        @media (max-width: 620px) {
+            @content;
+        }
+    }
     @else if $point == bigdsmallrommobile {
         @media (max-width: 600px) {
+            @content;
+        }
+    }
+    @else if $point == bigmobilenew {
+        @media (max-width: 575px) {
             @content;
         }
     }

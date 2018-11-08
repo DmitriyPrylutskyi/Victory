@@ -1166,6 +1166,45 @@ body.personal-ar{
         }
     }
 }
+@include breakpoint(bigipad) {
+    .leave-order-modal{
+        width: 90%;
+        margin: 0 auto;
+        .modal-dialog{
+            margin: 0;
+            .modal-content{
+                .modal-body{
+                    .new-in-bl-nn{
+                        ul{
+                            li{
+                                width: 100%;
+                            }
+                        }
+                    }
+                } 
+            }
+        }    
+    }
+    .personal-area{
+        .table-in {
+            margin-left: 0;
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+        }
+        .title-block{
+            padding-left: 0;
+            margin-top: 60px;
+            margin-bottom: 30px;
+            text-align: center;
+            background: linear-gradient(to right, #c55b00 0%, #fd9b13);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    } 
+}
 @include breakpoint(smallfromtablet) {
     .personal-area {
         .oun-head {
@@ -1311,6 +1350,24 @@ body.personal-ar{
                 }
             }
         }
+        .prog-take{
+            h3{
+                text-align: left;
+                color: #c55b00;
+                margin: 0 auto;
+                width: auto;
+                left: 0;
+                position: relative;
+                margin-top: 20px;
+                padding-left: 20px;
+                top: 0;
+                background-image: none;
+                padding-right: 0;
+                background: linear-gradient(to right, #c55b00 0%, #fd9b13);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        } 
     }
 }
 
@@ -1349,6 +1406,42 @@ body.personal-ar{
         }
         .last-pass-doc{
             max-width: 90%;
+        }
+    }
+}
+@include breakpoint(ipadsmall) {
+    .modal-dialog{
+        &.other{
+            .modal-content{
+                width: 90%;
+                margin: 0 auto;
+                .modal-body{
+                    .close{
+                        right: -50px;
+                    }
+                } 
+            }
+        }
+    } 
+    .personal-area{
+        .prog-take{
+            .all-kind-off{
+                flex-direction: column;
+                h4{
+                    padding-left: 0;
+                    text-align: center;
+                    margin-bottom: 10px;
+                }
+                .one-kind-off{
+                    width: 90%;
+                    margin-bottom: 20px;
+                    .per-one-k{
+                        span{
+                            text-align: center;
+                        }
+                    } 
+                }
+            }
         }
     }
 }
@@ -1406,6 +1499,28 @@ body.personal-ar{
             } 
         } 
     }
+}
+@include breakpoint(bigiphommobile) {
+    .modal-dialog{
+        &.other{
+            .modal-content{
+                .modal-body{
+                    max-width: 100%;
+                    width: 100%;
+                    margin: 30px auto;
+                    padding-left: 30px;
+                    padding-right: 30px;
+                    h3{
+                        text-align: left;
+                        font-size: 18px;
+                    }
+                    .close {
+                        right: 30px;
+                    }
+                } 
+            }
+        } 
+    }     
 }
 @include breakpoint(bigdsmallrommobile) {
     .personal-area{
@@ -1548,7 +1663,42 @@ body.personal-ar{
             }
         }
     }
-      
+}
+@include breakpoint(bigmobilenew) {
+    .leave-order-modal{
+        .modal-dialog{
+            .modal-content{
+                .modal-body{
+                    padding: 50px 50px 50px 50px;
+                    .close{
+                        right: 40px;
+                    }
+                    .new-in-bl-nn{
+                        h3{
+                        font-size: 16px;
+                        }
+                    } 
+                }
+            }
+        }
+    }
+    .modal-dialog{
+        &.other{
+            margin: 0
+        } 
+    } 
+    .personal-area{
+        .prog-take{
+            width: 90%;
+        }
+        .table-in{
+            width: 90%;
+            margin: 0 auto
+        }
+        .title-block{
+            margin-left: 5%
+        }
+    } 
 }
 
 @include breakpoint(bigsmallrommobile) {
@@ -1567,6 +1717,18 @@ body.personal-ar{
 }
 
 @include breakpoint(midmob) {
+    .modal-dialog{
+        &.other{
+            .modal-content{
+                .modal-body{
+                    h3 {
+                        text-align: left;
+                        font-size: 16px;
+                    }
+                } 
+            } 
+        } 
+    }
     .personal-area{
         .last-pass-doc {
             .part-l{
