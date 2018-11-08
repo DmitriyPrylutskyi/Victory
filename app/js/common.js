@@ -49,7 +49,6 @@ function setClickOnAdvantageIcon() {
     $( this ).parent().find('.advantage-desc p').toggleClass('active');
   })
 }
-<<<<<<< HEAD
 
 function initReviewsCarousel() {
     $('.reviews .reviews-carousel').slick({
@@ -70,8 +69,7 @@ function initEvents() {
       initReviewsCarousel();
     });
 };
-=======
->>>>>>> components
+
 // modal
 function modalWindow () {
   $('.forgot-pass').on('click', function () {
