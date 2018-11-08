@@ -49,7 +49,7 @@ function setClickOnAdvantageIcon() {
     $( this ).parent().find('.advantage-desc p').toggleClass('active');
   })
 }
-<<<<<<< HEAD
+
 
 function initReviewsCarousel() {
     $('.reviews .reviews-carousel').slick({
@@ -58,20 +58,6 @@ function initReviewsCarousel() {
     })
 }
 
-function initEvents() {
-    /*Actions on 'DOM ready' event*/
-
-    /*Actions on 'Window load' event*/
-    $(window).on("load", function() {
-      initAmountSlider();
-      initRefillSlider();
-      setHoverOnAdvantageIcon();
-      setClickOnAdvantageIcon();
-      initReviewsCarousel();
-    });
-};
-=======
->>>>>>> components
 // modal
 function modalWindow () {
   $('.forgot-pass').on('click', function () {
@@ -101,17 +87,18 @@ function modalWindow () {
 };
 
 function initEvents() {
-    /*Actions on 'DOM ready' event*/
+  /*Actions on 'DOM ready' event*/
 
-    /*Actions on 'Window load' event*/
-    $(window).on("load", function() {
-      modalWindow();
-      initAmountSlider();
-      initRefillSlider();
-      setHoverOnAdvantageIcon();
-      setClickOnAdvantageIcon();
-    });
+  /*Actions on 'Window load' event*/
+  $(window).on("load", function() {
+    initAmountSlider();
+    initRefillSlider();
+    setHoverOnAdvantageIcon();
+    setClickOnAdvantageIcon();
+    initReviewsCarousel();
+  });
 };
+
 
 //show pass
 function showPass() {
