@@ -1,3 +1,85 @@
+.prog-take{
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 100%;
+    margin-bottom: 90px;
+    max-width: 1031px;
+    border-radius: 20px;
+    box-shadow: 0px 18px 35px rgba(0,0,0,0.14);
+    background-color: #ffffff;
+    border: 1px solid #e7830c;
+    position: relative;
+
+    h3{
+        text-transform: uppercase;
+        font-size: 25px;
+        letter-spacing: 0px;
+        display: block;
+        font-family: "CocogoosePro";
+        font-weight: 300;
+        text-align: center;
+        color: #c55b00;
+        margin: 0 auto;
+        width: 520px;
+        left: calc(50% - 260px - 30px);
+        position: absolute;
+        padding-left: 100px;
+        top: -16px;
+        background-image: url(../img/tit-back.png);
+        background-position: 20px;
+        background-repeat: no-repeat;
+        background-size: 110%;
+        padding-right: 40px;
+    }
+    .all-kind-off{
+        display: flex;
+        position: relative;
+        top: 40px;
+        h4{
+            font-family: "Lato";
+            font-size: 15px;
+            color: #494949;
+            text-transform: uppercase;
+            font-weight: 300;
+            margin-bottom: 20px;
+            padding-left: 15px
+        }
+        .one-kind-off{
+            display: block;
+            width: 17%;
+            margin: 0 auto;
+            .per-one-k{
+                border-radius: 10px;
+                box-shadow: 2.29px 11.78px 35px rgba(0,0,0,0.11);
+                background-color: #ffffff;
+                padding: 15px;
+
+                span{
+                    font-family: "Lato";
+                    font-size: 33px;
+                    line-height: 40px;
+                    font-weight: 800;
+                    text-align: left;
+                    background: linear-gradient(to right, #c55b00 0%, #fd9b13);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    margin-bottom: 10px;
+                    display: block;
+                }
+                p{
+                    font-family: "Lato";
+                    font-size: 12px;
+                    line-height: 12px;
+                    color: #7c746c;
+                    margin: 0;
+                    text-transform: uppercase;
+                    font-weight: 200;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
 body.personal-ar{
     background-image: url(../app/img/other-head.png);
     background-size: contain;
@@ -427,88 +509,7 @@ body.personal-ar{
             }
         }
     }
-    .prog-take{
-        margin: 0 auto;
-        margin-top: 40px;
-        width: 100%;
-        margin-bottom: 90px;
-        max-width: 1031px;
-        border-radius: 20px;
-        box-shadow: 0px 18px 35px rgba(0,0,0,0.14);
-        background-color: #ffffff;
-        border: 1px solid #e7830c;
-        position: relative;
-
-        h3{
-            text-transform: uppercase;
-            font-size: 25px;
-            letter-spacing: 0px;
-            display: block;
-            font-family: "CocogoosePro";
-            font-weight: 300;
-            text-align: center;
-            color: #c55b00;
-            margin: 0 auto;
-            width: 520px;
-            left: calc(50% - 260px - 60px);
-            position: absolute;
-            padding-left: 100px;
-            top: -16px;
-            background-image: url(../img/tit-back.png);
-            background-position: 40px;
-            background-repeat: no-repeat;
-            background-size: 110%;
-            padding-right: 40px;
-        }
-        .all-kind-off{
-            display: flex;
-            position: relative;
-            top: 40px;
-            h4{
-                font-family: "Lato";
-                font-size: 15px;
-                color: #494949;
-                text-transform: uppercase;
-                font-weight: 300;
-                margin-bottom: 20px;
-                padding-left: 15px
-            }
-            .one-kind-off{
-                display: block;
-                width: 17%;
-                margin: 0 auto;
-                .per-one-k{
-                    border-radius: 10px;
-                    box-shadow: 2.29px 11.78px 35px rgba(0,0,0,0.11);
-                    background-color: #ffffff;
-                    padding: 15px;
-
-                    span{
-                        font-family: "Lato";
-                        font-size: 33px;
-                        line-height: 40px;
-                        font-weight: 800;
-                        text-align: left;
-                        background: linear-gradient(to right, #c55b00 0%, #fd9b13);
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
-                        margin-bottom: 10px;
-                        display: block;
-                    }
-                    p{
-                        font-family: "Lato";
-                        font-size: 12px;
-                        line-height: 12px;
-                        color: #7c746c;
-                        margin: 0;
-                        text-transform: uppercase;
-                        font-weight: 200;
-                        text-align: center;
-                    }
-                }
-            }
-        }
-    }
+    
     .nav-link{
         font-size: 15px;
         color: #df7e1d;
