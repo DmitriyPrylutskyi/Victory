@@ -55,3 +55,12 @@ input[type='tel'] {
         background-color: #eee;
     }
 }
+textarea{
+    width: 100%;
+    resize: none;
+    padding: 5px 15px;
+    min-height: 150px;
+    border-radius: 17px;
+    border: 1px solid #e7830c;
+    outline: none;
+}

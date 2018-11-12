@@ -57,6 +57,29 @@ function initReviewsCarousel() {
     })
 }
 
+function sliderServices() {
+  $('.slide-foto').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: '.slide-foto-nav'
+  });
+  $('.slide-foto-nav').slick({
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    asNavFor: '.slide-foto',
+    dots: false,
+    centerMode: false,
+    swipe: false,
+    vertical: true,
+    focusOnSelect: true,
+    prevArrow: '<i class="fas fa-chevron-up left"></i>',
+    nextArrow: '<i class="fas fa-chevron-down right"></i>'
+  });
+}
+
+
 // modal
 function modalWindow () {
   $('.forgot-pass').on('click', function () {
@@ -95,6 +118,7 @@ function initEvents() {
     setHoverOnAdvantageIcon();
     setClickOnAdvantageIcon();
     initReviewsCarousel();
+    sliderServices();
     modalWindow ();
   });
 };

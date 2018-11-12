@@ -54,6 +54,16 @@
             @content;
         }
     }
+    @else if $point == bootmidl {
+        @media (max-width: 991px) {
+            @content;
+        }
+    }
+    @else if $point == newninel {
+        @media (max-width: 900px) {
+            @content;
+        }
+    }
     @else if $point == bigfrommobile {
         @media (max-width: 800px) {
             @content;
