@@ -1,5 +1,4 @@
 .menu {
-  display: none;
   width: auto;
   margin: 0;
   box-sizing: border-box;
@@ -10,7 +9,7 @@
   .menu_button {
     display: block;
     float: right;
-    padding: 12px 0;
+    padding: 22px 0;
     width: 39px;
     height: 53px;
     border-radius: 5px;
@@ -61,39 +60,38 @@
     }
   }
 
-  &.mobile {
-    display: block;
-    width: 100%;
-    position: absolute;
-    top: -7px;
-    right: 0;
-    background-color: transparent;
-    box-shadow: none;
-    z-index: 9;
-    .menu_button {
-      padding: 5px 0;
-      height: 39px;
-      span {
-        background-color: #68bebd;
-      }
-    }
-  }
-
   .nav {
     display: flex;
     position: relative;
     left: -999px;
     max-height: 0;
     flex-direction: column;
-    margin-top: 53px;
     padding: 0 50px;
     transition: max-height 0.5s ease-in-out 0.5s, left 1s ease-in-out;
 
     &.collapse {
       left: 0;
       max-height: 1000px;
-      margin-bottom: 53px;
+      margin-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
       transition: max-height 1s ease-in-out, left 1s ease-in-out 0.1s;
+      background-color: #fff;
+      .menu_item {
+        border-bottom: 1px solid #693400;
+        a {
+          padding: 0 20px;
+          line-height: 50px;
+          color: #693400;
+        }
+        &.login {
+          a {
+            &:before {
+              content: none;
+            }
+          }
+        }
+      }
     }
 
     .menu_item {
@@ -149,18 +147,11 @@
         }
       }
     }
-
-    &.mobile {
-      background-color: #000101;
-    }
   }
 
   @include breakpoint(tablets) {
     display: block;
-    &.mobile {
-      display: none;
-    }
-  }
+ }
 
   @include breakpoint(middle) {
     .nav {
@@ -168,7 +159,7 @@
       left: 0;
       width: calc(100% - 200px);
       max-height: none;
-      margin-top: 0;
+      margin-top: 53px;
       flex-direction: row;
       transition: none;
       &.collapse {
@@ -187,6 +178,7 @@
     }
   }
 }
+
 
 
 

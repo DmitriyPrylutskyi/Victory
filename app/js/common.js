@@ -1,3 +1,12 @@
+function collapseMenu() {
+  $menu_button = $('.menu_button');
+
+  $menu_button.click(function () {
+    $menu_button.toggleClass("open");
+    $menu_button.nextAll('.main-menu').toggleClass("collapse");
+  });
+}
+
 function initAmountSlider() {
   $( "#slider-amount" ).slider({
     min: 1000,
@@ -113,6 +122,7 @@ function initEvents() {
 
   /*Actions on 'Window load' event*/
   $(window).on("load", function() {
+    collapseMenu();
     initAmountSlider();
     initRefillSlider();
     setHoverOnAdvantageIcon();
