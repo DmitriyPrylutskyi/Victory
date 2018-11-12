@@ -1,5 +1,6 @@
 footer {
   height: 185px;
+  margin-top: 85px;
   padding-top: 110px;
   background: url("../img/bg-bottom.jpg");
   background-repeat: no-repeat;
@@ -28,12 +29,13 @@ footer {
     }
 
     .contacts {
-      a {
-        margin-right: 30px;
-      }
       span {
-        margin-right: 5px;
-        font-family: 'Lato', sans-serif;
+        display: none;
+      }
+      a {
+        &:last-child {
+          float: right;
+        }
       }
       span, a {
         font-size: 15px;
@@ -41,4 +43,21 @@ footer {
       }
     }
   }
+
+  @include breakpoint(tablets) {
+    .row {
+      .contacts {
+        a {
+          float: none;
+          margin-right: 30px;
+        }
+        span {
+          display: inline;
+          margin-right: 5px;
+          font-family: 'Lato', sans-serif;
+        }
+      }
+    }
+  }
 }
+
