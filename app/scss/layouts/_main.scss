@@ -84,6 +84,11 @@
           &:nth-child(even) {
             margin-bottom: 55px;
           }
+          img {
+            &:not(.active) {
+              display: none;
+            }
+          }
         }
         .advantage-desc {
           position: relative;
@@ -163,27 +168,12 @@
       .lider {
         padding-left: 0;
         padding-right: 0;
+        z-index: 1;
         .img-wrapper {
           height: 465px;
           background-size: 106%;
           background-position-x: center;
           background-repeat: no-repeat;
-        }
-        &.deputy {
-          z-index: 1;
-          .img-wrapper {
-            background-image: url('../img/avatar-1.png');
-          }
-        }
-        &.chairman {
-          .img-wrapper {
-            background-image: url('../img/avatar-2.png');
-          }
-        }
-        &.manager {
-          .img-wrapper {
-            background-image: url('../img/avatar-3.png');
-          }
         }
         h4 {
           min-height: 90px;
