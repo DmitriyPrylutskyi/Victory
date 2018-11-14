@@ -119,4 +119,9 @@
             @content;
         }
     }
+    @else if $point == smallmmob {
+        @media (max-width: 375px) {
+            @content;
+        }
+    }
 }

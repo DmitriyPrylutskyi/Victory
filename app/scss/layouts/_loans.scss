@@ -1,0 +1,165 @@
+
+body.loans-ar{
+    background-image: url(../app/img/other-head.png);
+    margin: 0px;
+    padding: 0px;
+    background-repeat: no-repeat;
+}
+@include breakpoint(mob-small) {
+    body.loans-ar{
+        background-image: url(../app/img/mobile-head.png);
+        background-size: auto;
+        margin: 0px;
+        padding: 0px;
+        background-repeat: no-repeat;
+    }
+}
+@include breakpoint(desktopssr) {
+    body.loans-ar{
+        background-image: url(../app/img/other-head.png);
+        margin: 0px;
+        padding: 0px;
+        background-repeat: no-repeat;
+    }
+}
+.loans-wrapp{
+    width: 100%;
+    max-width: 1030px;
+    margin: 0 auto;
+    .text-info-only{
+        font-size: 13px;
+        line-height: 24px;
+        color: #5c5c5c;
+        font-family: "CocogoosePro";
+        font-weight: 300;
+        text-align: left;
+        margin-top: 70px;
+        a{
+            color:#e5800b;
+            font-family: "CocogoosePro";
+                font-size: 13px;
+            &:hover{
+                color: #5c5c5c;
+            }
+        }
+    }
+    .block-with-back-or{
+        ol{
+            counter-reset: item;
+            list-style-type: none;
+            padding: 0;
+            position: relative;
+            &:before{
+                content: "";
+                position: absolute;
+                width: 1033px;
+                height: 265px;
+                top: 50px;
+                border-radius: 20px;
+                box-shadow: 0px 18px 35px rgba(0,0,0,0.14);
+                background-color: #ffffff;
+                border: 1px solid #e7830c;
+            }
+            li{
+                float: left;
+                width: 50%;
+                padding: 20px;
+                position: relative;
+                display: inline-block;
+                height: 180px;
+                margin-right: 0px;
+                margin-bottom: 30px;
+                &:nth-child(2n){
+                    margin-right: 0
+                }
+                div{
+                    border-radius: 20px;
+                    box-shadow: 0px 18px 35px rgba(0,0,0,0.14);
+                    background-color: #ffffff;
+                    padding: 20px;
+                    min-height: 148px;
+                    font-size: 15px;
+                    line-height: 23px;
+                    color: #5c5c5c;
+                    font-family: "Lato";
+                    font-weight: 300;
+                    text-align: left;
+                    padding-top: 35px;
+                    a{
+                       color:#5c5c5c;
+                       font-weight: bold;
+                       font-family: "Lato"; 
+                    }
+                }
+                &:before {
+                    float: left;
+                    display: block;
+                    content: counter(item, decimal-leading-zero) " ";
+                    counter-increment: item;
+                    position: absolute;
+                    top: -10px;
+                    font-family: "Lato";
+                    font-weight: 800;
+                    left: 38px;
+                    font-size: 36px;
+                    background: linear-gradient(to right, #c55b00 0%, #fd9b13);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+        }
+    }
+}
+@include breakpoint(midfromtablet) {
+    .loans-wrapp{
+        width: 95%;
+        .block-with-back-or{
+            ol:before{
+                display: none
+            }
+        }
+    }
+}
+
+
+@include breakpoint(ipadsmall) {
+    .loans-wrapp{
+        .text-info-only{
+            font-size: 13px;
+            line-height: 24px;
+            color: #5c5c5c;
+            font-family: "CocogoosePro";
+            font-weight: 300;
+            text-align: left;
+            margin-top: 20px;
+        }
+        .block-with-back-or{
+            ol{
+                li{
+                    float: none;
+                    width: 100%;
+                    padding: 20px;
+                    position: relative;
+                    display: inline-block;
+                    height: auto;
+                    margin-right: 0px;
+                    margin-bottom: 30px;
+                    div{
+                        border-radius: 20px;
+                        box-shadow: 0px 18px 35px rgba(0,0,0,0.14);
+                        background-color: #ffffff;
+                        padding: 20px;
+                        min-height: auto;
+                        font-size: 15px;
+                        line-height: 23px;
+                        color: #5c5c5c;
+                        font-family: "Lato";
+                        font-weight: 300;
+                        text-align: left;
+                        padding-top: 35px;
+                    }
+                }
+            }
+        } 
+    }   
+}
