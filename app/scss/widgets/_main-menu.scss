@@ -48,6 +48,7 @@
       font-weight: 300;
       font-size: 32px;
       line-height: 1;
+      text-transform: uppercase;
       color: #ffffff;
     }
     span {
@@ -159,7 +160,6 @@
       left: 0;
       width: calc(100% - 200px);
       max-height: none;
-      margin-top: 53px;
       flex-direction: row;
       transition: none;
       &.collapse {
