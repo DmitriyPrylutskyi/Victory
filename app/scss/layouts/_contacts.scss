@@ -252,7 +252,7 @@ body.contacts-ar{
             form{
                 .in-call-newsa{
                     border-radius: 25px;
-                    box-shadow: 0 0 35px #c55c0085;
+                    box-shadow: 0 15px 35px #c55c0085;
                     background-color: #ffffff;
                     width: 434px;
                     padding: 43px 64px 35px 62px;
@@ -294,6 +294,7 @@ body.contacts-ar{
                 [type="submit"]{
                     margin-left: 64px;
                     margin-top: 52px;
+                    text-transform: uppercase;
                 }
             }
         }
@@ -482,6 +483,13 @@ body.contacts-ar{
             .right-send-mail{
                 float: none;
                 width: 100%;
+                form{
+                    [type="submit"] {
+                        margin: 0 auto;
+                        display: block;
+                        margin-top: 45px;
+                    }
+                } 
             }
         } 
     }
@@ -509,4 +517,19 @@ body.contacts-ar{
             } 
         } 
     } 
+}
+@include breakpoint(bigipad) {
+
+.modal-dialog.other .modal-content .modal-body .close img{
+    width: 70%;
+}
+}
+@include breakpoint(bigdsmallrommobile) {
+
+.be-cen{
+    text-align: center;
+}
+}
+.no-ots{
+    margin-bottom: 57px;
 }

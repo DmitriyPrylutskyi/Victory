@@ -1,6 +1,7 @@
 input[type='text'],
 input[type='email'],
-input[type='tel'] {
+input[type='tel'],
+input[type='password'] {
     display: inline-block;
     width: 100%;
     padding: 0 15px;
@@ -29,11 +30,13 @@ input[type='tel'] {
     &:-ms-input-placeholder {
       @include placeholder-style;
     }
-
+    &:focus::placeholder {
+        opacity: 0;
+    }
     &:focus {
         outline: none;
         box-shadow: none;
-        border: 1px solid #ccc;
+        border: 1px solid #ccc !important;
         outline-offset: 0;
 
       &::-webkit-input-placeholder {
@@ -63,4 +66,26 @@ textarea{
     border-radius: 17px;
     border: 1px solid #e7830c;
     outline: none;
+    transition: .3s;
+    &:focus::placeholder {
+        opacity: 0;
+    }
+    &:focus {
+        outline: none;
+        box-shadow: none;
+        border: 1px solid #ccc !important;
+        outline-offset: 0;
+
+      &::-webkit-input-placeholder {
+          @include focus-placeholder-style;
+      }
+
+      &::-moz-placeholder {
+          @include focus-placeholder-style;
+      }
+
+      &:-ms-input-placeholder {
+          @include focus-placeholder-style;
+      }
+    }
 }
