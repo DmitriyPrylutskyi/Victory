@@ -33,8 +33,18 @@ body.saving-ar{
 .saving-wrapp{
     margin: 0 auto;
     width: 100%;
-    max-width: 1030px;
-          
+    max-width: 1030px;   
+}
+.all-kind-off{
+    .one-kind-off{
+        h4{
+            margin-bottom: 9px;
+            line-height: 15px;
+        }
+        .per-one-k{
+            padding-top: 5px !important
+        }
+    }
 }
 .saving{
     position: relative;
@@ -64,6 +74,40 @@ body.saving-ar{
         height: 445px;
         position: absolute;
     }
+    .prog-take{
+        position: relative;
+        &:before{
+            position: absolute;
+    content: "";
+    top: -1px;
+    left: 15px;
+    width: calc(100% - 50px);
+    height: 1px;
+    margin-left: 15px;
+    background-image: linear-gradient(to right, #e7830c 0%, #e7830c 20%, #fff 25%, #fff 75%, #e7830c 80%);
+        }
+        h3{
+            color: #c55b00;
+            margin: 0 auto;
+            width: 570px;
+            left: calc(50% - 285px);
+            position: absolute;
+            top: -16px;
+            padding-left: 0;
+            padding-right: 0;
+            text-transform: uppercase;
+            font-size: 29px;
+            letter-spacing: 0px;
+            display: inline-block;
+            text-align: center;
+            font-family: "CocogoosePro";
+            font-weight: 300;
+            text-align: center;
+            background: linear-gradient(to right, #c55b00 0%, #fd9b13);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    } 
     .wrapper-calc {
         margin: 0 auto;
         margin-top: 0;
