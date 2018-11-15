@@ -1,0 +1,33 @@
+
+.un-act{
+    display: none;
+    position: fixed;
+    bottom: 20%;
+    right: 10%;
+    z-index: 99;
+    opacity: .79;
+    &.active{
+        display: block;
+        border-radius: 50%;
+        width: 57px;
+        height: 57px;
+        text-align: center;
+        line-height: 57px;
+        box-shadow: 3.5px 6.062px 29px rgba(28,27,27,0.07);
+        background-color: #ffffff;
+        transition: .3s;
+        a{
+            color: #f99713;
+            font-size: 30px;
+        }
+        &:hover{
+            box-shadow: 3.5px 6.062px 29px #f99713;
+        }
+    }
+}
+@include breakpoint(midslboot) {
+    .un-act{
+        bottom: 50px;
+        right: 50px;
+    }
+}

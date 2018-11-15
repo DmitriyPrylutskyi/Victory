@@ -34,6 +34,11 @@
             @content;
         }
     }
+    @else if $point == midslboot {
+        @media (max-width: 1400px) {
+            @content;
+        }
+    }
     @else if $point == midboot {
         @media (max-width: 1200px) {
             @content;

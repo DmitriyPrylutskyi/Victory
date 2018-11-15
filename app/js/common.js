@@ -149,5 +149,48 @@ function showPass() {
   }
 }
 
+//body class
+$(document).ready(function(){
+$('body').attr('id', 'top-has');
+});
+
+$(document).ready(function(){
+  $("a.link-go").click(function() {
+      var elementClick = $(this).attr("href")
+      var destination = $(elementClick).offset().top;
+      jQuery("html:not(:animated),body:not(:animated)").animate({
+        scrollTop: destination
+      }, 800);
+      return false;
+  });
+});
+
+$(function() {
+  $(window).scroll(function() {
+      var scroll = $(window).scrollTop();
+
+      if (scroll >= 20) {
+          $('.un-act').addClass('active');
+          
+          // $('header .member-actions').css({
+          //     "top": "26px",
+          // });
+          // $('header .navicon').css({
+          //     "top": "34px",
+          // });
+      } else {
+          $('.un-act').removeClass('active');
+          
+          // $('header .member-actions').css({
+          //     "top": "41px",
+          // });
+          // $('header .navicon').css({
+          //     "top": "48px",
+          // });
+      }
+  });
+});
+
+
 /*Start all functions and actions*/
 initEvents();
