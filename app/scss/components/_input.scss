@@ -12,7 +12,7 @@ input[type='password'] {
     border: 1px solid #e7830c;
     box-sizing: border-box;
     color: #919191;
-    font-family: "CocogoosePro";
+    font-family: "Lato";
     font-weight: 200;
     font-size: 13px;
     appearance: none;
@@ -76,16 +76,27 @@ textarea{
         border: 1px solid #ccc !important;
         outline-offset: 0;
 
-      &::-webkit-input-placeholder {
-          @include focus-placeholder-style;
-      }
+        &::-webkit-input-placeholder {
+            @include focus-placeholder-style;
+        }
 
-      &::-moz-placeholder {
-          @include focus-placeholder-style;
-      }
+        &::-moz-placeholder {
+            @include focus-placeholder-style;
+        }
 
-      &:-ms-input-placeholder {
-          @include focus-placeholder-style;
-      }
+        &:-ms-input-placeholder {
+            @include focus-placeholder-style;
+        }
     }
 }
+header{
+    .wrapper{
+        a{
+            transition: .3s;
+            &:hover{
+                color: #3c3c3c;
+            }
+            
+        }
+    } 
+} 

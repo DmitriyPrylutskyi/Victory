@@ -28,18 +28,21 @@ input[type="reset"] {
     outline: none;
     color: #fff;
     background-image: linear-gradient(-85deg, #fd9b13 0%, #c55b00 100%);
+    background-color: #fd9b13
   }
 
   &:focus {
     outline: none;
     color: #fff;
     background-image: linear-gradient(-85deg, #fd9b13 0%, #c55b00 100%);
+    background-color: #fd9b13
   }
 
   &:active {
     outline: none;
     color: #fff;
     background-image: linear-gradient(-85deg, #fd9b13 0%, #c55b00 100%);
+    background-color: #fd9b13
   }
 
   &:disabled {
