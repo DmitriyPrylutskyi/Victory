@@ -76,17 +76,17 @@ textarea{
         border: 1px solid #ccc !important;
         outline-offset: 0;
 
-      &::-webkit-input-placeholder {
-          @include focus-placeholder-style;
-      }
+        &::-webkit-input-placeholder {
+            @include focus-placeholder-style;
+        }
 
-      &::-moz-placeholder {
-          @include focus-placeholder-style;
-      }
+        &::-moz-placeholder {
+            @include focus-placeholder-style;
+        }
 
-      &:-ms-input-placeholder {
-          @include focus-placeholder-style;
-      }
+        &:-ms-input-placeholder {
+            @include focus-placeholder-style;
+        }
     }
 }
 header{
