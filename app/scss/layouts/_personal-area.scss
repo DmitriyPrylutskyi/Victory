@@ -149,8 +149,8 @@ body.personal-ar{
                 -webkit-appearance: none;
                 box-shadow: none;
                 position: absolute;
-                right: 60px;
-                top: 50px;
+                right: 30px;
+                top: 30px;
                 opacity: 1;
                 color: #FF9138;
                 outline: none;
@@ -456,7 +456,7 @@ body.personal-ar{
         position: relative;
         box-shadow: 0px 7px 18px rgba(95,95,95,0.07);
         top: 30px;
-        margin-top: 80px;
+        margin-top: 0;
         background-color: #ffffff;
     }
     .reg-new-snb{
@@ -546,8 +546,9 @@ body.personal-ar{
             color: #8f8f8f;
             display:inline-block;
             margin: 0;
+            line-height: 40px;
             position: relative;
-            top: -2px;
+            top: -3px;
             margin-right: 10px;
         }
         span{
@@ -555,6 +556,9 @@ body.personal-ar{
             font-size: 15px;
             text-transform: uppercase;
             display:inline-block;
+            line-height: 40px;
+            position: relative;
+            top: -2px;
         }
     }
     .pass-data{
@@ -568,7 +572,16 @@ body.personal-ar{
         margin-top: 70px;
         position: relative;
         z-index: 9;
-        
+        &:before{
+            position: absolute;
+            content: "";
+            top: -1px;
+            left: 5px;
+            width: calc(100% - 40px);
+            height: 1px;
+            margin-left: 15px;
+            background-image: linear-gradient(to right, #b2b2b2 0%, #fff 10%, #fff 36%, #b2b2b2 100%);
+        } 
         
         // .has-titt{
             // padding-left: 135px;
@@ -584,7 +597,6 @@ body.personal-ar{
                 font-size: 25px;
                 letter-spacing: 0px;
                 display: inline-block;
-                text-align: left;
                 font-family: "CocogoosePro";
                 font-weight: 300;
                 text-align: center;
@@ -592,11 +604,13 @@ body.personal-ar{
                 padding-left: 135px;
                 position: absolute;
                 top: -16px;
-                background-image: url(../img/tit-back.png);
                 background-position: 40px;
                 background-repeat: no-repeat;
                 background-size: 110%;
                 padding-right: 40px;
+                background: linear-gradient(to right, #c55b00 0%, #fd9b13);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
             }
         
         form{
@@ -667,7 +681,7 @@ body.personal-ar{
         position: relative;
         max-width: 1053px;
         width: 100%;
-        padding-bottom: 50px;
+        padding-bottom: 0;
         margin: 0 auto;
 
         .part-l, .part-r{
@@ -683,7 +697,7 @@ body.personal-ar{
                 padding-left: 185px;
                 position: absolute;
                 display: inline-block;
-                top: -10px;
+                top: -5px;
                 text-align: left;
                 font-family: "CocogoosePro";
                 font-weight: 300;
@@ -744,6 +758,7 @@ body.personal-ar{
                 background-image: linear-gradient(-85deg, #c55b00 0%, #fd9b13 100%);
                 line-height: 39px;
                 transition: .3s;
+                margin-top: 6px;
                 text-transform: none;
     
                 &:hover{
@@ -761,7 +776,18 @@ body.personal-ar{
             background-color: #ffffff;
             border: 1px solid #ababab;
             padding: 70px;
+            float: right;
             position: relative;
+            &:before{
+                position: absolute;
+                content: "";
+                top: -1px;
+                left: 5px;
+                width: calc(100% - 40px);
+                height: 1px;
+                margin-left: 15px;
+                background-image: linear-gradient(to right, #ababab 0%, #fff 12%, #fff 65%, #ababab 100%);
+            }
             h3{
                 text-align: left;
                 position: absolute;
@@ -769,17 +795,15 @@ body.personal-ar{
                 text-transform: uppercase;
                 width: 315px;
                 left: 0;
-                padding-left: 70px;
-                background-image: url(../img/tit-back.png);
-                background-position: 0px;
-                background-repeat: no-repeat;
-                background-size: 110%;
-                padding-right: 40px;
                 font-weight: 300;
+                padding-left: 70px;
                 font-size: 25px;
                 letter-spacing: 0px;
                 line-height: 29px;
                 color: #c55b00;
+                background: linear-gradient(to right, #c55b00 0%, #fd9b13);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
             }
             p{
                 font-size: 13px;
@@ -946,8 +970,12 @@ body.personal-ar{
             line-height: 39px;
             text-align: center;
             border-radius: 19px;
+            transition: .3s;
             cursor: pointer;
-
+            &:hoveR{
+                background-image: linear-gradient(-85deg, #fd9b13 0%, #c55b00 100%);
+                color: #ffffff;
+            }
             &[for="ma"]{
                 margin-right: 19px;
             }
@@ -973,6 +1001,7 @@ body.personal-ar{
             line-height: 39px;
             text-align: center;
             transition: .3s;
+            border: 1px solid #acacac;
 
             &:hover{
                 color: #ffffff;
@@ -1009,7 +1038,7 @@ body.personal-ar{
         text-transform: uppercase;
         font-size: 25px;
         letter-spacing: 0px;
-        padding-left: 135px;
+        padding-left: 146px;
         margin-top: 90px;
         margin-bottom: 60px;
         display: inline-block;
@@ -1466,6 +1495,9 @@ body.personal-ar{
         .last-pass-doc{
             .in-nwe-ff{
                 padding: 30px;
+                &:before{
+                    display: none
+                }
                 h3 {
                     text-align: left;
                     position: relative;
@@ -1748,4 +1780,8 @@ body.personal-ar{
             display: none
         }
     }
+}
+
+.imageuploadify{
+    top: -7px
 }
