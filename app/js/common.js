@@ -34,6 +34,12 @@ function initRefillSlider() {
 }
 
 function calcresult() {
+  b = $('#amount').val();
+  pop = $('#refill').val();
+  r = $('#interest-rate').val();
+  m = $('input[name=period]:checked').val();
+  k = rate / 12/1;
+
   $('#income').text(55);
   $('#total').text(1055);
 }
