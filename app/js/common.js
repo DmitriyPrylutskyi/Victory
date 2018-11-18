@@ -33,15 +33,64 @@ function initRefillSlider() {
   });
 }
 
-function calcresult() {
-  b = $('#amount').val();
-  pop = $('#refill').val();
-  r = $('#interest-rate').val();
-  m = $('input[name=period]:checked').val();
-  k = rate / 12/1;
+function changeAmount() {
+  $('#amount').keyup(function(){
+    if ( $(this).val() < 1000 ) {
+      $(this).val(1000)
+    }
+    if ( $(this).val() > 500000 ) {
+      $(this).val(500000)
+    }
+    $("#slider-amount").slider("value", $(this).val());
+    calcresult();
+  });
+}
 
-  $('#income').text(55);
-  $('#total').text(1055);
+function changeRefill() {
+  $('#refill').keyup(function(){
+    if ( $(this).val() < 1000 ) {
+      $(this).val(1000)
+    }
+    if ( $(this).val() > 500000 ) {
+      $(this).val(25000)
+    }
+    $("#slider-refill").slider("value", $(this).val());
+    calcresult();
+  });
+}
+
+function changePeriod() {
+  $('input[name=period]').change(function(){
+    calcresult();
+  });
+}
+
+function calcresult() {
+  amount = parseFloat($('#amount').val());
+  refill = parseFloat($('#refill').val());
+  rate = parseFloat($('#interest-rate').text());
+  period = parseFloat($('input[name=period]:checked').val());
+  rate_per_month = rate /12/100;
+  current_amount = amount;
+  total_amount = amount;
+  total_refill = amount;
+  total_percent = 0;
+  console.log(rate);
+  for(var i=0; i<period; ++i)
+  {
+    percent = current_amount * rate_per_month; // проценты за прошедший месяц
+    total_percent += percent;
+    total_amount += percent;
+    if (i<period-1)
+    {
+      total_amount += refill; // пополнение (в конце срока нет попонения)
+      total_refill += refill;
+    }
+    current_amount += refill;
+  }
+
+  $('#income').text(Math.round(total_percent));
+  $('#total').text(Math.round(total_amount));
 }
 
 function setHoverOnAdvantageIcon() {
@@ -136,6 +185,9 @@ function initEvents() {
     collapseMenu();
     initAmountSlider();
     initRefillSlider();
+    changeAmount();
+    changeRefill();
+    changePeriod();
     setHoverOnAdvantageIcon();
     setClickOnAdvantageIcon();
     initReviewsCarousel();
