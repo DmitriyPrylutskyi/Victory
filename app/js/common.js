@@ -183,6 +183,7 @@ function initEvents() {
   /*Actions on 'Window load' event*/
   $(window).on("load", function() {
     collapseMenu();
+    calcresult();
     initAmountSlider();
     initRefillSlider();
     changeAmount();
