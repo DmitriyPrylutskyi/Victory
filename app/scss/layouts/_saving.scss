@@ -1,11 +1,3 @@
-body.saving-ar{
-    background-image: url(../img/other-head.png);
-
-    margin: 0px;
-    padding: 0px;
-
-    background-repeat: no-repeat;
-}
 @include breakpoint(mob-small) {
     .jjjjd:before, .jjjjd:after{
     display: none;

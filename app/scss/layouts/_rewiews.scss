@@ -1,11 +1,3 @@
-body.rewiews-ar{
-    background-image: url(../img/other-head.png);
-    margin: 0px;
-    padding: 0px;
-    background-repeat: no-repeat;
-    position: relative;
-    
-}
 @include breakpoint(mob-small) {
     body.rewiews-ar{
         background-image: url(../img/mobile-head.png);

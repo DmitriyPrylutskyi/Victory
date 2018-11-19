@@ -5,6 +5,10 @@ body {
     background: url("../img/bg-top.jpg");
     background-repeat: no-repeat;
 
+    &:not(.home) {
+        background-image: url(../img/other-head.png);
+    }
+
     >.wrapper {
         min-height: calc(100vh - 185px);
     }
