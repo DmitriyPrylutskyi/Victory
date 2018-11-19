@@ -61,6 +61,8 @@ function changeRefill() {
 
 function changePeriod() {
   $('input[name=period]').change(function(){
+    rate = $('input[name=period]:checked').attr('data-rate');
+    $('#interest-rate').html(rate + ' ' + '<span class="unit">%</span>');
     calcresult();
   });
 }
@@ -75,7 +77,6 @@ function calcresult() {
   total_amount = amount;
   total_refill = amount;
   total_percent = 0;
-  console.log(rate);
   for(var i=0; i<period; ++i)
   {
     percent = current_amount * rate_per_month; // проценты за прошедший месяц
