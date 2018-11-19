@@ -93,6 +93,11 @@ function sliderServices() {
   });
 }
 
+function popOver () {
+  $('[data-toggle="popover"]').popover({
+    trigger: 'focus'
+  }); 
+};
 
 // modal
 function modalWindow () {
@@ -135,6 +140,7 @@ function initEvents() {
     initReviewsCarousel();
     sliderServices();
     modalWindow ();
+    popOver();
   });
 };
 

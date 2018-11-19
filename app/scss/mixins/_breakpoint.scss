@@ -89,6 +89,11 @@
             @content;
         }
     }
+    @else if $point == notaipad {
+        @media (max-width: 675px) {
+            @content;
+        }
+    }
     @else if $point == bigiphommobile {
         @media (max-width: 620px) {
             @content;
