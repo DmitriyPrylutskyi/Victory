@@ -1,5 +1,5 @@
 body.news-ar{
-    background-image: url(../app/img/other-head.png);
+    background-image: url(../img/other-head.png);
     margin: 0px;
     padding: 0px;
     background-repeat: no-repeat;
@@ -7,7 +7,7 @@ body.news-ar{
 @include breakpoint(mob-small) {
 
     body.news-ar{
-        background-image: url(../app/img/mobile-head.png);
+        background-image: url(../img/mobile-head.png);
         background-size: auto;
         margin: 0px;
         padding: 0px;
@@ -17,7 +17,7 @@ body.news-ar{
 @include breakpoint(desktopssr) {
 
     body.news-ar{
-        background-image: url(../app/img/other-head.png);
+        background-image: url(../img/other-head.png);
         margin: 0px;
         padding: 0px;
         background-repeat: no-repeat;
@@ -68,7 +68,7 @@ body.news-ar{
             left: -80px;
             width: 1075px;
             height: 255px;
-            background-image: url(../app/img/new-line-news.png);
+            background-image: url(../img/new-line-news.png);
         }
         &:before{
             position: absolute;

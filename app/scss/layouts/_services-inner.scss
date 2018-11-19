@@ -1,12 +1,12 @@
 body.services-inner-ar{
-    background-image: url(../app/img/other-head.png);
+    background-image: url(../img/other-head.png);
     margin: 0px;
     padding: 0px;
     background-repeat: no-repeat;
 }
 @include breakpoint(mob-small) {
     body.services-inner-ar{
-        background-image: url(../app/img/mobile-head.png);
+        background-image: url(../img/mobile-head.png);
         background-size: auto;
         margin: 0px;
         padding: 0px;
@@ -15,7 +15,7 @@ body.services-inner-ar{
 }
 @include breakpoint(desktopssr) {
     body.services-inner-ar{
-        background-image: url(../app/img/other-head.png);
+        background-image: url(../img/other-head.png);
         margin: 0px;
         padding: 0px;
         background-repeat: no-repeat; 
