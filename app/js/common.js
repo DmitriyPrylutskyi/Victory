@@ -195,7 +195,7 @@ function register() {
   phone       =   jQuery('#phone').val();
   password    =   jQuery('#password').val();
   rpassword   =   jQuery('#rpassword').val();
-  user_type   =   jQuery("#ireadd2:checked").val();
+  agree       =   jQuery("#ireadd2:checked").val();
   nonce       =   jQuery('#security-register').val();
   ajaxurl     =   vars.admin_url + 'admin-ajax.php';
 
@@ -216,7 +216,6 @@ function register() {
       'email'                     :   email,
       'phone'                     :   phone,
       'password'                  :   password,
-      'user_type'                 :   user_type,
       'nonce'                     :   nonce
     },
     success: function (data) {
