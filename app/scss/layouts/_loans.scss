@@ -1,20 +1,3 @@
-@include breakpoint(mob-small) {
-    body.loans-ar{
-        background-image: url(../img/mobile-head.png);
-        background-size: auto;
-        margin: 0px;
-        padding: 0px;
-        background-repeat: no-repeat;
-    }
-}
-@include breakpoint(desktopssr) {
-    body.loans-ar{
-        background-image: url(../img/other-head.png);
-        margin: 0px;
-        padding: 0px;
-        background-repeat: no-repeat;
-    }
-}
 .loans-wrapp{
     width: 100%;
     max-width: 1030px;

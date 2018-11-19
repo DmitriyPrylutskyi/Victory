@@ -2,23 +2,10 @@
     .jjjjd:before, .jjjjd:after{
         display: none;
     }
-    body.contacts-ar{
-        background-image: url(../img/mobile-head.png);
-        background-size: auto;
-        margin: 0px;
-        padding: 0px;
-        background-repeat: no-repeat;
-    }
 }
 @include breakpoint(desktopssr) {
     .jjjjd:before, .jjjjd:after{
         display: inline-block;
-    }
-    body.contacts-ar{
-        background-image: url(../img/other-head.png);
-        margin: 0px;
-        padding: 0px;
-        background-repeat: no-repeat;
     }
 }
 .contacts-ar{
