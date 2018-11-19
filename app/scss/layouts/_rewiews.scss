@@ -1,5 +1,5 @@
 body.rewiews-ar{
-    background-image: url(../app/img/other-head.png);
+    background-image: url(../img/other-head.png);
     margin: 0px;
     padding: 0px;
     background-repeat: no-repeat;
@@ -8,7 +8,7 @@ body.rewiews-ar{
 }
 @include breakpoint(mob-small) {
     body.rewiews-ar{
-        background-image: url(../app/img/mobile-head.png);
+        background-image: url(../img/mobile-head.png);
         background-size: auto;
         margin: 0px;
         padding: 0px;
@@ -17,7 +17,7 @@ body.rewiews-ar{
 }
 @include breakpoint(desktopssr) {
     body.rewiews-ar{
-        background-image: url(../app/img/other-head.png);
+        background-image: url(../img/other-head.png);
         margin: 0px;
         padding: 0px;
         background-repeat: no-repeat;
@@ -26,7 +26,7 @@ body.rewiews-ar{
 .rewiews-ar{
     &:before {
     content: "";
-    background-image: url(../app/img/left-el.png);
+    background-image: url(../img/left-el.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -39,7 +39,7 @@ body.rewiews-ar{
 }
 &:after {
     content: "";
-    background-image: url(../app/img/right-el.png);
+    background-image: url(../img/right-el.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

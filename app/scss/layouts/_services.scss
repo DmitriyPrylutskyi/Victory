@@ -1,5 +1,5 @@
 body.services-ar{
-    background-image: url(../app/img/other-head.png);
+    background-image: url(../img/other-head.png);
 
     margin: 0px;
     padding: 0px;
@@ -7,7 +7,7 @@ body.services-ar{
 }
 @include breakpoint(mob-small) {
     body.services-ar{
-        background-image: url(../app/img/mobile-head.png);
+        background-image: url(../img/mobile-head.png);
         background-size: auto;
         margin: 0px;
         padding: 0px;
@@ -16,7 +16,7 @@ body.services-ar{
 }
 @include breakpoint(desktopssr) {
     body.services-ar{
-        background-image: url(../app/img/other-head.png);
+        background-image: url(../img/other-head.png);
 
         margin: 0px;
         padding: 0px;
@@ -26,7 +26,7 @@ body.services-ar{
 .services-ar{
     &:before {
         content: "";
-        background-image: url(../app/img/left-el.png);
+        background-image: url(../img/left-el.png);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -39,7 +39,7 @@ body.services-ar{
     }
     &:after {
         content: "";
-        background-image: url(../app/img/right-el.png);
+        background-image: url(../img/right-el.png);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -99,22 +99,22 @@ body.services-ar{
             }
             &.first{
                 .have-img-back{
-                    background-image: url(../app/img/one-serv.png)
+                    background-image: url(../img/one-serv.png)
                 }
             }
             &.sec{
                 .have-img-back{
-                    background-image: url(../app/img/sec-serv.png)
+                    background-image: url(../img/sec-serv.png)
                 }
             }
             &.thr{
                 .have-img-back{
-                    background-image: url(../app/img/thr-serv.png)
+                    background-image: url(../img/thr-serv.png)
                 }
             }
             &.car-w{
                 .have-img-back{
-                    background-image: url(../app/img/car-w.png)
+                    background-image: url(../img/car-w.png)
                 }
             }
             a{

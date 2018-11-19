@@ -81,7 +81,7 @@
     }
 }
 body.personal-ar{
-    background-image: url(../app/img/other-head.png);
+    background-image: url(../img/other-head.png);
 
     margin: 0px;
     padding: 0px;
@@ -93,7 +93,7 @@ body.personal-ar{
     display: none;
     }
     body.personal-ar{
-        background-image: url(../app/img/mobile-head.png);
+        background-image: url(../img/mobile-head.png);
         background-size: auto;
         margin: 0px;
         padding: 0px;
@@ -105,7 +105,7 @@ body.personal-ar{
         display: inline-block;
     }
     body.personal-ar{
-        background-image: url(../app/img/other-head.png);
+        background-image: url(../img/other-head.png);
 
         margin: 0px;
         padding: 0px;
@@ -192,7 +192,7 @@ body.personal-ar{
                     margin-bottom: 15px;
                     table{
                         span{
-                            background-image: url(../app/img/pdf-img-icon.png);
+                            background-image: url(../img/pdf-img-icon.png);
                             background-repeat: no-repeat;
                             background-position: center;
                             background-size: cover;
@@ -486,7 +486,7 @@ body.personal-ar{
         &:before{
             content: "";
             position: absolute;
-            background-image: url(../app/img/back-head-after.png);
+            background-image: url(../img/back-head-after.png);
             background-position: center;
             background-repeat: no-repeat;
             background-size: contain;
@@ -843,7 +843,7 @@ body.personal-ar{
         left: 0;
 
         .new-back{
-            background-image: url(../app/img/new-lineback.png);
+            background-image: url(../img/new-lineback.png);
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -856,7 +856,7 @@ body.personal-ar{
 
         &:before{
             content: "";
-            background-image: url(../app/img/left-el.png);
+            background-image: url(../img/left-el.png);
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -869,7 +869,7 @@ body.personal-ar{
         }
         &:after{
             content: "";
-            background-image: url(../app/img/right-el.png);
+            background-image: url(../img/right-el.png);
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;

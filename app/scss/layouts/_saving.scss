@@ -1,5 +1,5 @@
 body.saving-ar{
-    background-image: url(../app/img/other-head.png);
+    background-image: url(../img/other-head.png);
 
     margin: 0px;
     padding: 0px;
@@ -11,7 +11,7 @@ body.saving-ar{
     display: none;
     }
     body.saving-ar{
-        background-image: url(../app/img/mobile-head.png);
+        background-image: url(../img/mobile-head.png);
         background-size: auto;
         margin: 0px;
         padding: 0px;
@@ -23,7 +23,7 @@ body.saving-ar{
         display: inline-block;
     }
     body.saving-ar{
-        background-image: url(../app/img/other-head.png);
+        background-image: url(../img/other-head.png);
 
         margin: 0px;
         padding: 0px;
@@ -50,7 +50,7 @@ body.saving-ar{
     position: relative;
     &:before{
         content: "";
-        background-image: url(../app/img/left-el.png);
+        background-image: url(../img/left-el.png);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -63,7 +63,7 @@ body.saving-ar{
     }
     &:after{
         content: "";
-        background-image: url(../app/img/right-el.png);
+        background-image: url(../img/right-el.png);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -160,7 +160,7 @@ body.saving-ar{
                         top: -20px;
                         width: 150px;
                         height: 170px;
-                        background-image: url(../app/img/rub-sign.png);
+                        background-image: url(../img/rub-sign.png);
                         background-position: center;
                         background-repeat: no-repeat;
                         background-size: contain;
@@ -174,7 +174,7 @@ body.saving-ar{
                         top: -20px;
                         width: 150px;
                         height: 170px;
-                        background-image: url(../app/img/protect-sign.png);
+                        background-image: url(../img/protect-sign.png);
                         background-position: center;
                         background-repeat: no-repeat;
                         background-size: cover;
@@ -188,7 +188,7 @@ body.saving-ar{
                         top: -20px;
                         width: 150px;
                         height: 170px;
-                        background-image: url(../app/img/search-sign.png);
+                        background-image: url(../img/search-sign.png);
                         background-position: center;
                         background-repeat: no-repeat;
                         background-size: contain;
@@ -202,7 +202,7 @@ body.saving-ar{
                         top: -20px;
                         width: 150px;
                         height: 170px;
-                        background-image: url(../app/img/user-sign.png);
+                        background-image: url(../img/user-sign.png);
                         background-position: center;
                         background-repeat: no-repeat;
                         background-size: cover;
