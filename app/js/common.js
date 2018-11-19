@@ -183,6 +183,57 @@ function modalWindow () {
   });
 };
 
+
+// register function -jslint checked
+function register() {
+  var last_name,first_name,patronymic, email, phone, password, nonce, ajaxurl, user_type;
+
+  last_name   =   jQuery('#last_name').val();
+  first_name  =   jQuery('#first_name').val();
+  patronymic  =   jQuery('#patronymic').val();
+  email       =   jQuery('#email').val();
+  phone       =   jQuery('#phone').val();
+  password    =   jQuery('#password').val();
+  rpassword   =   jQuery('#rpassword').val();
+  user_type   =   jQuery("#ireadd2:checked").val();
+  nonce       =   jQuery('#security-register').val();
+  ajaxurl     =   vars.admin_url + 'admin-ajax.php';
+
+  if ( !jQuery('#ireadd2').is(":checked") ) {
+    /*jQuery('#register_message_area').empty().append('<div class="alert_err login-alert">' + control_vars.terms_cond + '</div>');*/
+    return;
+  }
+
+  jQuery.ajax({
+    type: 'POST',
+    url: ajaxurl,
+    dataType: 'json',
+    data: {
+      'action'                    :   'victory_register_form',
+      'last_name'                 :   last_name,
+      'first_name'                :   first_name,
+      'patronymic'                :   patronymic,
+      'email'                     :   email,
+      'phone'                     :   phone,
+      'password'                  :   password,
+      'user_type'                 :   user_type,
+      'nonce'                     :   nonce
+    },
+    success: function (data) {
+
+      // This outputs the result of the ajax request
+      if (data.register === true) {
+        /*jQuery('#register_message_area').empty().append('<div class="login-alert">' + data.message + '</div>');*/
+      }else{
+        /*jQuery('#register_message_area').empty().append('<div class="alert_err login-alert">' + data.message + '</div>');*/
+      }
+    },
+    error: function (errorThrown) {
+
+    }
+  });
+}
+
 function initEvents() {
   /*Actions on 'DOM ready' event*/
 
