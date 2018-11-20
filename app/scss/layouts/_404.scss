@@ -1,0 +1,59 @@
+.less-foot{
+    footer{
+        margin-top: 0
+    }
+}
+.error-ar{
+    .cen-miset{
+        margin: 0 auto;
+        max-width: 90%;
+        .some-err{
+            text-align: center;
+            p{
+                font-family: "Lato";
+                display: block;
+                margin: 0;
+                font-size: 96px;
+                font-weight: bold;
+                background-image: linear-gradient(to right, #c55c00 0%, #fd9b14 100%);
+                -webkit-background-clip: text;
+                color: transparent;
+                line-height: 90px;
+                span{
+                    // color: #333;
+                    // margin-left: 0;
+                    // font-family: "CocogoosePro";
+                    // font-weight: 300;
+                    font-size: 26px;
+                    display: inline-block;
+                    background-image: linear-gradient(to right, #c55c00 0%, #fd9b14 100%);
+                    -webkit-background-clip: text;
+                    color: transparent;
+                    // line-height: 26px;
+                }
+            }
+            span{
+                font-family: "CocogoosePro";
+                display: inline-block;
+                font-size: 26px;
+                margin-left: 0;
+                margin-top: 30px
+            }
+        }
+    }
+}
+@include breakpoint(bootmidl) {
+    .error-ar{
+        .cen-miset{
+            .some-err{
+                p{
+                    display: block; 
+                }
+                span{
+                    display: block;
+                    margin-left: 0px
+                }
+            }
+        }
+    }
+}
