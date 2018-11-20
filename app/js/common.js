@@ -181,30 +181,33 @@ function modalWindow () {
       $('body').css('padding-right','15px').addClass('modal-open'); 
     });
   });
+  $('#victory-login').on('click', function () {
+    registration();
+  });
 };
 
 
 // register function -jslint checked
-function register() {
-  var last_name,first_name,patronymic, email, phone, password, nonce, ajaxurl, user_type;
+function registration() {
+  var last_name,first_name,patronymic, email, phone, password, nonce, ajaxurl;
 
-  last_name   =   jQuery('#last_name').val();
-  first_name  =   jQuery('#first_name').val();
-  patronymic  =   jQuery('#patronymic').val();
-  email       =   jQuery('#email').val();
-  phone       =   jQuery('#phone').val();
-  password    =   jQuery('#password').val();
-  rpassword   =   jQuery('#rpassword').val();
-  agree       =   jQuery("#ireadd2:checked").val();
-  nonce       =   jQuery('#security-register').val();
+  last_name   =   $('#registration #last_name').val();
+  first_name  =   $('#registration #first_name').val();
+  patronymic  =   $('#registration #patronymic').val();
+  email       =   $('#registration #email').val();
+  phone       =   $('#registration #phone').val();
+  password    =   $('#registration #password').val();
+  rpassword   =   $('#registration #rpassword').val();
+  agree       =   $("#registration #ireadd2:checked").val();
+  nonce       =   $('#registration #security-register').val();
   ajaxurl     =   vars.admin_url + 'admin-ajax.php';
 
-  if ( !jQuery('#ireadd2').is(":checked") ) {
-    /*jQuery('#register_message_area').empty().append('<div class="alert_err login-alert">' + control_vars.terms_cond + '</div>');*/
+  /*if ( !jQuery('#ireadd2').is(":checked") ) {
+    /!*jQuery('#register_message_area').empty().append('<div class="alert_err login-alert">' + control_vars.terms_cond + '</div>');*!/
     return;
-  }
+  }*/
 
-  jQuery.ajax({
+  $.ajax({
     type: 'POST',
     url: ajaxurl,
     dataType: 'json',
@@ -216,18 +219,20 @@ function register() {
       'email'                     :   email,
       'phone'                     :   phone,
       'password'                  :   password,
+      'rpassword'                 :  rpassword,
       'nonce'                     :   nonce
     },
     success: function (data) {
 
       // This outputs the result of the ajax request
       if (data.register === true) {
-        /*jQuery('#register_message_area').empty().append('<div class="login-alert">' + data.message + '</div>');*/
+        $('#register_message_area').empty().append('<div class="login-alert">' + data.message + '</div>');
+        document.location.href = '/personal-account/';
       }else{
-        /*jQuery('#register_message_area').empty().append('<div class="alert_err login-alert">' + data.message + '</div>');*/
+        $('#register_message_area').empty().append('<div class="alert_err login-alert">' + data.message + '</div>');
       }
     },
-    error: function (errorThrown) {
+    error: function (data) {
 
     }
   });
