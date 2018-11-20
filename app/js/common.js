@@ -155,6 +155,138 @@ function popOver () {
   }); 
 };
 
+//validate
+function validate(formId) {
+  errorMsg = 'required';
+
+  $(formId + ' input[type="tel"]').keyup(function () {
+    var $input = $(this),
+      $errorMsg = $input.nextAll('.error-msg'),
+      regex = /^[\d- ]+$/,
+      str = $input.val();
+    if (regex.exec(str) == null) {
+      $input.val(str.slice(0, -1));
+      errorMsg = 'incorrect phone';
+    } else {
+      errorMsg = '';
+    }
+
+    if (errorMsg) {
+      $input.css({'borderColor': 'red'});
+      $errorMsg.text(errorMsg);
+    } else {
+      $input.css({'borderColor': '#cccccc'});
+      $errorMsg.text('');
+    }
+  });
+
+  $(formId + ' input').blur(function () {
+    var $input = $(this),
+      str = $input.val(),
+      $errorMsg = $input.nextAll('.error-msg');
+
+    if ( $input.prop( 'required' ) && str == '') {
+      $input.removeClass('full');
+      errorMsg = 'required';
+    } else {
+      $input.addClass('full');
+      errorMsg = '';
+    }
+
+    if ($input.attr('type') == 'email' && str != '') {
+      var regex = /^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.]{2,6})$/;
+
+      if (regex.exec(str) == null) {
+        errorMsg = 'incorrect email';
+      }
+    }
+
+    if ( $input.attr('type') == 'tel' && str != '' && str.length < 6 ) {
+      errorMsg = 'incorrect phone';
+    }
+
+    if (errorMsg) {
+      $input.css({'borderColor': 'red'});
+      $errorMsg.text(errorMsg);
+    } else {
+      $input.css({'borderColor': '#e7830c'});
+      $errorMsg.text('');
+    }
+  })
+}
+
+function formSubmitRegistration() {
+  $('#registration' + ' input[type="button"]').click(function(e) {
+    var msg = $('.msg');
+    var msgText = $('#msg-text');
+
+    var last_name,first_name,patronymic, email, phone, password, nonce, ajaxurl;
+
+    last_name   =   $('#registration #last_name').val();
+    first_name  =   $('#registration #first_name').val();
+    patronymic  =   $('#registration #patronymic').val();
+    email       =   $('#registration #email').val();
+    phone       =   $('#registration #phone').val();
+    password    =   $('#registration #password').val();
+    rpassword   =   $('#registration #rpassword').val();
+    agree       =   $("#registration #ireadd2:checked").val();
+    nonce       =   $('#registration #security-register').val();
+    ajaxurl     =   vars.admin_url + 'admin-ajax.php';
+
+    if ( !$('#ireadd2').is(":checked") ) {
+      msgText.remove();
+      msg.prepend('<span id="msg-text">Must agree</span>');
+      msg.addClass('fail');
+      return;
+    }
+
+    $.ajax({
+      type: 'POST',
+      url: ajaxurl,
+      dataType: 'json',
+      data: {
+        'action'                    :   'victory_register_form',
+        'last_name'                 :   last_name,
+        'first_name'                :   first_name,
+        'patronymic'                :   patronymic,
+        'email'                     :   email,
+        'phone'                     :   phone,
+        'password'                  :   password,
+        'rpassword'                 :   rpassword,
+        'nonce'                     :   nonce
+      },
+      success: function (data) {
+
+        // This outputs the result of the ajax request
+        if (data.register === true) {
+          $('#registration input').css({'borderColor': '#e7830c'});
+          msgText.remove();
+          msg.prepend('<span id="msg-text">' + data.message + '</span>');
+          msg.addClass('success');
+
+          setTimeout(function () {
+            document.location.href = '/personal-account/';
+          }, 1000)
+
+          setTimeout(function () {
+            $('.main-menu .login a').text('Выйти');
+          }, 5000)
+        }else{
+          msgText.remove();
+          msg.prepend('<span id="msg-text">' + data.message + '</span>');
+          msg.addClass('fail');
+          $('#registration #' + data.id).css({'borderColor': 'red'});
+        }
+      },
+      error: function (data) {
+        msgText.remove();
+        msg.prepend('<span id="msg-text">The message could not be sent. Try it again.</span>');
+        msg.addClass('fail');
+      }
+    });
+  })
+}
+
 // modal
 function modalWindow () {
   $('.forgot-pass').on('click', function () {
@@ -181,62 +313,7 @@ function modalWindow () {
       $('body').css('padding-right','15px').addClass('modal-open'); 
     });
   });
-  $('#victory-login').on('click', function () {
-    registration();
-  });
 };
-
-
-// register function -jslint checked
-function registration() {
-  var last_name,first_name,patronymic, email, phone, password, nonce, ajaxurl;
-
-  last_name   =   $('#registration #last_name').val();
-  first_name  =   $('#registration #first_name').val();
-  patronymic  =   $('#registration #patronymic').val();
-  email       =   $('#registration #email').val();
-  phone       =   $('#registration #phone').val();
-  password    =   $('#registration #password').val();
-  rpassword   =   $('#registration #rpassword').val();
-  agree       =   $("#registration #ireadd2:checked").val();
-  nonce       =   $('#registration #security-register').val();
-  ajaxurl     =   vars.admin_url + 'admin-ajax.php';
-
-  /*if ( !jQuery('#ireadd2').is(":checked") ) {
-    /!*jQuery('#register_message_area').empty().append('<div class="alert_err login-alert">' + control_vars.terms_cond + '</div>');*!/
-    return;
-  }*/
-
-  $.ajax({
-    type: 'POST',
-    url: ajaxurl,
-    dataType: 'json',
-    data: {
-      'action'                    :   'victory_register_form',
-      'last_name'                 :   last_name,
-      'first_name'                :   first_name,
-      'patronymic'                :   patronymic,
-      'email'                     :   email,
-      'phone'                     :   phone,
-      'password'                  :   password,
-      'rpassword'                 :  rpassword,
-      'nonce'                     :   nonce
-    },
-    success: function (data) {
-
-      // This outputs the result of the ajax request
-      if (data.register === true) {
-        $('#register_message_area').empty().append('<div class="login-alert">' + data.message + '</div>');
-        document.location.href = '/personal-account/';
-      }else{
-        $('#register_message_area').empty().append('<div class="alert_err login-alert">' + data.message + '</div>');
-      }
-    },
-    error: function (data) {
-
-    }
-  });
-}
 
 function initEvents() {
   /*Actions on 'DOM ready' event*/
@@ -254,8 +331,10 @@ function initEvents() {
     setClickOnAdvantageIcon();
     initReviewsCarousel();
     sliderServices();
-    modalWindow ();
+    modalWindow();
     popOver();
+    validate('#registration');
+    formSubmitRegistration();
   });
 };
 

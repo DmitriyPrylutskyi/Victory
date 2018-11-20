@@ -1,0 +1,16 @@
+.input-grp {
+  position: relative;
+
+  .full {
+    z-index: 1;
+  }
+
+  .error-msg {
+    position: absolute;
+    top: -15px;
+    bottom: 0;
+    right: 10px;
+    font-size: 10px;
+    color: red;
+  }
+}
