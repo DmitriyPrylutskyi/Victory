@@ -112,3 +112,9 @@ body {
         }
     }
 }
+@include breakpoint(midbiggboot) {
+    body:not(.home){
+        background-image: url(../img/mobile-head.png);
+    }
+}
+
