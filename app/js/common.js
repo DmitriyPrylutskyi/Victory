@@ -235,7 +235,7 @@ function formSubmitRegistration() {
 
     if ( !$('#ireadd2').is(":checked") ) {
       msgText.remove();
-      msg.prepend('<span id="msg-text">Must agree</span>');
+      msg.html('<span id="msg-text">Must agree</span>');
       msg.addClass('fail');
       return;
     }
@@ -261,26 +261,82 @@ function formSubmitRegistration() {
         if (data.register === true) {
           $('#registration input').css({'borderColor': '#e7830c'});
           msgText.remove();
-          msg.prepend('<span id="msg-text">' + data.message + '</span>');
+          msg.html('<span id="msg-text">' + data.message + '</span>');
           msg.addClass('success');
 
           setTimeout(function () {
             document.location.href = '/personal-account/';
           }, 1000)
-
-          setTimeout(function () {
-            $('.main-menu .login a').text('Выйти');
-          }, 5000)
         }else{
+          $('#registration input').css({'borderColor': '#e7830c'});
           msgText.remove();
-          msg.prepend('<span id="msg-text">' + data.message + '</span>');
+          msg.html('<span id="msg-text">' + data.message + '</span>');
           msg.addClass('fail');
           $('#registration #' + data.id).css({'borderColor': 'red'});
         }
       },
       error: function (data) {
         msgText.remove();
-        msg.prepend('<span id="msg-text">The message could not be sent. Try it again.</span>');
+        msg.html('<span id="msg-text">The message could not be sent. Try it again.</span>');
+        msg.addClass('fail');
+      }
+    });
+  })
+}
+
+function formSubmitLogin() {
+  $('#login' + ' input[type="button"]').click(function(e) {
+    var msg = $('.msg');
+    var msgText = $('#msg-text');
+
+    var phone, password, nonce, ajaxurl;
+
+    phone       =   $('#login #phone').val();
+    password    =   $('#login #password').val();
+    agree       =   $("#login #ireadd:checked").val();
+    nonce       =   $('#login #security-register').val();
+    ajaxurl     =   vars.admin_url + 'admin-ajax.php';
+
+    if ( !$('#ireadd').is(":checked") ) {
+      msgText.remove();
+      msg.prepend('<span id="msg-text">Must agree</span>');
+      msg.addClass('fail');
+      return;
+    }
+
+    $.ajax({
+      type: 'POST',
+      url: ajaxurl,
+      dataType: 'json',
+      data: {
+        'action'                    :   'victory_login_form',
+        'phone'                     :   phone,
+        'password'                  :   password,
+        'nonce'                     :   nonce
+      },
+      success: function (data) {
+
+        // This outputs the result of the ajax request
+        if (data.login === true) {
+          $('#login input').css({'borderColor': '#e7830c'});
+          msgText.remove();
+          msg.html('<span id="msg-text">' + data.message + '</span>');
+          msg.addClass('success');
+
+          setTimeout(function () {
+            document.location.href = '/personal-account/';
+          }, 1000)
+        }else{
+          $('#login input').css({'borderColor': '#e7830c'});
+          msgText.remove();
+          msg.html('<span id="msg-text">' + data.message + '</span>');
+          msg.addClass('fail');
+          $('#login #' + data.id).css({'borderColor': 'red'});
+        }
+      },
+      error: function (data) {
+        msgText.remove();
+        msg.html('<span id="msg-text">The message could not be sent. Try it again.</span>');
         msg.addClass('fail');
       }
     });
@@ -289,22 +345,29 @@ function formSubmitRegistration() {
 
 // modal
 function modalWindow () {
+  $('.main-menu .login a').on('click', function () {
+    $('#msg-text').remove();
+    $('#login').trigger('reset');
+    $('#registration').trigger('reset');
+  });
   $('.forgot-pass').on('click', function () {
     $('#enter').modal('hide');
     $('#forgot-pass').on('shown.bs.modal', function() {
-      $('body').css('padding-right','15px').addClass('modal-open'); 
+      $('body').css('padding-right','15px').addClass('modal-open');
     });
   });
   $('.sign-up').on('click', function () {
     $('#enter').modal('hide');
     $('#sign-up').on('shown.bs.modal', function() {
-      $('body').css('padding-right','15px').addClass('modal-open'); 
+      $('body').css('padding-right','15px').addClass('modal-open');
+      $('#msg-text').remove();
     });
   });
   $('.sign-up').on('click', function () {
     $('#forgot-pass').modal('hide');
     $('#sign-up').on('shown.bs.modal', function() {
-      $('body').css('padding-right','15px').addClass('modal-open'); 
+      $('body').css('padding-right','15px').addClass('modal-open');
+      $('#msg-text').remove();
     });
   });
   $('.leave-order').on('click', function () {
@@ -335,13 +398,14 @@ function initEvents() {
     popOver();
     validate('#registration');
     formSubmitRegistration();
+    formSubmitLogin();
   });
 };
 
 
 //show pass
 function showPass() {
-  var x = document.getElementById("my-pass");
+  var x = document.getElementById("password");
   if (x.type === "password") {
       x.type = "text";
   } else {
