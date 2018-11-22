@@ -1032,21 +1032,6 @@
     } 
 }
 @include breakpoint(smallfromtablet) {
-    .imageuploadify{
-        .imageuploadify-images-list{
-            button{
-                &.btn-default{
-                    width: 90px;
-                    margin-left: 0;
-                }
-            }
-            .imageuploadify-container{
-                width: 90px;
-                margin-right: 15px!important;
-                margin-left: 0 !important;
-            }
-        } 
-    } 
     .personal-area {
         .oun-head {
             margin-bottom: 150px;
@@ -1613,7 +1598,8 @@
         .last-pass-doc {
             .part-l{
                 width: 100%;
-                margin-top: 20px
+                margin-top: 20px;
+                padding: 30px
             }
         }
         .jjjjd{

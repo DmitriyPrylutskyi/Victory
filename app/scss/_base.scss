@@ -352,4 +352,70 @@ footer{
             }
         } 
     } 
-} 
+}
+@include breakpoint(smallfromtablet) {
+    .imageuploadify{
+        .imageuploadify-images-list{
+            button{
+                &.btn-default{
+                    width: 90px;
+                    margin-left: 0;
+                }
+            }
+            .imageuploadify-container{
+                width: 90px;
+                margin-right: 15px!important;
+                margin-left: 0 !important;
+            }
+        } 
+    }
+}
+@include breakpoint(ipadsmall) {
+    .imageuploadify{
+        .imageuploadify-images-list{
+            button{
+                &.btn-default{
+                    width: 49%;
+                    margin-left: 2%;
+                }
+            }
+            .imageuploadify-container{
+                width: 49%;
+                margin-right: 2% !important;
+                &:nth-child(2n){
+                    margin-right: 0 !important;
+                }
+                &:first-child{
+                    margin-right: 2% !important;
+                }
+            }
+        }
+    }  
+}
+
+@include breakpoint(midmob) {
+    .modal-dialog.other{
+        .modal-content{
+            .modal-body{
+                h3{
+                    top: 4px;
+                    position: relative;
+                }
+                .new-link-mod{
+                    flex-direction: column;
+                    
+                    a{
+                        max-width: 100%;
+                        width: 100%;
+                        margin: 0;
+                        margin-bottom: 20px;
+                    }
+                    input{
+                        max-width: 100%;
+                        width: 100%;
+                    }
+                } 
+            }
+        }  
+    } 
+}
