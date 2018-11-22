@@ -236,6 +236,7 @@ function formSubmitRegistration() {
     if ( !$('#ireadd2').is(":checked") ) {
       msgText.remove();
       msg.html('<span id="msg-text">Must agree</span>');
+      msg.removeClass('success');
       msg.addClass('fail');
       return;
     }
@@ -262,6 +263,7 @@ function formSubmitRegistration() {
           $('#registration input').css({'borderColor': '#e7830c'});
           msgText.remove();
           msg.html('<span id="msg-text">' + data.message + '</span>');
+          msg.removeClass('fail');
           msg.addClass('success');
 
           setTimeout(function () {
@@ -269,15 +271,15 @@ function formSubmitRegistration() {
           }, 1000)
         }else{
           $('#registration input').css({'borderColor': '#e7830c'});
-          msgText.remove();
           msg.html('<span id="msg-text">' + data.message + '</span>');
+          msg.removeClass('success');
           msg.addClass('fail');
           $('#registration #' + data.id).css({'borderColor': 'red'});
         }
       },
       error: function (data) {
-        msgText.remove();
         msg.html('<span id="msg-text">The message could not be sent. Try it again.</span>');
+        msg.removeClass('success');
         msg.addClass('fail');
       }
     });
@@ -300,6 +302,7 @@ function formSubmitLogin() {
     if ( !$('#ireadd').is(":checked") ) {
       msgText.remove();
       msg.prepend('<span id="msg-text">Must agree</span>');
+      msg.removeClass('success');
       msg.addClass('fail');
       return;
     }
@@ -321,15 +324,17 @@ function formSubmitLogin() {
           $('#login input').css({'borderColor': '#e7830c'});
           msgText.remove();
           msg.html('<span id="msg-text">' + data.message + '</span>');
+          msg.removeClass('fail');
           msg.addClass('success');
 
-          setTimeout(function () {
+          /*setTimeout(function () {
             document.location.href = '/personal-account/';
-          }, 1000)
+          }, 1000)*/
         }else{
           $('#login input').css({'borderColor': '#e7830c'});
           msgText.remove();
           msg.html('<span id="msg-text">' + data.message + '</span>');
+          msg.removeClass('success');
           msg.addClass('fail');
           $('#login #' + data.id).css({'borderColor': 'red'});
         }
@@ -337,6 +342,7 @@ function formSubmitLogin() {
       error: function (data) {
         msgText.remove();
         msg.html('<span id="msg-text">The message could not be sent. Try it again.</span>');
+        msg.removeClass('success');
         msg.addClass('fail');
       }
     });
