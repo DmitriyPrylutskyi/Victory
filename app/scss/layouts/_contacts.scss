@@ -77,10 +77,36 @@
         display: flex;
         justify-content: space-between;
         flex-direction: row;
+        &:nth-child(1n){
+            position: relative;
+            .right-line-cont{
+                &:before{
+                    position: absolute;
+                    content: "";
+                    top: 44px;
+                    left: 8px;
+                    width: calc(100% - 45px);
+                    height: 1px;
+                    margin-left: 15px;
+                    background-image: linear-gradient(to right, #e7830c 0%, #fff 54%, #fff 70%, #e7830c 100%);
+                }
+            } 
+        }
         &:nth-child(2n){
             justify-content: space-between;
             flex-direction: row-reverse;
+            position: relative;
             .right-line-cont{
+                &:before{
+                    position: absolute;
+                    content: "";
+                    top: 44px;
+                    left: 8px;
+                    width: calc(100% - 45px);
+                    height: 1px;
+                    margin-left: 15px;
+                    background-image: linear-gradient(to right, #e7830c 0%, #fff 17%, #fff 44%, #e7830c 100%);
+                }
                 h3{
                     left: 43px;
                 }
@@ -99,6 +125,16 @@
         
                 &:nth-child(4){
                     .right-line-cont{
+                        &:before{
+                            position: absolute;
+                            content: "";
+                            top: 44px;
+                            left: 8px;
+                            width: calc(100% - 45px);
+                            height: 1px;
+                            margin-left: 15px;
+                            background-image: linear-gradient(to right, #e7830c 0%, #fff 30%, #fff 44%, #e7830c 100%);
+                        }
                         h3{
                             left: 149px;
                         }
@@ -145,10 +181,9 @@
                 position: absolute;
                 top: 30px;
                 left: 336px;
-                background-image: url(../img/tit-back.png);
-                background-position: 40px;
-                background-repeat: no-repeat;
-                background-size: 110%;
+                background: linear-gradient(to right, #c55b00 0%, #fd9b13);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
                 padding-right: 40px;
             }
             p{
@@ -286,6 +321,11 @@
     }
 }
 @include breakpoint(bootmidl) {
+    .right-line-cont{
+        &:before{
+            display: none
+        }
+    }
     .contacts-wrapp{
         max-width: 768px;
         .send-email-one-line{
