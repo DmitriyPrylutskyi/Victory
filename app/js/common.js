@@ -327,9 +327,9 @@ function formSubmitLogin() {
           msg.removeClass('fail');
           msg.addClass('success');
 
-          /*setTimeout(function () {
+          setTimeout(function () {
             document.location.href = '/personal-account/';
-          }, 1000)*/
+          }, 1000)
         }else{
           $('#login input').css({'borderColor': '#e7830c'});
           msgText.remove();
@@ -348,6 +348,40 @@ function formSubmitLogin() {
     });
   })
 }
+
+//  update profile
+
+$('#user_data').click(function () {
+  var firstname, lastname, patronymic, useremail, userphone, ajaxurl;
+  firstname       =  $('#first_name').val();
+  lastname        =  $('#last_name').val();
+  patronymic      =  $('#patronymic').val();
+  useremail       =  $('#user_email').val();
+  userphone       =  $('#user_phone').val();
+  ajaxurl         =   vars.admin_url + 'admin-ajax.php';
+
+
+  $('#profile_message').empty().html('<div class="userdate-alert">' + ajaxcalls_vars.saving + '<div>');
+
+  $.ajax({
+    type: 'POST',
+    url: ajaxurl,
+    data: {
+      'action'            :   'victory_ajax_update_profile',
+      'firstname'         :   firstname,
+      'lastname'          :   lastname,
+      'patronymic'        :   patronymic,
+      'useremail'         :   useremail,
+      'userphone'         :   userphone
+    },
+    success: function (data) {
+
+      $('#profile_message').empty().html('<div class="userdate-alert">' + data + '<div>');
+    },
+    error: function (errorThrown) {
+    }
+  });
+});
 
 // modal
 function modalWindow () {

@@ -448,7 +448,7 @@
         .one-ll{
             display: inline-block;
         }
-        [type="submit"]{
+        [type="button"]{
             position: absolute;
             right: 66px;
             bottom: 50px;
@@ -539,7 +539,7 @@
             .sec-bb{
                 margin-bottom: 5px
             }
-            [type="submit"]{
+            [type="button"]{
                 left: 185px;
                 width: 188px;
                 position: relative;
@@ -605,7 +605,7 @@
                 font-weight: 200;
             }
 
-            [type="submit"] {
+            [type="button"] {
                 position: absolute;
                 left: 66px;
                 bottom: 30px;
@@ -687,7 +687,7 @@
         form{
             padding: 50px;
 
-            [type="submit"]{
+            [type="button"]{
                 position: absolute;
                 right: 66px;
                 bottom: 50px;
@@ -976,7 +976,7 @@
             max-width: 991px;
             form {
                 padding: 30px;
-                [type="submit"]{
+                [type="button"]{
                     bottom: 30px;
                 }
             }
@@ -1095,7 +1095,7 @@
                         font-size: 12px
                     }
                 }
-                [type="submit"] {
+                [type="button"] {
                     position: relative;
                     right: 0;
                     bottom: 0;
@@ -1151,7 +1151,7 @@
                     top: 10px;
                 }
             }
-            [type="submit"] {
+            [type="button"] {
                 position: relative;
                 right: 0;
                 float: none;
@@ -1175,7 +1175,7 @@
                     top: 0;
                     margin-top: 20px;
                 }
-                [type="submit"] {
+                [type="button"] {
                     left: 0;
                 }
             }
@@ -1330,7 +1330,7 @@
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                 }
-                [type="submit"]{
+                [type="button"]{
                     position: relative;
                     left: 0;
                     bottom: 0;
@@ -1568,13 +1568,13 @@
     .personal-area{
         .last-pass-doc{
             .in-nwe-ff{
-                [type="submit"]{
+                [type="button"]{
                     display: block;
                     margin: 0 auto;
                 }
             }
             .part-l{
-                [type="submit"] {
+                [type="button"] {
                     left: 0;
                     display: block;
                     margin: 0 auto;
