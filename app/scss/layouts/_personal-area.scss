@@ -605,6 +605,33 @@
                 font-weight: 200;
             }
 
+            .user-preview-image, .image_doc {
+                display: inline-block;
+                position: relative;
+                width: 119px;
+                height: 89px;
+                padding: 5px;
+                border-radius: 15px;
+                box-shadow: none;
+                border: 1.22px solid #cccccc;
+                margin-bottom: 20px;
+                background-color: #fff !important;
+            }
+
+            .image_doc {
+                &:hover {
+                    background: #ffffff;
+                }
+                i {
+                    display: block;
+                    font-size: 60px;
+                    margin: 0;
+                    text-align: center;
+                    padding: 0;
+                    color: grey;
+                }
+            }
+
             input[type="button"] {
                 position: absolute;
                 left: 66px;

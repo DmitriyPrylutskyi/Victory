@@ -296,7 +296,7 @@ function formSubmitLogin() {
     phone       =   $('#login #phone').val();
     password    =   $('#login #password').val();
     agree       =   $("#login #ireadd:checked").val();
-    nonce       =   $('#login #security-register').val();
+    nonce       =   $('#login #security-login').val();
     ajaxurl     =   vars.admin_url + 'admin-ajax.php';
 
     if ( !$('#ireadd').is(":checked") ) {
@@ -349,39 +349,144 @@ function formSubmitLogin() {
   })
 }
 
-//  update profile
+//  update UserData
+function updateUserData() {
+  $('#user_data').click(function () {
+    var firstname, lastname, patronymic, useremail, userphone, nonce, ajaxurl;
+    firstname = $('#first_name').val();
+    lastname = $('#last_name').val();
+    patronymic = $('#patronymic').val();
+    useremail = $('#user_email').val();
+    userphone = $('#user_phone').val();
+    userbirthday = $('#birthday').val();
+    usercity = $('#city').val();
+    gender = $("input[name='gender']:checked").val();
+    nonce  =   $('#security-personal').val();
+    ajaxurl = vars.admin_url + 'admin-ajax.php';
 
-$('#user_data').click(function () {
-  var firstname, lastname, patronymic, useremail, userphone, ajaxurl;
-  firstname       =  $('#first_name').val();
-  lastname        =  $('#last_name').val();
-  patronymic      =  $('#patronymic').val();
-  useremail       =  $('#user_email').val();
-  userphone       =  $('#user_phone').val();
-  ajaxurl         =   vars.admin_url + 'admin-ajax.php';
+    $('#personal_info_message').empty().html('<div class="userdate-alert">Сохранение...<div>');
 
+    $.ajax({
+      type: 'POST',
+      url: ajaxurl,
+      data: {
+        'action': 'victory_ajax_update_profile',
+        'firstname': firstname,
+        'lastname': lastname,
+        'patronymic': patronymic,
+        'useremail': useremail,
+        'userphone': userphone,
+        'userbirthday': userbirthday,
+        'usercity': usercity,
+        'gender': gender,
+        'nonce' : nonce
+      },
+      success: function (data) {
 
-  $('#profile_message').empty().html('<div class="userdate-alert">' + ajaxcalls_vars.saving + '<div>');
-
-  $.ajax({
-    type: 'POST',
-    url: ajaxurl,
-    data: {
-      'action'            :   'victory_ajax_update_profile',
-      'firstname'         :   firstname,
-      'lastname'          :   lastname,
-      'patronymic'        :   patronymic,
-      'useremail'         :   useremail,
-      'userphone'         :   userphone
-    },
-    success: function (data) {
-
-      $('#profile_message').empty().html('<div class="userdate-alert">' + data + '<div>');
-    },
-    error: function (errorThrown) {
-    }
+        $('#personal_info_message').empty().html('<div class="userdate-alert">' + data + '<div>');
+      },
+      error: function (errorThrown) {
+        $('#personal_info_message').empty().html('<div class="userdate-alert">Повторите попытку позже<div>');
+      }
+    });
   });
-});
+}
+
+//  update PassportData
+function updatePassportData() {
+  $('#user_passport').click(function () {
+    var passser, passnum, passwhom, passdate, passcode, nonce, ajaxurl;
+    passser = $('#pass_ser').val();
+    passnum = $('#pass_num').val();
+    passwhom  = $('#pass_whom ').val();
+    passdate = $('#pass_date').val();
+    passcode = $('#pass_code').val();
+    nonce  =   $('#security-passport').val();
+    ajaxurl = vars.admin_url + 'admin-ajax.php';
+
+    $('#passport_info_message').empty().html('<div class="userdate-alert">Сохранение...<div>');
+
+    $.ajax({
+      type: 'POST',
+      url: ajaxurl,
+      data: {
+        'action': 'victory_ajax_update_passport',
+        'passser': passser,
+        'passnum': passnum,
+        'passwhom': passwhom,
+        'passdate': passdate,
+        'passcode': passcode,
+        'nonce' : nonce
+      },
+      success: function (data) {
+        $('#passport_info_message').empty().html('<div class="userdate-alert">' + data + '<div>');
+      },
+      error: function (errorThrown) {
+        $('#passport_info_message').empty().html('<div class="userdate-alert">Повторите попытку позже<div>');
+      }
+    });
+  });
+}
+
+// change password
+function changePassword() {
+  $('#change_password').click(function () {
+    var oldpass, newpass, renewpass, securitypass, ajaxurl;
+    oldpass         = $('#old-pass').val();
+    newpass         = $('#new-pass').val();
+    renewpass       = $('#re-pass').val();
+    nonce           = $('#security-password').val();
+    ajaxurl         = vars.admin_url + 'admin-ajax.php';
+
+    $('#password_info_message').empty().html('<div class="userdate-alert">Сохранение...<div>');
+
+    $.ajax({
+      type: 'POST',
+      url: ajaxurl,
+      data: {
+        'action'            :   'victory_ajax_change_pass',
+        'oldpass'           :   oldpass,
+        'newpass'           :   newpass,
+        'renewpass'         :   renewpass,
+        'nonce'             :   nonce
+      },
+      success: function (data) {
+        $('#password_info_message').empty().html('<div class="userdate-alert">' + data + '<div>');
+        $('#old-pass, #new-pass, #re-pass').val('');
+      },
+      error: function (errorThrown) {
+        $('#password_info_message').empty().html('<div class="userdate-alert">Повторите попытку позже<div>');
+      }
+    });
+  })
+}
+
+// Upload Doc
+function uploadDoc() {
+  $('#uploader_doc').on('click', function () {
+    var imageurl, nonce, ajaxurl;
+    imageurl = $('#image').val();
+    nonce = $('#security-doc').val();
+    ajaxurl = vars.admin_url + 'admin-ajax.php';
+    $('#doc_info_message').empty().html('<div class="userdate-alert">Сохранение...<div>');
+
+    $.ajax({
+      type: 'POST',
+      url: ajaxurl,
+      data: {
+        'action': 'victory_ajax_update_doc',
+        'imageurl': imageurl,
+        'nonce': nonce
+      },
+      success: function (data) {
+        $('#doc_info_message').empty().html('<div class="userdate-alert">' + data + '<div>');
+      },
+      error: function (errorThrown) {
+        $('#doc_info_message').empty().html('<div class="userdate-alert">Повторите попытку позже<div>');
+      }
+    });
+  })
+}
 
 // modal
 function modalWindow () {
@@ -439,6 +544,10 @@ function initEvents() {
     validate('#registration');
     formSubmitRegistration();
     formSubmitLogin();
+    updateUserData();
+    updatePassportData();
+    changePassword();
+    uploadDoc();
   });
 };
 
