@@ -246,7 +246,7 @@ footer{
                 width: 100%;
                 font-size: 13px;
                 letter-spacing: 0px;
-                line-height: 13px;
+                line-height: 20px;
                 color: #929292;
                 font-family: "CocogoosePro";
                 font-weight: 200;
@@ -397,6 +397,9 @@ footer{
     .modal-dialog.other{
         .modal-content{
             .modal-body{
+                .close{
+                    top:10px;
+                }
                 h3{
                     top: 4px;
                     position: relative;
@@ -418,4 +421,13 @@ footer{
             }
         }  
     } 
+    .modal-dialog{
+        .modal-content{
+            .modal-body{
+                .close{
+                    top:10px!important;
+                }
+            }
+        }
+    }
 }

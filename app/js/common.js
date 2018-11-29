@@ -376,6 +376,12 @@ function modalWindow () {
       $('body').css('padding-right','15px').addClass('modal-open'); 
     });
   });
+  $('.leave-order').on('click', function () {
+    $('#sign-up').modal('hide');
+    $('#leave-order').on('shown.bs.modal', function() {
+      $('body').css('padding-right','15px').addClass('modal-open'); 
+    });
+  });
 };
 
 function initEvents() {
