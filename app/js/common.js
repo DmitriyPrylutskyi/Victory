@@ -152,7 +152,7 @@ function sliderServices() {
 function popOver () {
   $('[data-toggle="popover"]').popover({
     trigger: 'focus'
-  }); 
+  });
 };
 
 //validate
@@ -464,8 +464,14 @@ function changePassword() {
 // Upload Doc
 function uploadDoc() {
   $('#uploader_doc').on('click', function () {
-    var imageurl, nonce, ajaxurl;
-    imageurl = $('#image').val();
+    var $imageurl, images = [];
+    var nonce, ajaxurl;
+
+    $imageurl = $('.user-preview-image');
+    $.each($imageurl,function(key,data) {
+      images.push($(data).attr('src'));
+    });
+
     nonce = $('#security-doc').val();
     ajaxurl = vars.admin_url + 'admin-ajax.php';
     $('#doc_info_message').empty().html('<div class="userdate-alert">Сохранение...<div>');
@@ -475,7 +481,7 @@ function uploadDoc() {
       url: ajaxurl,
       data: {
         'action': 'victory_ajax_update_doc',
-        'imageurl': imageurl,
+        'images': images,
         'nonce': nonce
       },
       success: function (data) {
@@ -518,7 +524,7 @@ function modalWindow () {
   $('.leave-order').on('click', function () {
     $('#enter').modal('hide');
     $('#leave-order').on('shown.bs.modal', function() {
-      $('body').css('padding-right','15px').addClass('modal-open'); 
+      $('body').css('padding-right','15px').addClass('modal-open');
     });
   });
   $('.leave-order').on('click', function () {
@@ -601,7 +607,7 @@ $(function() {
 
       if (scroll >= 20) {
           $('.un-act').addClass('active');
-          
+
           // $('header .member-actions').css({
           //     "top": "26px",
           // });
@@ -610,7 +616,7 @@ $(function() {
           // });
       } else {
           $('.un-act').removeClass('active');
-          
+
           // $('header .member-actions').css({
           //     "top": "41px",
           // });
