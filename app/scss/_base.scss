@@ -120,11 +120,15 @@ body {
 footer{
     .row{
         .contacts{
+            text-align: right;
             a{
                 transition: .3s;
                 &:hover{
                     color: #3c3c3c;
                 }
+            }
+            span{
+                margin-right: 30px;
             }
         } 
     } 
@@ -145,6 +149,9 @@ footer{
             margin: 50px auto;
             .seee-pass{
                 position: relative;
+                #my-pass{
+                    padding-right: 40px;
+                }
             }
             
             button.go-to-other{
