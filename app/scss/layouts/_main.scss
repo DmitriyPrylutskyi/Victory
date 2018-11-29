@@ -11,6 +11,10 @@
     h2 {
       position: relative;
       margin-bottom: 60px;
+      background-image: linear-gradient(to right, #c55c00 0%, #fd9b14 100%);
+      -webkit-background-clip: text;
+      color: transparent;
+      display: inline-block;
     }
     .image {
       position: relative;
@@ -80,6 +84,7 @@
           position: relative;
           display: inline-block;
           vertical-align: middle;
+          cursor: pointer;
           z-index: 1;
           &:nth-child(even) {
             margin-bottom: 55px;
@@ -307,6 +312,10 @@
               height: 24px;
               z-index: 1;
               cursor: pointer;
+              transition: .3s;
+              &:hover{
+                opacity: .7;
+              }
               &.slick-prev {
                 left: 20px;
                 background-image: url('../img/arrow-gray-left.png');

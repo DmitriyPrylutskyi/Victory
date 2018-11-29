@@ -528,6 +528,17 @@ function modalWindow () {
     });
   });
 };
+//show pass
+// function showPass() {
+//   var x = document.getElementById("password");
+//   if (x.type === "password") {
+//       x.type = "text";
+//   } else {
+//       x.type = "password";
+//   }
+// }
+
+
 
 function initEvents() {
   /*Actions on 'DOM ready' event*/
@@ -557,16 +568,16 @@ function initEvents() {
   });
 };
 
-
-//show pass
-function showPass() {
-  var x = document.getElementById("password");
-  if (x.type === "password") {
-      x.type = "text";
-  } else {
-      x.type = "password";
-  }
-}
+$(document).ready(function(){
+  $(".seee-pass span").click(function() {
+    var input = document.getElementById("my-pass");
+    if (input.type === "password") {
+      input.type = "text";
+      } else {
+        input.type = "password";
+      }
+  });
+});
 
 //body class
 $(document).ready(function(){

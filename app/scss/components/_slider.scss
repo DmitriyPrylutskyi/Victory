@@ -11,7 +11,13 @@
     height: 26px;
     border-radius: 13px;
     background-color: #df7d1d;
+    background-image: linear-gradient(to right, #c55c00 0%, #fd9b14 100%);
+    transition: .3s;
     cursor: pointer;
+    &:hover{
+      background-color: #df7d1d;
+      background-image: none;
+    }
     &:before, &:after{
       position: absolute;
       top: 50%;
@@ -40,5 +46,10 @@
     font-size: 13px;
     font-weight: 400;
     color:  #919191;
+  }
+}
+.result{
+  h5{
+    font-weight: 300;
   }
 }
