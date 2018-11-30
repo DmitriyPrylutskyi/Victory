@@ -401,8 +401,15 @@
                         <input type="text" placeholder="Отчество">
                         <input type="email" placeholder="Почта">
                         <input type="text" placeholder="Телефон">
-                        <input type="password" placeholder="Пароль">
-                        <input type="password" placeholder="Повторите пароль">
+                        <div class="seee-pass nw1">
+                            <input type="password" placeholder="Пароль" name="password" id="my-pass1">
+                            <input type="checkbox" id="see-pass1" onclick="showPass()"><label for="see-pass1"><span></span></label>
+                        </div>
+                        <div class="seee-pass nw2">
+                            <input type="password" placeholder="Повторите пароль" name="password" id="my-pass2">
+                            <input type="checkbox" id="see-pass2" onclick="showPass()"><label for="see-pass2"><span></span></label>
+                        </div>
+                        
                         <div>
                             <input type="checkbox" id="ireadd2">
                             <label for="ireadd2"><span></span>Я прочел и согласен с <a href="" data-toggle="modal"
