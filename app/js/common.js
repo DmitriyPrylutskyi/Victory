@@ -77,6 +77,7 @@ function calcresult() {
   total_amount = amount;
   total_refill = amount;
   total_percent = 0;
+
   for(var i=0; i<period; ++i)
   {
     percent = current_amount * rate_per_month; // проценты за прошедший месяц
@@ -246,7 +247,7 @@ function formSubmitRegistration() {
       url: ajaxurl,
       dataType: 'json',
       data: {
-        'action'                    :   'victory_register_form',
+        'action'                    :   'victory_ajax_register_form',
         'last_name'                 :   last_name,
         'first_name'                :   first_name,
         'patronymic'                :   patronymic,
@@ -312,7 +313,7 @@ function formSubmitLogin() {
       url: ajaxurl,
       dataType: 'json',
       data: {
-        'action'                    :   'victory_login_form',
+        'action'                    :   'victory_ajax_login_form',
         'phone'                     :   phone,
         'password'                  :   password,
         'nonce'                     :   nonce
@@ -494,6 +495,45 @@ function uploadDoc() {
   })
 }
 
+// Add New Deposits
+function addNewDeposits() {
+  $('#add-deposit').click(function () {
+
+    $('.leave-order').trigger("click");
+
+    var nonce, ajaxurl, amount, refill, rate, period;
+
+    amount = parseFloat($('#amount').val());
+    refill = parseFloat($('#refill').val());
+    rate = parseFloat($('#interest-rate').text());
+    period = parseFloat($('input[name=period]:checked').val());
+    nonce = $('#security-deposit').val();
+    ajaxurl = vars.admin_url + 'admin-ajax.php';
+
+    $('#deposit_info_message').empty().html('<div class="userdate-alert">Отправка...<div>');
+
+    $.ajax({
+      type: 'POST',
+      url: ajaxurl,
+
+      data: {
+        'action': 'victory_ajax_add_deposit',
+        'amount': amount,
+        'refill': refill,
+        'rate': rate,
+        'period': period,
+        'nonce': nonce
+      },
+      success: function (data) {
+        $('#deposit_info_message').empty().html('<div class="userdate-alert">' + data + '<div>');
+      },
+      error: function (errorThrown) {
+        $('#deposit_info_message').empty().html('<div class="userdate-alert">Повторите попытку позже<div>');
+      }
+    });
+  })
+};
+
 // modal
 function modalWindow () {
   $('.main-menu .login a').on('click', function () {
@@ -571,6 +611,7 @@ function initEvents() {
     updatePassportData();
     changePassword();
     uploadDoc();
+    addNewDeposits();
   });
 };
 
