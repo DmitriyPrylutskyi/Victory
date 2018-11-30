@@ -624,8 +624,45 @@ $(document).ready(function(){
         input.type = "password";
       }
   });
+  $(".nw1 span").click(function() {
+    var input = document.getElementById("my-pass1");
+    if (input.type === "password") {
+      input.type = "text";
+      } else {
+        input.type = "password";
+      }
+  });
+  $(".nw2 span").click(function() {
+    var input = document.getElementById("my-pass2");
+    if (input.type === "password") {
+      input.type = "text";
+      } else {
+        input.type = "password";
+      }
+  });
 });
+$(document).ready(function() {
+	
+  var readURL = function(input) {
+      if (input.files && input.files[0]) {
+          var reader = new FileReader();
 
+          reader.onload = function (e) {
+              $('.profile-pic').attr('src', e.target.result);
+          }
+  
+          reader.readAsDataURL(input.files[0]);
+      }
+  }
+ 
+  $(".file-upload").on('change', function(){
+      readURL(this);
+  });
+  
+  $(".upload-button").on('click', function() {
+     $(".file-upload").click();
+  });
+});
 //body class
 $(document).ready(function(){
 $('body').attr('id', 'top-has');

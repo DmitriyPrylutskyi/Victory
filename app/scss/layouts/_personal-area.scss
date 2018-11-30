@@ -734,7 +734,11 @@
 
         form{
             padding: 50px;
-
+            input[type="submit"]{
+                right: 65px;
+                position: absolute;
+                bottom: 50px;
+            }
             input[type="button"]{
                 position: absolute;
                 right: 66px;
@@ -1665,4 +1669,139 @@
 
 .imageuploadify{
     top: -7px
+}
+.avatar-wrapper {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    display: inline-block;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 1px 1px 15px -5px #e7830c;
+    transition: all .3s ease;
+    &:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+      }
+      .profile-pic {
+        height: 100%;
+        width: 100%;
+        transition: all .3s ease;
+        &:after {
+            font-family: "Font Awesome\ 5 Free";
+            content: "";
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(../img/user-solid.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            font-size: 100px;
+            background-color: #fff;
+            text-align: center;
+          }
+      }
+      .upload-button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        .fa-arrow-circle-up {
+            position: absolute;
+            font-size: 150px;
+            text-align: center;
+            left: 0;
+            opacity: 0;
+            transition: all .3s ease;
+            color: #e7830c;
+          }
+      }
+  }
+
+  .avatar-wrapper:hover .profile-pic {
+    opacity: 0;
+  }
+
+  .avatar-wrapper .upload-button:hover .fa-arrow-circle-up {
+    opacity: 1;
+  }
+  .foto-block-ava{
+    display: inline-block;
+    width: 277px;
+    text-align: center;
+  }
+  #avatar-chn{
+      position: relative;
+      top: -70px;
+  }
+  .pass-data{
+    input[type="submit"]{
+        right: 60px;
+        bottom: 50px;
+        position: absolute
+      }
+  }
+@include breakpoint(midfromtablet) { 
+  .personal-area{
+    .personal-info{
+        form{
+            input[type="submit"]{
+              right: 40px;
+              bottom: 30px;
+            }
+          } 
+      } 
+  } 
+}
+
+@include breakpoint(smallfromtablet) {
+    .pass-data{
+        input[type="submit"]{
+            right: 0;
+            bottom: 0;
+            position: relative;
+            margin: 0 auto;
+            display: block; 
+            margin-top: 20px;
+          }
+      }
+      .part-l{
+        input[type="submit"]{
+            right: 0;
+            bottom: 0;
+            position: relative;
+            margin: 0 auto;
+            display: block; 
+            margin-top: 20px;
+            margin-bottom: 30px;
+          }
+      }
+}
+
+@include breakpoint(bigfrommobile) {
+    .personal-area{
+        .personal-info{
+            form{
+                input[type="submit"]{
+                  right: 0;
+                  bottom: 0;
+                  position: relative;
+                  display: block;
+                  margin: 0 auto;
+                  margin-top: 30px;
+                }
+              } 
+          } 
+      } 
+}
+
+@include breakpoint(bigmidrommobile) {
+    .foto-block-ava{
+        width: 100%;
+    }
 }

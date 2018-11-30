@@ -35,6 +35,7 @@ footer {
       a {
         &:last-child {
           float: right;
+          margin: 0;
         }
       }
       span, a {
@@ -53,7 +54,7 @@ footer {
         }
         span {
           display: inline;
-          margin-right: 30px;
+          margin-right: 3px;
           font-family: 'Lato', sans-serif;
         }
       }

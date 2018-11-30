@@ -113,6 +113,19 @@
                                     <div>
                                         <form>
                                             <div class="left-part">
+                                                    <div class="one-line">
+                                                            <label for="" id="avatar-chn" class="can-lable">Фото</label>
+                                                            <div class="foto-block-ava">
+                                                                    <div class="avatar-wrapper">
+                                                                            <img class="profile-pic" src="" />
+                                                                            
+                                                                            <div class="upload-button">
+                                                                                <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
+                                                                            </div>
+                                                                            <input class="file-upload" type="file" accept="image/*"/>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
                                                 <div class="one-line">
                                                     <label for="thir-name" class="can-lable">Фамилия</label>
                                                     <input type="text" id="thir-name" name="thir-name" placeholder="Фамилия">
@@ -154,7 +167,7 @@
                                                 <div class="one-line">
                                                     <label for="e-mail" class="can-lable">E-mail</label>
                                                     <input type="email" id="e-mail" name="e-mail" placeholder="E-mail">
-                                                    <a href="">Верифицировать</a>
+                                                    <!-- <a href="">Верифицировать</a> -->
                                                 </div>
                                             </div>
                                             <input type="submit" value="Сохранить">
@@ -729,8 +742,15 @@
                         <input type="text" placeholder="Отчество">
                         <input type="email" placeholder="Почта">
                         <input type="text" placeholder="Телефон">
-                        <input type="password" placeholder="Пароль">
-                        <input type="password" placeholder="Повторите пароль">
+                        <div class="seee-pass nw1">
+                            <input type="password" placeholder="Пароль" name="password" id="my-pass1">
+                            <input type="checkbox" id="see-pass1" onclick="showPass()"><label for="see-pass1"><span></span></label>
+                        </div>
+                        <div class="seee-pass nw2">
+                            <input type="password" placeholder="Повторите пароль" name="password" id="my-pass2">
+                            <input type="checkbox" id="see-pass2" onclick="showPass()"><label for="see-pass2"><span></span></label>
+                        </div>
+                        
                         <div>
                             <input type="checkbox" id="ireadd2">
                             <label for="ireadd2"><span></span>Я прочел и согласен с <a href="" data-toggle="modal"
