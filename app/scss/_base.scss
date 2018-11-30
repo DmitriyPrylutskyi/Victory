@@ -360,6 +360,17 @@ footer{
         } 
     } 
 }
+
+.acf-field input[type="text"]:disabled {
+    padding: 0;
+    height: 18px;
+    font-weight: bold;
+    background-color: #f1f1f1;
+    border: none;
+    box-shadow: none;
+    color: #32373c;
+}
+
 @include breakpoint(smallfromtablet) {
     .imageuploadify{
         .imageuploadify-images-list{
