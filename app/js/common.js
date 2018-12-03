@@ -350,10 +350,46 @@ function formSubmitLogin() {
   })
 }
 
+function forgotPassword() {
+  $('#forgot-password').click(function (e) {
+    var msg = $('.msg');
+    var msgText = $('#msg-text');
+
+    var forgot_email, nonce, ajaxurl;
+    forgot_email = $('#forgot-email').val();
+    nonce = $('#security-forgot').val();
+    ajaxurl = vars.admin_url + 'admin-ajax.php';
+
+    $.ajax({
+      type: 'POST',
+      url: ajaxurl,
+      data: {
+        'action': 'victory_ajax_forgot_pass',
+        'forgot_email': forgot_email,
+        'nonce': nonce
+      },
+
+      success: function (data) {
+        msgText.remove();
+        msg.html('<span id="msg-text">' + datae + '</span>');
+        msg.removeClass('fail');
+        msg.addClass('success');
+      },
+      error: function (errorThrown) {
+        msgText.remove();
+        msg.html('<span id="msg-text">The message could not be sent. Try it again.</span>');
+        msg.removeClass('success');
+        msg.addClass('fail');
+      }
+    });
+  });
+}
+
 //  update UserData
 function updateUserData() {
   $('#user_data').click(function () {
-    var firstname, lastname, patronymic, useremail, userphone, nonce, ajaxurl;
+    var foto, firstname, lastname, patronymic, useremail, userphone, nonce, ajaxurl;
+    foto = $('#foto').val();
     firstname = $('#first_name').val();
     lastname = $('#last_name').val();
     patronymic = $('#patronymic').val();
@@ -372,6 +408,7 @@ function updateUserData() {
       url: ajaxurl,
       data: {
         'action': 'victory_ajax_update_profile',
+        'foto': foto,
         'firstname': firstname,
         'lastname': lastname,
         'patronymic': patronymic,
@@ -570,7 +607,7 @@ function modalWindow () {
   $('.leave-order').on('click', function () {
     $('#sign-up').modal('hide');
     $('#leave-order').on('shown.bs.modal', function() {
-      $('body').css('padding-right','15px').addClass('modal-open'); 
+      $('body').css('padding-right','15px').addClass('modal-open');
     });
   });
 };
@@ -607,6 +644,7 @@ function initEvents() {
     validate('#registration');
     formSubmitRegistration();
     formSubmitLogin();
+    forgotPassword();
     updateUserData();
     updatePassportData();
     changePassword();
@@ -642,7 +680,7 @@ $(document).ready(function(){
   });
 });
 $(document).ready(function() {
-	
+
   var readURL = function(input) {
       if (input.files && input.files[0]) {
           var reader = new FileReader();
@@ -650,15 +688,15 @@ $(document).ready(function() {
           reader.onload = function (e) {
               $('.profile-pic').attr('src', e.target.result);
           }
-  
+
           reader.readAsDataURL(input.files[0]);
       }
   }
- 
+
   $(".file-upload").on('change', function(){
       readURL(this);
   });
-  
+
   $(".upload-button").on('click', function() {
      $(".file-upload").click();
   });
