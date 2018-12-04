@@ -654,8 +654,8 @@ function initEvents() {
 };
 
 $(document).ready(function(){
-  $(".seee-pass span").click(function() {
-    var input = document.getElementById("my-pass");
+  $("#see-pass").next('label').click(function() {
+    var input = document.getElementById("password");
     if (input.type === "password") {
       input.type = "text";
       } else {
