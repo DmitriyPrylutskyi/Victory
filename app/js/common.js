@@ -236,7 +236,7 @@ function formSubmitRegistration() {
 
     if ( !$('#ireadd2').is(":checked") ) {
       msgText.remove();
-      msg.html('<span id="msg-text">Must agree</span>');
+      msg.html('<span id="msg-text">Подтвердите согласие с правилами.</span>');
       msg.removeClass('success');
       msg.addClass('fail');
       return;
@@ -279,7 +279,7 @@ function formSubmitRegistration() {
         }
       },
       error: function (data) {
-        msg.html('<span id="msg-text">The message could not be sent. Try it again.</span>');
+        msg.html('<span id="msg-text">Сообщение не может быть отправлено. Попробуйте снова.</span>');
         msg.removeClass('success');
         msg.addClass('fail');
       }
@@ -302,7 +302,7 @@ function formSubmitLogin() {
 
     if ( !$('#ireadd').is(":checked") ) {
       msgText.remove();
-      msg.prepend('<span id="msg-text">Must agree</span>');
+      msg.prepend('<span id="msg-text">Подтвердите согласие с правилами.</span>');
       msg.removeClass('success');
       msg.addClass('fail');
       return;
@@ -342,7 +342,7 @@ function formSubmitLogin() {
       },
       error: function (data) {
         msgText.remove();
-        msg.html('<span id="msg-text">The message could not be sent. Try it again.</span>');
+        msg.html('<span id="msg-text">Сообщение не может быть отправлено. Попробуйте снова.</span>');
         msg.removeClass('success');
         msg.addClass('fail');
       }
@@ -377,7 +377,7 @@ function forgotPassword() {
       },
       error: function (errorThrown) {
         msgText.remove();
-        msg.html('<span id="msg-text">The message could not be sent. Try it again.</span>');
+        msg.html('<span id="msg-text">Сообщение не может быть отправлено. Попробуйте снова.</span>');
         msg.removeClass('success');
         msg.addClass('fail');
       }
@@ -611,17 +611,36 @@ function modalWindow () {
     });
   });
 };
-//show pass
-// function showPass() {
-//   var x = document.getElementById("password");
-//   if (x.type === "password") {
-//       x.type = "text";
-//   } else {
-//       x.type = "password";
-//   }
-// }
 
+function paginationNews() {
+  $('.news').find('.pagination').find('li').click(function() {
 
+    if ($(this).hasClass('active')) {
+      return false;
+    }
+
+    var page = $(this).attr('page');
+    ajaxurl = vars.admin_url + 'admin-ajax.php';
+
+    $.ajax({
+      url: ajaxurl,
+      type: 'post',
+      dataType: 'json',
+      data: ({
+        action: 'paginationNews',
+        'page': page
+        }),
+      success: function(data) {
+        $('.news-wrapp').html(data['news']);
+        paginationNews();
+      },
+      error: function(errorThrown) {
+        alert(errorThrown);
+      }
+    });
+    return false;
+  });
+}
 
 function initEvents() {
   /*Actions on 'DOM ready' event*/
@@ -650,6 +669,7 @@ function initEvents() {
     changePassword();
     uploadDoc();
     addNewDeposits();
+    paginationNews();
   });
 };
 
