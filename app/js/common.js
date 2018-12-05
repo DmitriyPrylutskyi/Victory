@@ -610,6 +610,13 @@ function modalWindow () {
       $('body').css('padding-right','15px').addClass('modal-open');
     });
   });
+  $('.make-order').on('click', function () {
+    order_type = $(this).find('.one-serv-name').text();
+    $('#make-order').on('shown.bs.modal', function() {
+      $('#order-type').val(order_type);
+      $('body').css('padding-right','15px').addClass('modal-open');
+    });
+  });
 };
 
 function paginationNews() {
@@ -642,6 +649,48 @@ function paginationNews() {
   });
 }
 
+function addOrder() {
+  $('#victory-order').click(function() {
+    var nonce, ajaxurl, order_type, order_name, order_phone, order_date, order_comment;
+
+    order_type = $('#order-type').val();
+    order_name = $('#order-name').val();
+    order_phone = $('#order-phone').val();
+    order_date = $('#order-date').val();
+    order_comment = $('#order-comment').val();
+    nonce = $('#security-order').val();
+    ajaxurl = vars.admin_url + 'admin-ajax.php';
+
+    $('#order_info_message').empty().html('<div class="userdate-alert">Отправка...<div>');
+
+    $.ajax({
+      type: 'POST',
+      url: ajaxurl,
+
+      data: {
+        'action': 'victory_ajax_add_order',
+        'order_type': order_type,
+        'order_name': order_name,
+        'order_phone': order_phone,
+        'order_date': order_date,
+        'order_comment': order_comment,
+        'nonce': nonce
+      },
+      success: function (data) {
+        $('#order_info_message').empty().html('<div class="userdate-alert">' + data + '<div>');
+        $('#form-order').trigger('reset');
+        setTimeout(function () {
+          $('#order_info_message').empty();
+          $('#make-order .close').trigger("click");
+        }, 1500);
+      },
+      error: function (errorThrown) {
+        $('#order_info_message').empty().html('<div class="userdate-alert">Повторите попытку позже<div>');
+      }
+    });
+  });
+}
+
 function initEvents() {
   /*Actions on 'DOM ready' event*/
 
@@ -670,6 +719,7 @@ function initEvents() {
     uploadDoc();
     addNewDeposits();
     paginationNews();
+    addOrder();
   });
 };
 
