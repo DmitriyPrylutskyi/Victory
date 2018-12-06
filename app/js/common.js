@@ -22,10 +22,10 @@ function initAmountSlider() {
 
 function initRefillSlider() {
   $( "#slider-refill" ).slider({
-    min: 1000,
+    min: 0,
     max: 25000,
     step: 1000,
-    values: 1000,
+    values: 0,
     slide: function( event, ui ) {
       $(ui.handle).parent().next('.input-refill').find('#refill').val(ui.value);
       calcresult();
@@ -167,7 +167,7 @@ function validate(formId) {
       str = $input.val();
     if (regex.exec(str) == null) {
       $input.val(str.slice(0, -1));
-      errorMsg = 'incorrect phone';
+      errorMsg = 'Некорректный номер телефона';
     } else {
       errorMsg = '';
     }
@@ -188,7 +188,7 @@ function validate(formId) {
 
     if ( $input.prop( 'required' ) && str == '') {
       $input.removeClass('full');
-      errorMsg = 'required';
+      errorMsg = 'Поле пустое';
     } else {
       $input.addClass('full');
       errorMsg = '';
@@ -198,12 +198,12 @@ function validate(formId) {
       var regex = /^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.]{2,6})$/;
 
       if (regex.exec(str) == null) {
-        errorMsg = 'incorrect email';
+        errorMsg = 'Некорректный адрес почты';
       }
     }
 
     if ( $input.attr('type') == 'tel' && str != '' && str.length < 6 ) {
-      errorMsg = 'incorrect phone';
+      errorMsg = 'Некорректный номер телефона';
     }
 
     if (errorMsg) {
@@ -296,17 +296,17 @@ function formSubmitLogin() {
 
     phone       =   $('#login #phone').val();
     password    =   $('#login #password').val();
-    agree       =   $("#login #ireadd:checked").val();
+    //agree       =   $("#login #ireadd:checked").val();
     nonce       =   $('#login #security-login').val();
     ajaxurl     =   vars.admin_url + 'admin-ajax.php';
 
-    if ( !$('#ireadd').is(":checked") ) {
+/*    if ( !$('#ireadd').is(":checked") ) {
       msgText.remove();
       msg.prepend('<span id="msg-text">Подтвердите согласие с правилами.</span>');
       msg.removeClass('success');
       msg.addClass('fail');
       return;
-    }
+    }*/
 
     $.ajax({
       type: 'POST',
@@ -649,6 +649,36 @@ function paginationNews() {
   });
 }
 
+function paginationReviews() {
+  $('.review').find('.pagination').find('li').click(function() {
+
+    if ($(this).hasClass('active')) {
+      return false;
+    }
+
+    var page = $(this).attr('page');
+    ajaxurl = vars.admin_url + 'admin-ajax.php';
+
+    $.ajax({
+      url: ajaxurl,
+      type: 'post',
+      dataType: 'json',
+      data: ({
+        action: 'paginationReviews',
+        'page': page
+      }),
+      success: function(data) {
+        $('.rewiews-wrapp').html(data['reviews']);
+        paginationReviews();
+      },
+      error: function(errorThrown) {
+        alert(errorThrown);
+      }
+    });
+    return false;
+  });
+}
+
 function addOrder() {
   $('#victory-order').click(function() {
     var nonce, ajaxurl, order_type, order_name, order_phone, order_date, order_comment;
@@ -719,6 +749,7 @@ function initEvents() {
     uploadDoc();
     addNewDeposits();
     paginationNews();
+    paginationReviews();
     addOrder();
   });
 };

@@ -1,4 +1,5 @@
 .services-ar{
+    position: relative;
     &:before {
         content: "";
         background-image: url(../img/left-el.png);
@@ -7,7 +8,7 @@
         background-size: cover;
         left: 0;
         z-index: 9;
-        top: 930px;
+        bottom: 0;
         width: 280px;
         height: 445px;
         position: absolute;
@@ -20,7 +21,7 @@
         background-size: cover;
         right: 0;
         z-index: 9;
-        top: 1560px;
+        bottom: 0;
         width: 280px;
         height: 445px;
         position: absolute;
