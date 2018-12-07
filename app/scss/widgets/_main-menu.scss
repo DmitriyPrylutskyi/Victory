@@ -124,7 +124,7 @@
         }
       }
       &.login {
-        a {
+        a[title=" "] {
           &:before {
             content: "";
             position: absolute;
@@ -140,10 +140,31 @@
           }
         }
         &:hover {
-          a {
+          a[title=" "] {
             &:before {
               background: url("../img/login-hover.png");
             }
+          }
+        }
+      }
+      &.user-avatar {
+        img {
+          position: relative;
+          height: 50px;
+          min-width: 50px;
+          border-radius: 50%;
+          &:after {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background-image: url(../img/user-solid.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-color: #fff;
           }
         }
       }

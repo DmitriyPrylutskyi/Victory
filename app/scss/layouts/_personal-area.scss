@@ -141,7 +141,7 @@
                 text-align: center;
                 display: block;
             }
-            
+
             .close{
                 padding: 0;
                 background-color: transparent;
@@ -199,7 +199,7 @@
                             display: inline-block;
                             width: 70px;
                             height: 90px;
-                            
+
                             position: relative;
                         }
                         p{
@@ -211,7 +211,7 @@
                             font-weight: 300;
                             padding: 0;
                             width: 100%;
-                            
+
                             display: inline-block;
                         }
                         i{
@@ -222,7 +222,7 @@
                             font-family: "Lato";
                         }
                     }
-                    
+
                 }
                 ul {
                     padding: 0;
@@ -242,7 +242,7 @@
                         -webkit-text-fill-color: transparent;
                     }
                 }
-                
+
                 .firls-bl-mod{
                     position: relative;
                 }
@@ -300,7 +300,7 @@
             }
         }
     }
-    
+
     .nav-link{
         font-size: 15px;
         color: #df7e1d;
@@ -372,8 +372,8 @@
             height: 1px;
             margin-left: 15px;
             background-image: linear-gradient(to right, #b2b2b2 0%, #fff 10%, #fff 36%, #b2b2b2 100%);
-        } 
-        
+        }
+
         // .has-titt{
             // padding-left: 135px;
             // position: absolute;
@@ -403,7 +403,7 @@
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
-        
+
         form{
             padding: 50px;
         }
@@ -440,7 +440,7 @@
                 position: relative;
                 top: 15px;
             }
-            
+
         }
         .line-off{
             margin-bottom: 20px;
@@ -511,7 +511,7 @@
             .first-bb{
                 margin-top: 60px
             }
-            
+
             .last-bb{
                 position: relative;
                 top: 10px;
@@ -551,7 +551,7 @@
                 transition: .3s;
                 margin-top: 6px;
                 text-transform: none;
-    
+
                 &:hover{
                     background-image: linear-gradient(-85deg, #fd9b13 0%, #c55b00 100%);
                     text-transform: none;
@@ -674,10 +674,10 @@
         }
     }
     .jjjjd{
-        
+
         width: 100%;
         display: block;
-        position: relative; 
+        position: relative;
         height: 200px;
         left: 0;
 
@@ -857,7 +857,7 @@
                 background-image: linear-gradient(-85deg, #fd9b13 0%, #c55b00 100%);
                 box-shadow: 0px 5px 18px rgba(235,121,29,0.51)
             }
-        } 
+        }
     }
     .one-line{
         display: block;
@@ -974,7 +974,7 @@
                             border-radius: 20px;
                             font-weight: 300;
                             transition: .3s;
-                            
+
                             &.act{
                                 color: #ffffff;
                                 background-image: linear-gradient(-85deg, #c55b00 0%, #fd9b13 100%);
@@ -1019,7 +1019,7 @@
                 }
             }
         }
-    }  
+    }
 }
 @include breakpoint(midfromtablet) {
     .personal-area{
@@ -1065,9 +1065,9 @@
                             }
                         }
                     }
-                } 
+                }
             }
-        }    
+        }
     }
     .personal-area{
         .table-in {
@@ -1087,7 +1087,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-    } 
+    }
 }
 @include breakpoint(smallfromtablet) {
     .personal-area {
@@ -1100,7 +1100,7 @@
             .nav-item{
                 .last-link{
                     margin: 0
-                }    
+                }
             }
             .status-off{
                 position: relative;
@@ -1255,7 +1255,7 @@
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
-        } 
+        }
     }
 }
 
@@ -1304,9 +1304,9 @@
                 h3{
                     padding-left: 40px
                 }
-            } 
-        } 
-    } 
+            }
+        }
+    }
     .personal-area{
         .last-pass-doc{
             .in-nwe-ff{
@@ -1314,10 +1314,10 @@
                 padding-bottom: 70px;
                 padding-top: 70px;
             }
-        } 
-    } 
+        }
+    }
     .modal-dialog{
-        
+
         &.other{
             .modal-content{
                 width: 90%;
@@ -1326,10 +1326,10 @@
                     .close{
                         right: -50px;
                     }
-                } 
+                }
             }
         }
-    } 
+    }
     .personal-area{
         .prog-take{
             .all-kind-off{
@@ -1346,7 +1346,7 @@
                         span{
                             text-align: center;
                         }
-                    } 
+                    }
                 }
             }
         }
@@ -1361,7 +1361,7 @@
             }
         }
         .pass-data{
-            
+
         }
         .last-pass-doc{
             .in-nwe-ff{
@@ -1400,8 +1400,8 @@
                     transition: .3s;
                     text-transform: none;
                 }
-            } 
-        } 
+            }
+        }
     }
 }
 @include breakpoint(bigiphommobile) {
@@ -1421,10 +1421,10 @@
                     .close {
                         right: 30px;
                     }
-                } 
+                }
             }
-        } 
-    }     
+        }
+    }
 }
 @include breakpoint(notaipad) {
     .one-line.has-radio{
@@ -1449,7 +1449,7 @@
                 h3{
                     top: 0;
                     position: relative;
-                
+
                 }
                 input[type="password"]{
                     width: 100%;
@@ -1460,8 +1460,8 @@
                 float: none;
             }
 
-        } 
-    } 
+        }
+    }
 }
 @include breakpoint(midprefrommob) {
     .personal-area{
@@ -1477,7 +1477,7 @@
                 top: 0;
             }
         }
-    } 
+    }
 }
 @include breakpoint(bigmidrommobile) {
     .personal-area {
@@ -1492,7 +1492,7 @@
                     position: relative;
                     left: .5%;
                 }
-            } 
+            }
             .left-part {
                 float: none;
                 width: 100%;
@@ -1518,11 +1518,11 @@
         .pass-data{
             form {
                 padding: 30px;
-            
+
             .one-ll {
                 display: flex;
                 flex-direction: column;
-                
+
 
                 input{
                     width: 100%;
@@ -1547,9 +1547,9 @@
                 position: relative;
                 top: 15px;
             }
-            
+
         }
-        } 
+        }
     }
 }
 @include breakpoint(onebigmobile) {
@@ -1583,7 +1583,7 @@
                         h3{
                         font-size: 16px;
                         }
-                    } 
+                    }
                 }
             }
         }
@@ -1591,8 +1591,8 @@
     .modal-dialog{
         &.other{
             margin: 0
-        } 
-    } 
+        }
+    }
     .personal-area{
         .prog-take{
             width: 90%;
@@ -1604,7 +1604,7 @@
         .title-block{
             margin-left: 5%
         }
-    } 
+    }
 }
 
 @include breakpoint(bigsmallrommobile) {
@@ -1622,7 +1622,7 @@
     }
 }
 
-@include breakpoint(midmob) { 
+@include breakpoint(midmob) {
     .personal-area{
         .last-pass-doc{
             .in-nwe-ff{
@@ -1637,9 +1637,9 @@
                     display: block;
                     margin: 0 auto;
                 }
-            } 
-        } 
-    } 
+            }
+        }
+    }
     .modal-dialog{
         &.other{
             .modal-content{
@@ -1648,9 +1648,9 @@
                         text-align: left;
                         font-size: 16px;
                     }
-                } 
-            } 
-        } 
+                }
+            }
+        }
     }
     .personal-area{
         .last-pass-doc {
@@ -1663,7 +1663,7 @@
         .jjjjd{
             display: none
         }
-    } 
+    }
     .oun-head h2{
         padding: 0;
         padding-left: 15px;
@@ -1763,7 +1763,7 @@
         }
       }
   }
-@include breakpoint(midfromtablet) { 
+@include breakpoint(midfromtablet) {
   .personal-area{
     .personal-info{
         form{
@@ -1775,9 +1775,9 @@
               margin: 0 auto;
               margin-top: 30px;
             }
-          } 
-      } 
-  } 
+          }
+      }
+  }
 }
 
 @include breakpoint(smallfromtablet) {
@@ -1787,20 +1787,20 @@
             bottom: 0;
             position: relative;
             margin: 0 auto;
-            display: block; 
+            display: block;
             margin-top: 20px;
           }
       }
-       
+
        .personal-area{
         .last-pass-doc{
             .part-l{
                 input[type="submit"]{
                     left: 0;
                 }
-               } 
-           } 
-       } 
+               }
+           }
+       }
 }
 
 @include breakpoint(bigfrommobile) {
@@ -1815,9 +1815,9 @@
                   margin: 0 auto;
                   margin-top: 30px;
                 }
-              } 
-          } 
-      } 
+              }
+          }
+      }
 }
 @include breakpoint(bigdsmallrommobile) {
     .personal-area{
@@ -1828,9 +1828,9 @@
                     display: block;
                     margin-bottom: 30px;
                 }
-            } 
-        } 
-    } 
+            }
+        }
+    }
 }
 
 @include breakpoint(bigmidrommobile) {

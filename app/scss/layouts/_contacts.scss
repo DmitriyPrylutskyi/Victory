@@ -311,10 +311,15 @@
                         }
                     }
                 }
-                [type="submit"]{
+                #send-request {
                     margin-left: 64px;
                     margin-top: 52px;
                     text-transform: uppercase;
+                }
+                #request_info_message {
+                    position: absolute;
+                    top: 12px;
+                    left: 64px;
                 }
             }
         }
@@ -459,7 +464,7 @@
                     .in-call-newsa{
                         padding: 20px;
                     }
-                    [type="submit"]{
+                    #send-request{
                         margin-left: 25px
                     }
                 }
@@ -509,7 +514,7 @@
                 float: none;
                 width: 100%;
                 form{
-                    [type="submit"] {
+                    #send-request {
                         margin: 0 auto;
                         display: block;
                         margin-top: 45px;

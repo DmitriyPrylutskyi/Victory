@@ -194,6 +194,16 @@ function validate(formId) {
       errorMsg = '';
     }
 
+    if ($input.filter('[name $= "name"]').length > 0) {
+      if (str != '') {
+        var regex = /^[^\d_,.!@#$%^&*()-/*+=?~`\[\]\\<>]+$/;
+
+        if (regex.exec(str) == null) {
+          errorMsg = 'Некорректное имя';
+        }
+      }
+    }
+
     if ($input.attr('type') == 'email' && str != '') {
       var regex = /^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.]{2,6})$/;
 
@@ -230,17 +240,17 @@ function formSubmitRegistration() {
     phone       =   $('#registration #phone').val();
     password    =   $('#registration #password').val();
     rpassword   =   $('#registration #rpassword').val();
-    agree       =   $("#registration #ireadd2:checked").val();
+    //agree       =   $("#registration #ireadd2:checked").val();
     nonce       =   $('#registration #security-register').val();
     ajaxurl     =   vars.admin_url + 'admin-ajax.php';
 
-    if ( !$('#ireadd2').is(":checked") ) {
+    /*if ( !$('#ireadd2').is(":checked") ) {
       msgText.remove();
       msg.html('<span id="msg-text">Подтвердите согласие с правилами.</span>');
       msg.removeClass('success');
       msg.addClass('fail');
       return;
-    }
+    }*/
 
     $.ajax({
       type: 'POST',
@@ -261,11 +271,13 @@ function formSubmitRegistration() {
 
         // This outputs the result of the ajax request
         if (data.register === true) {
-          $('#registration input').css({'borderColor': '#e7830c'});
           msgText.remove();
           msg.html('<span id="msg-text">' + data.message + '</span>');
           msg.removeClass('fail');
           msg.addClass('success');
+          $('.error-msg').text('');
+          $('#registration input').css({'borderColor': '#e7830c'});
+          $('#msg-text').empty();
 
           setTimeout(function () {
             document.location.href = '/personal-account/';
@@ -279,7 +291,7 @@ function formSubmitRegistration() {
         }
       },
       error: function (data) {
-        msg.html('<span id="msg-text">Сообщение не может быть отправлено. Попробуйте снова.</span>');
+        msg.html('<span id="msg-text">Повторите попытку позже</span>');
         msg.removeClass('success');
         msg.addClass('fail');
       }
@@ -342,7 +354,7 @@ function formSubmitLogin() {
       },
       error: function (data) {
         msgText.remove();
-        msg.html('<span id="msg-text">Сообщение не может быть отправлено. Попробуйте снова.</span>');
+        msg.html('<span id="msg-text">Повторите попытку позже</span>');
         msg.removeClass('success');
         msg.addClass('fail');
       }
@@ -377,7 +389,7 @@ function forgotPassword() {
       },
       error: function (errorThrown) {
         msgText.remove();
-        msg.html('<span id="msg-text">Сообщение не может быть отправлено. Попробуйте снова.</span>');
+        msg.html('<span id="msg-text">Повторите попытку позже</span>');
         msg.removeClass('success');
         msg.addClass('fail');
       }
@@ -571,6 +583,54 @@ function addNewDeposits() {
   })
 };
 
+// Sent Request
+function sendRequest() {
+  $('#send-request').click(function () {
+    var requestor_name, requestor_email, requestor_comment, nonce, ajaxurl;
+    requestor_name = $('#form-request #requestor-name').val();
+    requestor_email = $('#form-request #requestor-email').val();
+    requestor_comment = $('#form-request #requestor-comment').val();
+
+    nonce = $('#security-request').val();
+    ajaxurl = vars.admin_url + 'admin-ajax.php';
+
+    $('#request_info_message').empty().html('<div class="userdate-alert">Отправка...<div>');
+
+    $.ajax({
+      type: 'POST',
+      url: ajaxurl,
+      dataType: 'JSON',
+      data: {
+        'action': 'victory_ajax_request',
+        'requestor_name': requestor_name,
+        'requestor_email': requestor_email,
+        'requestor_comment': requestor_comment,
+        'nonce': nonce
+      },
+
+      success: function (data) {
+        if (data.request === true) {
+          $('#form-request input').css({'borderColor': '#e7830c'});
+          $('#requestor-name').val('');
+          $('#requestor-email').val('');
+          $('#requestor-comment').val('');
+          $('#request_info_message').empty().html('<div class="userdate-alert" style="color: limegreen;">' + data.message + '<div>');
+          setTimeout(function () {
+            $('#request_info_message').empty();
+          }, 1500);
+        } else {
+          $('#form-request input').css({'borderColor': '#e7830c'});
+          $('#form-request #' + data.id).css({'borderColor': 'red'});
+          $('#request_info_message').empty().html('<div class="userdate-alert" style="color: red;">' + data.message + '<div>');
+        }
+      },
+      error: function (errorThrown) {
+        $('#request_info_message').empty().html('<div class="userdate-alert">Повторите попытку позже<div>');
+      }
+    });
+  });
+}
+
 // modal
 function modalWindow () {
   $('.main-menu .login a').on('click', function () {
@@ -588,15 +648,24 @@ function modalWindow () {
     $('#enter').modal('hide');
     $('#sign-up').on('shown.bs.modal', function() {
       $('body').css('padding-right','15px').addClass('modal-open');
-      $('#msg-text').remove();
+
     });
   });
   $('.sign-up').on('click', function () {
     $('#forgot-pass').modal('hide');
     $('#sign-up').on('shown.bs.modal', function() {
       $('body').css('padding-right','15px').addClass('modal-open');
-      $('#msg-text').remove();
     });
+  });
+  $('#enter').on('hide.bs.modal', function () {
+    $('.error-msg').text('');
+    $('#login input').css({'borderColor': '#e7830c'});
+    $('.msg span').empty();
+  });
+  $('#sign-up').on('hide.bs.modal', function () {
+    $('.error-msg').text('');
+    $('#registration input').css({'borderColor': '#e7830c'});
+    $('.msg span').empty();
   });
   $('.leave-order').on('click', function () {
     $('#enter').modal('hide');
@@ -696,7 +765,6 @@ function addOrder() {
     $.ajax({
       type: 'POST',
       url: ajaxurl,
-
       data: {
         'action': 'victory_ajax_add_order',
         'order_type': order_type,
@@ -751,6 +819,7 @@ function initEvents() {
     paginationNews();
     paginationReviews();
     addOrder();
+    sendRequest();
   });
 };
 

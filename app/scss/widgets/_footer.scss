@@ -48,7 +48,7 @@ footer {
   @include breakpoint(tablets) {
     .row {
       .contacts {
-        a {
+        .block:not(:last-child) {
           float: none;
           margin-right: 30px;
         }

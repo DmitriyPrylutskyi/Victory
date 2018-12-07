@@ -222,6 +222,7 @@
     }
     .simple-text2{
         margin-bottom: 60px;
+        text-align: center;
         p{
             font-size: 13px;
             line-height: 24px;
@@ -230,10 +231,21 @@
             font-weight: 200;
         }
         a{
+            padding: 0 30px;
+            border-radius: 20px;
+            line-height: 40px;
+            transition: .3s;
+            text-transform: none;
+            font-size: 15px;
+            color: #df7e1d;
             font-family: "CocogoosePro";
-            color: #e5800b;
+            font-weight: 300;
+            box-shadow: 0px 5px 18px rgba(235,121,29,0.51);
+            background-color: #ffffff;
+
             &:hover{
-                color: #5c5c5c;
+                color: #fff;
+                background-image: linear-gradient(-85deg, #fd9b13 0%, #c55b00 100%);
             }
         }
     }
