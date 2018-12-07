@@ -599,7 +599,7 @@ function sendRequest() {
     $.ajax({
       type: 'POST',
       url: ajaxurl,
-      dataType: 'JSON',
+      dataType: 'json',
       data: {
         'action': 'victory_ajax_request',
         'requestor_name': requestor_name,
@@ -614,18 +614,18 @@ function sendRequest() {
           $('#requestor-name').val('');
           $('#requestor-email').val('');
           $('#requestor-comment').val('');
-          $('#request_info_message').empty().html('<div class="userdate-alert" style="color: limegreen;">' + data.message + '<div>');
+          $('#request_info_message').empty().html('<div class="userdate-alert" style="color: limegreen;">' + data + '<div>');
           setTimeout(function () {
             $('#request_info_message').empty();
           }, 1500);
         } else {
           $('#form-request input').css({'borderColor': '#e7830c'});
           $('#form-request #' + data.id).css({'borderColor': 'red'});
-          $('#request_info_message').empty().html('<div class="userdate-alert" style="color: red;">' + data.message + '<div>');
+          $('#request_info_message').empty().html('<div class="userdate-alert style="color: limegreen;">' + data + '<div>');
         }
       },
       error: function (errorThrown) {
-        $('#request_info_message').empty().html('<div class="userdate-alert">Повторите попытку позже<div>');
+        $('#request_info_message').empty().html('<div class="userdate-alert style="color: red;">Повторите попытку позже<div>');
       }
     });
   });
@@ -688,6 +688,29 @@ function modalWindow () {
   });
 };
 
+function getNewsPost() {
+  $('.js-watch').click(function () {
+    post = $(this).attr('data-post');
+    ajaxurl = vars.admin_url + 'admin-ajax.php';
+
+    $.ajax({
+      url: ajaxurl,
+      type: 'post',
+      dataType: 'json',
+      data: ({
+        action: 'victory_ajax_get_news',
+        'post': post
+      }),
+      success: function(data) {
+        $('#watch-news .modal-body').empty().html(data['new']);
+      },
+      error: function(errorThrown) {
+        console.log('error');
+      }
+    });
+  })
+}
+
 function paginationNews() {
   $('.news').find('.pagination').find('li').click(function() {
 
@@ -711,7 +734,7 @@ function paginationNews() {
         paginationNews();
       },
       error: function(errorThrown) {
-        alert(errorThrown);
+
       }
     });
     return false;
@@ -741,7 +764,7 @@ function paginationReviews() {
         paginationReviews();
       },
       error: function(errorThrown) {
-        alert(errorThrown);
+
       }
     });
     return false;
@@ -820,6 +843,7 @@ function initEvents() {
     paginationReviews();
     addOrder();
     sendRequest();
+    getNewsPost();
   });
 };
 
