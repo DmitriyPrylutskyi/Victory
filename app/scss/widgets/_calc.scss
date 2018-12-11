@@ -27,11 +27,14 @@
           }
         }
       }
-      .input-amount-block {
+      .input-refill-block, .input-amount-block {
         margin-top: 15px;
         margin-bottom: 70px;
       }
-      .input-amount, .input-refill {
+      .input-month-block {
+        visibility: hidden;
+      }
+      .input-amount, .input-refill, .input-month {
         position: relative;
         display: inline-block;
         width: 184px;
@@ -68,11 +71,26 @@
           color: #3c3c3c;
         }
       }
+      .input-month {
+        &:after {
+          content: '';
+        }
+      }
       .slider {
         display: inline-block;
         width: 100%;
         margin-bottom: 60px;
         vertical-align: middle;
+        &#slider-month {
+          &:before {
+            content: '1';
+            left: 0;
+          }
+          &:after {
+            content: '12';
+            right: 0;
+          }
+        }
         &#slider-amount {
           &:before {
             content: '1000';

@@ -414,6 +414,9 @@ form{
         color: #fff;
         background-image: linear-gradient(-85deg, #fd9b13 0%, #c55b00 100%);
     }
+    &:focus{
+        color: #df7e1d;
+    }
 }
 
 @include breakpoint(smallfromtablet) {

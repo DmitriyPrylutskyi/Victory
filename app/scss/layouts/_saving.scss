@@ -11,7 +11,12 @@
 .saving-wrapp{
     margin: 0 auto;
     width: 100%;
-    max-width: 1030px;   
+    max-width: 1030px;
+    .calc {
+        .container {
+            padding: 0;
+        }
+    }
 }
 .all-kind-off{
     .one-kind-off{

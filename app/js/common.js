@@ -33,8 +33,21 @@ function initRefillSlider() {
   });
 }
 
+function initMonthlider() {
+  $( "#slider-month" ).slider({
+    min: 1,
+    max: 12,
+    step: 1,
+    values: 1,
+    slide: function( event, ui ) {
+      $(ui.handle).parent().next('.input-month').find('#month').val(ui.value);
+      calcresult();
+    }
+  });
+}
+
 function changeAmount() {
-  $('#amount').keyup(function(){
+  $('#amount').blur(function(){
     if ( $(this).val() < 1000 ) {
       $(this).val(1000)
     }
@@ -47,7 +60,7 @@ function changeAmount() {
 }
 
 function changeRefill() {
-  $('#refill').keyup(function(){
+  $('#refill').blur(function(){
     if ( $(this).val() < 1000 ) {
       $(this).val(1000)
     }
@@ -62,7 +75,25 @@ function changeRefill() {
 function changePeriod() {
   $('input[name=period]').change(function(){
     rate = $('input[name=period]:checked').attr('data-rate');
+    if ($('input[name=period]:checked').is('#period5')) {
+      $('.input-month-block').css('visibility', 'visible');
+    } else {
+      $('.input-month-block').css('visibility', 'hidden');
+    }
     $('#interest-rate').html(rate + ' ' + '<span class="unit">%</span>');
+    calcresult();
+  });
+}
+
+function changeMonth() {
+  $('#month').blur(function(){
+    if ( $(this).val() < 1 ) {
+      $(this).val(1)
+    }
+    if ( $(this).val() > 12 ) {
+      $(this).val(12)
+    }
+    $("#slider-month").slider("value", $(this).val());
     calcresult();
   });
 }
@@ -72,6 +103,9 @@ function calcresult() {
   refill = parseFloat($('#refill').val());
   rate = parseFloat($('#interest-rate').text());
   period = parseFloat($('input[name=period]:checked').val());
+  if (period == 1 ) {
+    period = parseFloat($('#month').val());
+  }
   rate_per_month = rate /12/100;
   current_amount = amount;
   total_amount = amount;
@@ -413,7 +447,7 @@ function updateUserData() {
     nonce  =   $('#security-personal').val();
     ajaxurl = vars.admin_url + 'admin-ajax.php';
 
-    $('#personal_info_message').empty().html('<div class="userdate-alert">Сохранение...<div>');
+    $('#personal_info_message').empty().html('<div class="userdate-alert">Сохранение...</div>');
 
     $.ajax({
       type: 'POST',
@@ -433,10 +467,10 @@ function updateUserData() {
       },
       success: function (data) {
 
-        $('#personal_info_message').empty().html('<div class="userdate-alert">' + data + '<div>');
+        $('#personal_info_message').empty().html('<div class="userdate-alert" style="color: limegreen;">' + data + '</div>');
       },
       error: function (errorThrown) {
-        $('#personal_info_message').empty().html('<div class="userdate-alert">Повторите попытку позже<div>');
+        $('#personal_info_message').empty().html('<div class="userdate-alert" style="color: red;">Повторите попытку позже</div>');
       }
     });
   });
@@ -454,7 +488,7 @@ function updatePassportData() {
     nonce  =   $('#security-passport').val();
     ajaxurl = vars.admin_url + 'admin-ajax.php';
 
-    $('#passport_info_message').empty().html('<div class="userdate-alert">Сохранение...<div>');
+    $('#passport_info_message').empty().html('<div class="userdate-alert">Сохранение...</div>');
 
     $.ajax({
       type: 'POST',
@@ -469,10 +503,10 @@ function updatePassportData() {
         'nonce' : nonce
       },
       success: function (data) {
-        $('#passport_info_message').empty().html('<div class="userdate-alert">' + data + '<div>');
+        $('#passport_info_message').empty().html('<div class="userdate-alert" style="color: limegreen;">' + data + '</div>');
       },
       error: function (errorThrown) {
-        $('#passport_info_message').empty().html('<div class="userdate-alert">Повторите попытку позже<div>');
+        $('#passport_info_message').empty().html('<div class="userdate-alert" style="color: red;">Повторите попытку позже</div>');
       }
     });
   });
@@ -488,7 +522,7 @@ function changePassword() {
     nonce           = $('#security-password').val();
     ajaxurl         = vars.admin_url + 'admin-ajax.php';
 
-    $('#password_info_message').empty().html('<div class="userdate-alert">Сохранение...<div>');
+    $('#password_info_message').empty().html('<div class="userdate-alert">Сохранение...</div>');
 
     $.ajax({
       type: 'POST',
@@ -501,11 +535,11 @@ function changePassword() {
         'nonce'             :   nonce
       },
       success: function (data) {
-        $('#password_info_message').empty().html('<div class="userdate-alert">' + data + '<div>');
+        $('#password_info_message').empty().html('<div class="userdate-alert" style="color: limegreen;">' + data + '</div>');
         $('#old-pass, #new-pass, #re-pass').val('');
       },
       error: function (errorThrown) {
-        $('#password_info_message').empty().html('<div class="userdate-alert">Повторите попытку позже<div>');
+        $('#password_info_message').empty().html('<div class="userdate-alert" style="color: red;">Повторите попытку позже</div>');
       }
     });
   })
@@ -524,7 +558,7 @@ function uploadDoc() {
 
     nonce = $('#security-doc').val();
     ajaxurl = vars.admin_url + 'admin-ajax.php';
-    $('#doc_info_message').empty().html('<div class="userdate-alert">Сохранение...<div>');
+    $('#doc_info_message').empty().html('<div class="userdate-alert">Сохранение...</div>');
 
     $.ajax({
       type: 'POST',
@@ -535,10 +569,10 @@ function uploadDoc() {
         'nonce': nonce
       },
       success: function (data) {
-        $('#doc_info_message').empty().html('<div class="userdate-alert">' + data + '<div>');
+        $('#doc_info_message').empty().html('<div class="userdate-alert" style="color: limegreen;">' + data + '</div>');
       },
       error: function (errorThrown) {
-        $('#doc_info_message').empty().html('<div class="userdate-alert">Повторите попытку позже<div>');
+        $('#doc_info_message').empty().html('<div class="userdate-alert" style="color: red;">Повторите попытку позже</div>');
       }
     });
   })
@@ -559,7 +593,7 @@ function addNewDeposits() {
     nonce = $('#security-deposit').val();
     ajaxurl = vars.admin_url + 'admin-ajax.php';
 
-    $('#deposit_info_message').empty().html('<div class="userdate-alert">Отправка...<div>');
+    $('#deposit_info_message').empty().html('<div class="userdate-alert">Отправка...</div>');
 
     $.ajax({
       type: 'POST',
@@ -574,10 +608,10 @@ function addNewDeposits() {
         'nonce': nonce
       },
       success: function (data) {
-        $('#deposit_info_message').empty().html('<div class="userdate-alert">' + data + '<div>');
+        $('#deposit_info_message').empty().html('<div class="userdate-alert"> style="color: limegreen;"' + data + '</div>');
       },
       error: function (errorThrown) {
-        $('#deposit_info_message').empty().html('<div class="userdate-alert">Повторите попытку позже<div>');
+        $('#deposit_info_message').empty().html('<div class="userdate-alert" style="color: red;">Повторите попытку позже</div>');
       }
     });
   })
@@ -594,7 +628,7 @@ function sendRequest() {
     nonce = $('#security-request').val();
     ajaxurl = vars.admin_url + 'admin-ajax.php';
 
-    $('#request_info_message').empty().html('<div class="userdate-alert">Отправка...<div>');
+    $('#request_info_message').empty().html('<div class="userdate-alert">Отправка...</div>');
 
     $.ajax({
       type: 'POST',
@@ -614,18 +648,18 @@ function sendRequest() {
           $('#requestor-name').val('');
           $('#requestor-email').val('');
           $('#requestor-comment').val('');
-          $('#request_info_message').empty().html('<div class="userdate-alert" style="color: limegreen;">' + data + '<div>');
+          $('#request_info_message').empty().html('<div class="userdate-alert" style="color: limegreen;">' + data.message + '</div>');
           setTimeout(function () {
             $('#request_info_message').empty();
           }, 1500);
         } else {
           $('#form-request input').css({'borderColor': '#e7830c'});
           $('#form-request #' + data.id).css({'borderColor': 'red'});
-          $('#request_info_message').empty().html('<div class="userdate-alert style="color: limegreen;">' + data + '<div>');
+          $('#request_info_message').empty().html('<div class="userdate-alert" style="color: red;">' + data.message + '</div>');
         }
       },
       error: function (errorThrown) {
-        $('#request_info_message').empty().html('<div class="userdate-alert style="color: red;">Повторите попытку позже<div>');
+        $('#request_info_message').empty().html('<div class="userdate-alert" style="color: red;">Повторите попытку позже</div>');
       }
     });
   });
@@ -783,7 +817,7 @@ function addOrder() {
     nonce = $('#security-order').val();
     ajaxurl = vars.admin_url + 'admin-ajax.php';
 
-    $('#order_info_message').empty().html('<div class="userdate-alert">Отправка...<div>');
+    $('#order_info_message').empty().html('<div class="userdate-alert">Отправка...</div>');
 
     $.ajax({
       type: 'POST',
@@ -798,7 +832,7 @@ function addOrder() {
         'nonce': nonce
       },
       success: function (data) {
-        $('#order_info_message').empty().html('<div class="userdate-alert">' + data + '<div>');
+        $('#order_info_message').empty().html('<div class="userdate-alert">' + data + '</div>');
         $('#form-order').trigger('reset');
         setTimeout(function () {
           $('#order_info_message').empty();
@@ -806,7 +840,7 @@ function addOrder() {
         }, 1500);
       },
       error: function (errorThrown) {
-        $('#order_info_message').empty().html('<div class="userdate-alert">Повторите попытку позже<div>');
+        $('#order_info_message').empty().html('<div class="userdate-alert">Повторите попытку позже</div>');
       }
     });
   });
@@ -821,9 +855,11 @@ function initEvents() {
     calcresult();
     initAmountSlider();
     initRefillSlider();
+    initMonthlider();
     changeAmount();
     changeRefill();
     changePeriod();
+    changeMonth();
     setHoverOnAdvantageIcon();
     setClickOnAdvantageIcon();
     initReviewsCarousel();
