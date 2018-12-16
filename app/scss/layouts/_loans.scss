@@ -15,7 +15,7 @@
                 content: "";
                 position: absolute;
                 width: 1033px;
-                height: 265px;
+                height: calc(100% - 150px);
                 top: 50px;
                 border-radius: 20px;
                 box-shadow: 0px 18px 35px rgba(0,0,0,0.14);

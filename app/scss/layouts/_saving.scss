@@ -135,57 +135,27 @@
                 padding: 27px;
                 margin-bottom: 60px;
                 position: relative;
-                &.first{
-                    &:before{
+                &.left{
+                    .image{
                         content: "";
                         position: absolute;
                         left: -60px;
                         top: -20px;
                         width: 150px;
                         height: 170px;
-                        background-image: url(../img/rub-sign.png);
                         background-position: center;
                         background-repeat: no-repeat;
                         background-size: contain;
                     }
                 }
-                &.sec{
-                    &:before{
+                &.right{
+                    .image{
                         content: "";
                         position: absolute;
                         right: -60px;
                         top: -20px;
                         width: 150px;
                         height: 170px;
-                        background-image: url(../img/protect-sign.png);
-                        background-position: center;
-                        background-repeat: no-repeat;
-                        background-size: cover;
-                    }
-                }
-                &.thr{
-                    &:before{
-                        content: "";
-                        position: absolute;
-                        left: -60px;
-                        top: -20px;
-                        width: 150px;
-                        height: 170px;
-                        background-image: url(../img/search-sign.png);
-                        background-position: center;
-                        background-repeat: no-repeat;
-                        background-size: contain;
-                    }
-                }
-                &.four{
-                    &:before{
-                        content: "";
-                        position: absolute;
-                        right: -60px;
-                        top: -20px;
-                        width: 150px;
-                        height: 170px;
-                        background-image: url(../img/user-sign.png);
                         background-position: center;
                         background-repeat: no-repeat;
                         background-size: cover;
